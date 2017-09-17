@@ -25,7 +25,12 @@ if(isset($_POST['save'])){
 		
 		if(empty($errors)==true){
          move_uploaded_file($file_tmp,"upload/certifications/".$file_name);
-			$query="update users set certification_doc='$file_name' where activate_token='$token'";
+		 
+			$query=mysqli_query($db,"select user_id from users where activate_token='$token'");
+			$trow=mysqli_fetch_assoc($query);
+			$user_id=$trow['user_id'];
+			
+			$query="insert into certification_document(user_id,document_name,added_date)values('$user_id','$file_name',now())";
 			$run_q=mysqli_query($db,$query);
          $flag=1;
       }else{

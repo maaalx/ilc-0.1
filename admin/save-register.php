@@ -18,10 +18,15 @@ include("../db.php");
 	
 	$security_question = filter_var(addslashes($_GET["security_question"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$security_answer = filter_var(addslashes($_GET["security_answer"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-    
+	
+	if($user_type==2){
+		$doctor_id = filter_var(addslashes($_GET["doctor_id"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+    }else{
+		$doctor_id=0;
+	}
 	$ip_address=$_SERVER['REMOTE_ADDR'];
-	$q = "insert into users(fname,lname,email,user_type,password,security_question,security_answer,dob,status,added_date,ip_address,activate_token)
-	values('$fname','$lname','$user_email','$user_type',md5('$password'),'$security_question','$security_answer','$dob','0',now(),'$ip_address','$uid')";
+	$q = "insert into users(doctor_id,fname,lname,email,user_type,password,security_question,security_answer,dob,status,added_date,ip_address,activate_token)
+	values('$doctor_id','$fname','$lname','$user_email','$user_type',md5('$password'),'$security_question','$security_answer','$dob','0',now(),'$ip_address','$uid')";
 
 	if (mysqli_query($db,$q)) {
 		echo 1;
@@ -29,6 +34,23 @@ include("../db.php");
 	}else{
 		echo 0;
 	}
+	
+	$user_id=mysqli_insert_id($db);
+	$ilc_id=0;
+	if($user_type==2){
+		$ilc_id='P'.$user_id;
+	}
+	
+	if($user_type==3){
+		$ilc_id='D'.$user_id;
+	}
+	
+	if($user_type==4){
+		$ilc_id='R'.$user_id;
+	}
+	
+	$query=mysqli_query($db,"update users set ilc_id='$ilc_id' where user_id='$user_id'");
+	
 		$subject="Activate your account";
 		$message="To activate your account, Please click on below link";
 		

@@ -51,16 +51,36 @@ include("../includes/header.php"); ?>
 		  <div class="form-group ">
 					<div class="form-group">
                       <label>User Type</label>
-                      <select name="user_type" id="user_type" class="form-control">
-                        <option value="1">General User</option>
-                        <option value="2">Patient</option>
-                        <option value="3">Doctor</option>
-                        <option value="4">Researcher</option>
+                      <select onchange="return check_type(this.value)" name="user_type" id="user_type" class="form-control">
+					  <option value='0'>Select</option>
+					  <?php $query=mysqli_query($db,"select * from user_type where id!='5'");
+						while($row=mysqli_fetch_assoc($query)){
+							
+						
+					  ?>
+                        <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                         
+                        <?php } ?>
                       </select>
                     </div>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
+		  
+		  <div  style="display:none" class="form-group choose-doctor">
+					<div class="form-group">
+                      <label>Select Doctor</label>
+                      <select name="doctor_id" id="doctor_id" class="form-control">
+					  <option value='0'>Select Doctor</option>
+					  <?php $temp_query=mysqli_query($db,"select * from users where user_type='3' order by fname,lname");
+						while($row=mysqli_fetch_assoc($temp_query)){
+						?>
+                        <option value="<?php echo $row['user_id']; ?>"><?php echo $row['fname'].' '.$row['lname']; ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+		  
           <div class="form-group has-feedback">
             <input type="email" name="user_email" id="user_email" class="form-control" placeholder="Email">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -116,6 +136,7 @@ include("../includes/header.php"); ?>
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat register">Register</button>
+			 <div style="display:none" class="loading"> Saving<img src="img/loading.gif"></div>
             </div><!-- /.col -->
           </div>
         </form>
@@ -151,7 +172,13 @@ include("../includes/header.php"); ?>
     <!-- date-range-picker -->
 	
     <script type="text/javascript">
-     
+     function check_type(type_id){
+		 if(type_id==2){
+			 $(".choose-doctor").show();
+		 }else{
+			 $(".choose-doctor").hide();
+		 }
+	 }
       
 	  function validateEmail(email) {
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -192,9 +219,11 @@ include("../includes/header.php"); ?>
 						return false;
 					}
 				  
-				  var dataString = '?fname='+ $("#first_name").val() + '&lname=' + $("#last_name").val()+ '&user_type=' + $("#user_type").val()+ '&user_email=' + $("#user_email").val()+ '&password=' + $("#password").val()+ '&dob=' + $("#dob").val()+ '&security_question=' + $("#security_question").val()+ '&security_answer=' + $("#security_answer").val();
+				  var dataString = '?fname='+ $("#first_name").val() + '&lname=' + $("#last_name").val()+ '&user_type=' + $("#user_type").val()+ '&user_email=' + $("#user_email").val()+ '&password=' + $("#password").val()+ '&dob=' + $("#dob").val()+ '&security_question=' + $("#security_question").val()+ '&security_answer=' + $("#security_answer").val()+'&doctor_id=' + $("#doctor_id").val();
 				  
+				  $(".loading").show();
 				  $.ajax({url: "save-register.php"+dataString, success: function(result){
+					   $(".loading").hide();
 					  if (result==1){
 							alert("Successfully Registered. We have sent you account activate link on your email address.");
 						    window.location="../login.php";

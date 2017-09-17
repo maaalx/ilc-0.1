@@ -6,6 +6,10 @@
 		$query=mysqli_query($db,"select * from users where user_id='$user_id'");
 		$row=mysqli_fetch_assoc($query);
 		
+		$temp_q=mysqli_query($db,"select * from certification_document where user_id='$user_id'");
+		$doc_row=mysqli_fetch_assoc($temp_q);
+		
+		
 		
 ?>
 
@@ -72,11 +76,11 @@
 		   <label>Security Answer</label>:<?php echo $row['security_answer']; ?>
            
           </div>
-		 <?php $file_name="../upload/certifications/".$row['certification_doc']; ?>
+		 <?php $file_name="../upload/certifications/".$doc_row['document_name']; ?>
 		  <div class="form-group ">
 					<div class="form-group">
                       <label>Certification Document</label>:
-					  <?php if($row['certification_doc']!=''){ ?>
+					  <?php if($doc_row['document_name']!=''){ ?>
 					  <a href="lib/download.php?filename=<?php echo $file_name; ?>" class="links">Download</a>
 					  <?php }else{
 						  echo "Not uploaded";
@@ -89,7 +93,7 @@
 
                   <div class="box-footer">
                     <div class="error" style="color:red"></div>
-                    <button type="submit"  class="btn btn-primary">Update</button>
+                    
                   </div>
                 </form>
               
