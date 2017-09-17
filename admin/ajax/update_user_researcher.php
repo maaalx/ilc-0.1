@@ -61,27 +61,26 @@ include("../../db.php");
 	
 	$phone1 = filter_var(addslashes($_POST["phone1"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$phone2 = filter_var(addslashes($_POST["phone2"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$height = filter_var(addslashes($_POST["height"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$weight = filter_var(addslashes($_POST["weight"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$ethnicity = filter_var(addslashes($_POST["ethnicity"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$emergency_contact_name = filter_var(addslashes($_POST["emergency_contact_name"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$emergency_contact_number = filter_var(addslashes($_POST["emergency_contact_number"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	
+	$institution_name = filter_var(addslashes($_POST["institution_name"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	
 	$address_line_1 = filter_var(addslashes($_POST["address_line_1"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	
 	$address_line_2 = filter_var(addslashes($_POST["address_line_2"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$suburb = filter_var(addslashes($_POST["suburb"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$state = filter_var(addslashes($_POST["state"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$postcode = filter_var(addslashes($_POST["postcode"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$country = filter_var(addslashes($_POST["country"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	
-	$ilc_id='P'.$user_id;
+	$ilc_id='R'.$user_id;
 	
-	$query=mysqli_query($db,"select id from patient where ilc_id='$ilc_id'");
+	$query=mysqli_query($db,"select id from researcher where ilc_id='$ilc_id'");
 	$total_row=mysqli_num_rows($query);
 	if($total_row>0){
-		 $query="update patient set phone_1='$phone1',phone_2='$phone2',ethnicity='$ethnicity',height='$height',weight='$weight',emergency_contact_name='$emergency_contact_name',emergency_contact_number='$emergency_contact_number',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',country='$country' where ilc_id='$ilc_id'";
+		 $query="update researcher set phone1='$phone1',phone2='$phone2',institution_name='$institution_name',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',postcode='$postcode',country='$country' where ilc_id='$ilc_id'";
 		$exe_query=mysqli_query($db,$query);
 	}else{
-		$query="insert into patient(ilc_id,phone_1,phone_2,ethnicity,height,weight,emergency_contact_name,emergency_contact_number,address_line_1,address_line_2,suburb,state,country,added_date)values('$ilc_id','$phone1','$phone2','$ethnicity','$height','$weight','$emergency_contact_name','$emergency_contact_number','$address_line_1','$address_line_2','$suburb','$state','$country',now())";
+		$query="insert into researcher(ilc_id,phone1,phone2,institution_name,address_line_1,address_line_2,suburb,state,postcode,country,added_date)values('$ilc_id','$phone1','$phone2','$institution_name','$address_line_1','$address_line_2','$suburb','$state','$postcode','$country',now())";
 		$exe_query=mysqli_query($db,$query);
 	}
 	
