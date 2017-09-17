@@ -14,4 +14,16 @@ function checkPermissions($user_id,$permissions){
 		return 1;
 	else return 0;
 }
+
+function checkPatientBelongsToDoctor($patientId,$doctorId){
+	global $db;
+	$query=mysqli_query($db,"select * from users where user_id='$patientId' and doctor_id='$doctorId'");
+	$total_rows=mysqli_fetch_assoc($query);
+	
+	if($total_rows>0){
+		return 1;
+	}else{
+		return 0;
+	}
+}
 ?>
