@@ -137,7 +137,13 @@ function marknotiread(){
 				  
                    
                     <div class="pull-right">
-                      <a href="edit-profile.php" class="btn btn-default btn-flat">Edit Profile</a>
+					<?php if($user_data['user_type']==2){ ?>
+						<a href="edit_profile.php" class="btn btn-default btn-flat">Edit Profile</a>
+					<?php }elseif($user_data['user_type']==3){ ?>
+						<a href="edit_profile_doctor.php" class="btn btn-default btn-flat">Edit Profile</a>
+					<?php }elseif($user_data['user_type']==4){ ?>
+						<a href="edit_profile_researcher.php" class="btn btn-default btn-flat">Edit Profile</a>
+					<?php } ?>	
                     </div>
                   </li>
                   <li class="user-footer">

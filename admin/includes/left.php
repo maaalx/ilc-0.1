@@ -38,6 +38,46 @@
               </ul>
             </li>
 		<?php } ?>
+		
+		<?php if(checkPermissions($_SESSION['admin_user_id'],array(2))){ ?>
+            <li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Treatments</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="add_patient_history.php"><i class="fa fa-circle-o"></i> Add Treatment</a></li>
+				<li class="active"><a href="patient-treatments-list.php"><i class="fa fa-circle-o"></i> My Treatments</a></li>
+				
+					<li><a href="add_followups.php"><i class="fa fa-circle-o"></i> Add FollowUp</a></li>
+				
+               
+              </ul>
+            </li>
+		<?php } ?>
+		
+		<?php if(checkPermissions($_SESSION['admin_user_id'],array(3))){ ?>
+            <li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Patients</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="my-patients.php"><i class="fa fa-circle-o"></i> My Patients</a></li>
+				
+				
+              </ul>
+            </li>
+			
+			<li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Treatments</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               
+				<li><a href="my-treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
+				<li><a href="all-treatments.php"><i class="fa fa-circle-o"></i>All Treatments List</a></li>
+              </ul>
+            </li>
+		<?php } ?>
 
           
           </ul>
