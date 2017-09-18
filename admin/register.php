@@ -213,6 +213,48 @@ include("../includes/header.php"); ?>
 						return false;
 					}
 					
+					var numric_str=0;
+					var upper_str=0;
+					var i=0;
+					var character='';
+					var pass_tr=$( "#password" ).val();
+
+						while (i <= pass_tr.length){
+							character = pass_tr.charAt(i);
+							if (!isNaN(character * 1)){
+								numric_str=1;
+							}else{
+								if (character == character.toUpperCase()) {
+									upper_str=1;
+								}
+								if (character == character.toLowerCase()){
+									//alert ('lower case true');
+								}
+							}
+							i++;
+						}
+					var matches = pass_tr.match(/\d+/g);
+					if (matches != null) {
+						
+					}else{
+						alert("Password must contain at least one interger value");
+						$("#password").focus();
+						return false;
+					}	
+					
+
+					if(upper_str==0){
+						alert("Password must contain at least one upper case letter");
+						$("#password").focus();
+						return false;
+					}	
+
+					if(pass_tr.length<8){
+						alert("Password requires minimum 8 characters");
+						$("#password").focus();
+						return false;
+					}	
+					
 					if($( "#password" ).val()!=$( "#confirm_password" ).val()){
 						alert ("Password and confirm password should be same.");
 						$("#confirm_password").focus();
