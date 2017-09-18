@@ -22,14 +22,24 @@
 			<?php } ?>
            <li class="treeview">
               <a href="index.php">
-         <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+         <span>Dashboard</span> <i class="fa fa-dashboard"></i>
               </a>
+			  
+			  <?php if($user_data['user_type']==2){ ?>
+						<a href="edit_profile.php" ><span>Edit Profile</span> <i class="fa fa-fw fa-edit"></i></a>
+					<?php }elseif($user_data['user_type']==3){ ?>
+						<a href="edit_profile_doctor.php" ><span>Edit Profile</span> <i class="fa fa-fw fa-edit"></i></a>
+					<?php }elseif($user_data['user_type']==4){ ?>
+						<a href="edit_profile_researcher.php" ><span>Edit Profile</span> <i class="fa fa-fw fa-edit"></i></a>
+					<?php } ?>
+					
+			
           </li>  
 		  
 		  <?php if(checkPermissions($_SESSION['admin_user_id'],array(5))){ ?>
             <li class="treeview">
               <a href="#">
-	      <i class="ion ion-person-add"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
+				<i class="ion ion-person-add"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="add-user.php"><i class="fa fa-circle-o"></i> Add User</a></li>
@@ -37,7 +47,23 @@
                
               </ul>
             </li>
+			
+			<li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               
+				<li class="active"><a href="admin_all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
+				
+					
+				
+               
+              </ul>
+            </li>
 		<?php } ?>
+		
+	
 		
 		<?php if(checkPermissions($_SESSION['admin_user_id'],array(2))){ ?>
             <li class="treeview">
@@ -75,6 +101,22 @@
                
 				<li><a href="my-treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
 				<li><a href="all-treatments.php"><i class="fa fa-circle-o"></i>All Treatments List</a></li>
+              </ul>
+            </li>
+		<?php } ?>
+		
+		<?php if(checkPermissions($_SESSION['admin_user_id'],array(4))){ ?>
+            <li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="add_article.php"><i class="fa fa-circle-o"></i> Add Article</a></li>
+				<li class="active"><a href="all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
+				
+					
+				
+               
               </ul>
             </li>
 		<?php } ?>
