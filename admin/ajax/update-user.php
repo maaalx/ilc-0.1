@@ -57,6 +57,34 @@ include("../../db.php");
 	
 	if($password!=''){
 		mysqli_query($db,"update users set password=md5('$password') where user_id='$user_id'");
+		
+		$query=mysqli_query($db,"select email,fname from users where user_id='$user_id'");
+		$user=mysqli_fetch_assoc($query);
+		$user_email	=$user['email'];
+		$fname		=$user['fname'];
+		
+		$subject="Your password successfully updated";
+		$message="Your password is updated, You can login using new password<br><br>Click on below link for login";
+		
+		$email_text = file_get_contents('../email_notification.html');
+		$email_text=str_replace("[[SITETITLE]]","International Library of Cannabinoids",$email_text);
+		$email_text=str_replace("[[sitetitle]]","International Library of Cannabinoids",$email_text);
+		$email_text=str_replace("[[siteroot]]",SITEROOT,$email_text);
+		$email_text=str_replace("[[subject]]",$subject,$email_text);
+		$email_text=str_replace("[[message]]",$message,$email_text);
+		
+
+		$email_text=str_replace("[[firstname]]",$fname,$email_text);
+
+		$login_link=SITEROOT.'/login.php';
+		$email_text=str_replace("[[link]]",$login_link,$email_text);
+		
+	  
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+		$headers .= 'From: International Library of Cannabinoids Staff<admin@ilc.com>' . "\r\n";
+		$sentEmail = mail($user_email, $subject, $email_text, $headers);
 	}
 	
 	$phone1 = filter_var(addslashes($_POST["phone1"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
