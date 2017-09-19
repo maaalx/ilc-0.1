@@ -16,11 +16,14 @@ admin@gmail.com
 admin
 
 Patient : 
-maaalx@hotmail.com
-123456
+amit@gmail.com
+admin
  
 Doctor :
 jj@gmail.com
 admin
 
+Researcher :
+a@gmail.com
+admin
 
