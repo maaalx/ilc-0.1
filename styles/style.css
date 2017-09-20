@@ -1,0 +1,333 @@
+@charset "utf-8";
+/* CSS Document */
+/*Header background canvas*/
+#particles-js {
+	margin: 0px;
+	background-color: #7B7C86;
+	height: 200px;
+	width: 100%;
+}
+/* Header Animations*/
+#welcome{
+	position: absolute;
+	top: 20%;
+	left: 44%
+}
+#welcomecontent{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+}
+#welcomelabel{
+	animation-name: welcomefadeout;
+	animation-delay: 0s;
+	animation-duration: 7s;
+	
+}
+#leaf {
+	position: absolute;
+	top: 10%;
+	left: 45%;
+	height: 150px;
+	width: 150px;
+	animation-name: leaf;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+	animation-delay: 2s;
+}
+#leftup {
+	position: absolute;
+	top: 15%;
+	left: 37%;
+	animation-name: arrowFadein;
+	animation-delay: 0s;
+	animation-duration: 7s;
+}
+#leftlinear {
+	position: absolute;
+	top: 55%;
+	left: 37%;
+	animation-name: arrowFadein;
+	animation-delay: 0s;
+	animation-duration: 8.3s;
+}
+#rightup {
+	position: absolute;
+	top: 15%;
+	left: 57%;
+	animation-name: arrowFadein;
+	animation-delay: 0s;
+	animation-duration: 9.5s;
+}
+#rightlinear {
+	position: absolute;
+	top: 50%;
+	left: 57%;
+	animation-name: arrowFadein;
+	animation-delay: 0s;
+	animation-duration: 10s;
+}
+#leftuplabel {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 150%;
+	color: white;
+	opacity: 0.7;
+	position: absolute;
+	top: 5%;
+	left: 28%;
+	animation-name: leftuplabel;
+	animation-duration: 1s;
+	animation-delay: 3.5s;
+	animation-fill-mode: both;
+}
+#leftlinearlabel {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 150%;
+	color: white;
+	opacity: 0.7;
+	position: absolute;
+	top: 54%;
+	left: 26%;
+	animation-name: leftlinearlabel;
+	animation-duration: 1s;
+	animation-delay: 4s;
+	animation-fill-mode: both;
+}
+#rightuplabel {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 150%;
+	color: white;
+	opacity: 0.7;
+	position: absolute;
+	top: 6%;
+	left: 64%;
+	animation-name: rightuplabel;
+	animation-duration: 1s;
+	animation-delay: 4.5s;
+	animation-fill-mode: both;
+}
+#rightlinearlabel {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 150%;
+	color: white;
+	opacity: 0.7;
+	position: absolute;
+	top: 49%;
+	left: 66%;
+	animation-name: rightlinearlabel;
+	animation-duration: 1s;
+	animation-delay: 5s;
+	animation-fill-mode: both;
+}
+/*navigation bar*/
+#nav {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	font-size: 110%;
+}
+#navUl li {
+	padding: 0px 20px;
+}
+/*left carousel*/
+#myCarousel {
+	margin: 5px 0 0 0;
+}
+/*right tabs*/
+#rightTabs {
+	font-size: 90%;
+	margin: 5px 0 0 -50px;
+}
+/*affix and scroll*/
+body {
+	position: relative;
+}
+.affix {
+	top: 0;
+	width: 100%;
+	z-index: 9999 !important;
+}
+.navbar {
+	margin-bottom: 0px;
+}
+.affix ~ .container-fluid {
+	position: relative;
+	top: 50px;
+}
+/*bottom content*/
+#section1 {
+	margin: 10px;
+	height: auto;
+	background-color:#d8d8d8;
+}
+#aboutus{
+	margin: 20px 0 10px 5px;
+}
+#section2 {
+	padding-top: 20px;
+	height: auto;
+	margin: 10px 10px 50px 10px;
+}
+#section3 {
+	margin: 10px 10px 50px 10px;
+	padding-top: 20px;
+	height: auto;
+	color: #000;
+	background-color: #d8d8d8;
+	background: url()
+}
+
+.panels{
+	list-style-type: none;
+	padding: 0px;	
+}
+
+.panels li{
+	position: relative;
+	width: 12%;
+	margin: 2px;
+	display: block;
+	box-sizing: border-box;
+	float: left;
+}
+.panels li div{
+	width:100%;
+	padding: 40% 0;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+.panels div.back{
+	transform:rotateY(90deg);
+}
+.panels div.front{
+	position: absolute;
+}
+.panels	li:hover div.front{
+	animation: twirl;
+	animation-duration: 0.2s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+.panels	li:hover div.back{
+	animation: twirl;
+	animation-duration: 0.2s;
+	animation-delay: 0.2s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-direction: reverse;
+}
+#contactus{
+
+	margin: 5px;
+	float: left;
+}
+
+#map{
+	position: absolute;
+	
+	width: 450px;
+	margin: 30px 0 0 10px;
+}
+#map:hover{
+	transform: scale(1.6);
+}
+
+#contactdetails{
+	z-index: -1;
+	list-style: none;
+	margin: 30px 0 0 0;
+}
+#contactdetails ul li{
+	list-style: none;
+}
+
+#footer{
+	height: 100px;
+	background-color: lightgray;
+	text-align: center;	
+	margin: -25px 0 0 0;
+}
+#footerinfo{
+	line-height:800%;
+}
+#canvas{
+	position: absolute;
+	z-index: -2;
+	background: #fefefe;
+	width: 101%;
+	margin-top: -10px;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+ @keyframes leaf {
+ from {
+transform:translateY(-300px)
+}
+ to {
+transform: translateY(0%)
+}
+}
+@keyframes arrowFadein {
+ 0% {
+opacity: 0;
+}
+ 50% {
+opacity: 0;
+}
+ 100% {
+opacity: 1;
+}
+}
+@keyframes leftuplabel {
+ from {
+transform: translateX(-900px)
+}
+ to {
+transform: translateX(0%)
+}
+}
+@keyframes leftlinearlabel {
+ from {
+transform: translateY(300px)
+}
+ to {
+transform: translateY(0%)
+}
+}
+@keyframes rightuplabel {
+ from {
+transform:translateY(-300px)
+}
+ to {
+transform: translateY(0%)
+}
+}
+@keyframes rightlinearlabel {
+ from {
+transform:translateX(1400px)
+}
+ to {
+transform: translateX(0%)
+}
+}
+@keyframes welcomefadeout {
+ 100% {
+opacity: 1;
+}
+ 50% {
+opacity: 1;
+}
+ 0% {
+opacity: 0;
+}
+}
+@keyframes twirl{
+	0%{transform: rotateY(0deg);}
+	100%{transform: rotateY(90deg);}
+}
+/*@keyframes givespace{
+	from{ transform: translateX(0%);}
+	to{transform: translate(x(-5%));}
+}*/
+
