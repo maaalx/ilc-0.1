@@ -56,18 +56,15 @@
 					<div class="form-group">
                       <label>Frequency</label>
                       <select name="frequency" id="frequency" class="form-control">
-						<option value="1">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						
+					  <option value="0">Select</option>
+					  <?php
+						$query=mysqli_query($db,"select * from follow_up_frequency");
+						while($frow=mysqli_fetch_assoc($query)){
+							?>
+							<option value="<?php echo $frow['id']; ?>"><?php echo $frow['name']; ?></option>
+						<?php	
+						}
+					  ?>
                         
                       </select>
                     </div>
@@ -75,22 +72,9 @@
 			
 			<div class="form-group ">
 					<div class="form-group">
-                      <label>Effcient In Percentag</label>
-                      <select name="efficacyInpercent" id="	efficacyInpercent" class="form-control">
-						<option value="0">0%</option>
-                        <option value="10">10%</option>
-                        <option value="20">20%</option>
-                        <option value="30">30%</option>
-                        <option value="40">40%</option>
-						<option value="50">50%</option>
-						<option value="60">60%</option>
-						<option value="70">70%</option>
-						<option value="80">80%</option>
-						<option value="90">90%</option>
-						<option value="100">100%</option>
-						
-                        
-                      </select>
+                      <label>Efficiency (%)</label>
+					  <input type="text" name="efficacyInpercent" id="efficacyInpercent" class="form-control">
+                     
                     </div>
 			</div>
 			
@@ -105,15 +89,51 @@
                    
                   </div><!-- /.box-body -->
 				  
-				   <div class="box-body">
-                    
-
-                    <div class="form-group">
+				  
+				  <div class="form-group ">
+					<div class="form-group">
                       <label>Improvement In Secondary Condition</label>
-                      <textarea  name="improvementInSecondaryCondition" id="improvementInSecondaryCondition" class="form-control" rows="3" placeholder="Improvement In Secondary Condition"></textarea>
+                      <select onchange="check_condition_treated(this.value)" name="improvementInSecondaryCondition" id="improvementInSecondaryCondition" class="form-control">
+						<option value="">Select</option>
+						<?php
+							$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+							while($row=mysqli_fetch_assoc($query)){
+								?>
+								<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+								<?php
+							}
+						?>
+                         <option value="oi">Other infections</option>					
+                        
+                      </select>
+                    </div>
+			</div>
+			<div style="display:none" class="form-group cancer-type">
+					<div class="form-group">
+                      <label>Please select cancer type</label>
+                      <select name="cancer_type" id="cancer_type" class="form-control">
+						<option value="">Select</option>
+						<?php
+							$query=mysqli_query($db,"select * from cancer_types order by name");
+							while($row=mysqli_fetch_assoc($query)){
+								?>
+								<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+								<?php
+							}
+						?>
+                       					
+                        
+                      </select>
+                    </div>
+			</div>
+			<div style="display:none" class="box-body other-infections">
+                    <div class="form-group">
+                      <label>Other infections</label>
+                      <textarea  name="other_infections" id="other_infections" class="form-control" rows="3" placeholder="Other infections"></textarea>
                     </div>
                    
-                  </div><!-- /.box-body -->
+                </div>
+			
 
 
                   <div class="box-footer">
@@ -131,7 +151,20 @@
 <?php require_once("includes/footer.php"); ?>
 
 <script type="text/javascript">
-  
+  function check_condition_treated(treated_type){
+	if(treated_type==15){
+		$(".cancer-type").show();
+	}else{
+		$(".cancer-type").hide();
+	}
+	
+	
+	if(treated_type=='oi'){
+		$(".other-infections").show();
+	}else{
+		$(".other-infections").hide();
+	}
+}  
 $(document).ready(function (e) { 
 $("#add_followup").on('submit',(function(e) {
 e.preventDefault();

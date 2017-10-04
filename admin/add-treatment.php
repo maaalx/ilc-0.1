@@ -283,7 +283,7 @@ success: function(data)   // A function to be called if request succeeds
       $(".error").html(obj.msg);
   }else{
 	  alert("Submitted successfully");
-		window.location="patient-treatments-list.php";
+		window.location="add_strain_data.php?history_id="+$("#patient_history_id").val();
   }
 
 }

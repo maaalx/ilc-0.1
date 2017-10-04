@@ -1,16 +1,16 @@
 <?php  	require("../db.php"); ?>
 <?php 	require_once("includes/header.php");
 	require_once("includes/left.php");
-	if(!checkPermissions($_SESSION['admin_user_id'],array(3,4))){ 
+	if(!checkPermissions($_SESSION['admin_user_id'],array(5))){ 
 		header("location:index.php");
 	}
-	 
-	if(isset($_GET['user_id']) && $_GET['user_id']!=''){ 
-		$patient_id=addslashes($_GET['user_id']); 
-	}else{
-		$patient_id=0;
-	}
+
 	
+	$admin_id=$_SESSION['admin_user_id'];
+	
+	$history_id=addslashes($_GET['history_id']);
+	$query=mysqli_query($db,"select * from patient_history where id='$history_id'");
+	$data=mysqli_fetch_assoc($query);
 	
 ?>
 
@@ -21,7 +21,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-          Step 1: Add Patient History
+			Update Patient History
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
@@ -39,8 +39,9 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                 <!-- form start -->
-                <form role="form" name="add_patient_history" id="add_patient_history" action="" method="post">  
-				<input type="hidden" name="patient_id" id="patient_id" value="<?php echo addslashes($patient_id); ?>">
+                <form role="form" name="update_patient_history" id="update_patient_history" action="" method="post">  
+				<input type="hidden" name="history_id" id="history_id" value="<?php echo $history_id; ?>">
+				
 				<div class="form-group ">
 					<div class="form-group">
                       <label>Admission Type(<span style="color:red">*</span>)</label>
@@ -50,7 +51,7 @@
 						$query=mysqli_query($db,"select * from patient_history_admission_types");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['admission_type']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -70,7 +71,7 @@
 						$query=mysqli_query($db,"select * from patient_history_qualification_status");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option  <?php if($data['qualification_status']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -90,7 +91,7 @@
 						$query=mysqli_query($db,"select * from patient_history_criterion_for_admission");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['criterion_for_admission']==$row['id'])echo 'selected'; ?>  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -109,7 +110,7 @@
 						$query=mysqli_query($db,"select * from patient_history_intended_duration");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['intended_duration_of_stay']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -128,7 +129,7 @@
 						$query=mysqli_query($db,"select * from patient_history_admission_weight");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option  <?php if($data['admission_weight']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -145,7 +146,7 @@
 						$query=mysqli_query($db,"select * from patient_history_fim_score_on_admission");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['FIM_Score_on_Admission']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -164,7 +165,7 @@
 						$query=mysqli_query($db,"select * from patient_history_admission_read_mission_to_rehabilitation");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['Admission_readmission_to_rehabilitation']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -182,7 +183,7 @@
 						$query=mysqli_query($db,"select * from patient_history_rug_adl_on_admission");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['RUG_ADL_on_admission']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -200,7 +201,7 @@
 						$query=mysqli_query($db,"select * from patient_history_source_of_referral_to_palliative_care");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['Source_of_referral_to_palliative_care']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -220,7 +221,7 @@
 						$query=mysqli_query($db,"select * from patient_history_patient_type");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['Patient_type']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -238,7 +239,7 @@
 						$query=mysqli_query($db,"select * from patient_history_accommodation_type_during_admission");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option  <?php if($data['Accommodation_type_during_admission']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -257,7 +258,7 @@
 						$query=mysqli_query($db,"select * from patient_history_admission_source");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['Admission_Source']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -271,7 +272,7 @@
 
                     <div class="form-group">
                       <label>Hospital Campus Code(<span style="color:red">*</span>)</label>
-                      <input class="form-control" type="text" name="hospital_campus_code" id="hospital_campus_code" placeholder="Hospital Campus Code">
+                      <input class="form-control" type="text" name="hospital_campus_code" id="hospital_campus_code" placeholder="Hospital Campus Code" value="<?php echo $data['hospital_campus_code']; ?>">
                     </div>
                    
                   </div>
@@ -284,7 +285,7 @@
 						$query=mysqli_query($db,"select * from patient_history_interpreter_required");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
-						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<option <?php if($data['Interpreter_Required']==$row['id'])echo 'selected'; ?> value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 						<?php 	
 						}
 					   ?>
@@ -298,7 +299,7 @@
 
                     <div class="form-group">
                       <label>Comments</label>
-                      <textarea  name="comments" id="comments" class="form-control" rows="3" placeholder="Comments"></textarea>
+                      <textarea  name="comments" id="comments" class="form-control" rows="3" placeholder="Comments"><?php echo $data['comment']; ?></textarea>
                     </div>
                    
                   </div><!-- /.box-body -->
@@ -306,7 +307,7 @@
 
                   <div class="box-footer">
                     <div class="error" style="color:red"></div>
-                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
 					<img style="display:none" class="loading" src="img/loading.gif">
                   </div>
                 </form>
@@ -336,13 +337,13 @@ function check_admission_type(type_id){
 }
   
 $(document).ready(function (e) { 
-$("#add_patient_history").on('submit',(function(e) {
+$("#update_patient_history").on('submit',(function(e) {
 	$(".loading").show();
 e.preventDefault();
 
 
 $.ajax({
-url: "ajax/save-patient_history.php", // Url to which the request is send
+url: "ajax/update_patient_history.php", // Url to which the request is send
 type: "POST",             // Type of request to be send, called as method
 data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 contentType: false,       // The content type used when sending data to the server.
@@ -357,7 +358,7 @@ success: function(data)   // A function to be called if request succeeds
       $(".error").html(obj.msg);
   }else{
 	    alert("Submitted successfully");
-		window.location="doctor_add_treatment.php?user_id=<?php echo $patient_id; ?>&history_id="+obj.history_id;
+		window.location="edit_patient_history.php?history_id="+$("#history_id").val();
   }
 
 }
