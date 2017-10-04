@@ -1,42 +1,98 @@
 <?php 
-include("db.php");
-include("includes/header.php"); ?>
-  
-  <!-- start of hero -->
-  <section class="hero hero-slider-wrapper">
-    <div class="hero-slider">
-      <div class="slide"> <img src="images/slider/adventure_banner.jpg" alt>
-        <div style="top:30%" class="title"> <span >International Library Of Cannabinoids</span>
-          <h3 style="margin-top:4%">Medical Database</h3>
-         <input style="width:50%;margin-left:30%;margin-top:15%" id="form_name" type="text" name="name" class="form-control" placeholder="Search" required="required" data-error="Name is required."></div>
-      </div>
-      <div class="slide"> <img src="images/slider/adventure_banner.jpg" alt>
-        <div style="top:30%" class="title"> <span >International Library Of Cannabinoids</span>
-          <h3 style="margin-top:4%">Medical Database</h3>
-         <input style="width:50%;margin-left:30%;margin-top:15%" id="form_name" type="text" name="name" class="form-control" placeholder="Search" required="required" data-error="Name is required."></div> </div>
-      </div>
-      
-    </div>
-  </section>
-  <!-- end hero slider --> 
-  
+require("../db.php");
+require_once("includes/header.php");
+require_once("includes/left.php");
 
-  
+?>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Dashboard
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
 
-  
-  <!--Blog Section-->
-  <section class="blog">
-    <div style="padding-top: 0px;padding-bottom: 0px;" class="container">
-      
-      <div class="section-content">
-        <div class="row">
-          
-          <div class="col-sm-6 col-md-4 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+      <!-- Main content -->
+        <section class="content">
+          <!-- Small boxes (Stat box) -->
+            <b></b>
+         
+          <?php if(checkPermissions($_SESSION['admin_user_id'],array(5))){  ?>
+          <div class="row">
+        <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+
+		    <?php
+			$query=mysqli_query($db,"select * from users ");
+			$total=mysqli_num_rows($query);
+		    ?>
+
+                  <h3><?php echo $total; ?></h3>
+                  <p>Total Users</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                <?php 
+                  $query1=mysqli_query($db,"select * from users where user_type='3'");
+                  $count_groups=mysqli_num_rows($query1);
+                ?>
+                  <h3><?php echo $count_groups; ?></h3>
+                  <p>Doctors</p>
+                </div>
+                <div class="icon">
+                  <img src="dist/img/icon_reviews.png">
+                </div>
+                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+			
+			<div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                <?php 
+                  $query1=mysqli_query($db,"select * from users where user_type='2'");
+                  $count_groups=mysqli_num_rows($query1);
+                ?>
+                  <h3><?php echo $count_groups; ?></h3>
+                  <p>Patients</p>
+                </div>
+                <div class="icon">
+                  <img src="dist/img/icon_reviews.png">
+                </div>
+                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
             
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <?php include("includes/footer.php"); ?>
-  
+          </div><!-- /.row -->
+		  <?php } ?>
+      
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-7 connectedSortable">
+
+
+
+            </section><!-- right col -->
+          </div><!-- /.row (main row) -->
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <?php require_once("includes/footer.php"); ?>

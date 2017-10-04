@@ -1,9 +1,53 @@
+<?php 
+include("../db.php");
+
+$flag=0;
+$errors=array();
+if(isset($_POST['save'])){
+	
+		$token=addslashes($_POST['token']);
+		$errors= array();
+		$file_name = $_FILES['cert_doc']['name'];
+		$file_size =$_FILES['cert_doc']['size'];
+		$file_tmp =$_FILES['cert_doc']['tmp_name'];
+		$file_type=$_FILES['cert_doc']['type'];
+		$file_ext=strtolower(end(explode('.',$_FILES['cert_doc']['name'])));
+      
+		$extensions= array("jpeg","jpg","png","pdf","gif");
+		$file_ext=strtolower($file_ext);
+		  if(in_array($file_ext,$extensions)=== false){
+			 $errors[]="extension not allowed, please choose a JPEG or PNG,GIF and PDF file.";
+		  }
+		  
+		  if($file_size > 2097152){
+			 $errors[]='File size must be excately 2 MB';
+		  }
+		
+		if(empty($errors)==true){
+         move_uploaded_file($file_tmp,"upload/certifications/".$file_name);
+		 
+			$query=mysqli_query($db,"select user_id from users where activate_token='$token'");
+			$trow=mysqli_fetch_assoc($query);
+			$user_id=$trow['user_id'];
+			
+			$query="insert into certification_document(user_id,document_name,added_date)values('$user_id','$file_name',now())";
+			$run_q=mysqli_query($db,$query);
+         $flag=1;
+      }else{
+         
+      }	
+	  
+	
+}
+/*$query="update users set status='1' where activate_token='$token'";
+$run_q=mysqli_query($db,$query); */
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin | Log in</title>
+    <title>Admin | Activate Profile</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -28,27 +72,36 @@
   <body style="background: #cecece none repeat scroll 0 0;" class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <b><i></i>Admin Login</b>
+        <b><i></i>Upload Document</b>
 	 <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session.</p>
+        <p class="login-box-msg"></p>
         <div style="color:red" id="check_user_text"></div>
-        <form action="index.php" method="post">
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Email" id="username">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="password" id="password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
+        <form action="activate_account.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="token" id="token" value="<?php echo $_GET['token']; ?>">
           <div class="row">
-            <div class="col-xs-1">
-              <div class="checkbox icheck">
-               
+            <div class="col-xs-12">
+			<div style="color:red"><?php if(count($errors)>0){
+				foreach($errors as $val){
+					echo $val;
+				}
+			} ?>
+			</div>
+			<div style="color:green">
+			<?php if($flag==1){
+				echo "Your document is submitted for admin approval. We will send you email once admin approve it.";
+			}else{ ?>
+			
+              Please Upload certification document to approve your profile:
+			  <input type="file" name="cert_doc" name="cert_doc">
+              <br><br><a href="login.php">			  
+			  <input name="save" id="save" type="submit" value="Submit" class="btn btn-primary btn-block btn-flat">
+			  </a>
+			<?php } ?>
+               </div>
               </div>
             </div><!-- /.col -->
             <div class="col-xs-5">
-              <button type="submit" class="btn btn-primary btn-block btn-flat sign-in">Sign in</button>
+			
             </div><!-- /.col -->
           </div>
         </form>
