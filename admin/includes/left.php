@@ -50,17 +50,48 @@
 			
 			<li class="treeview">
               <a href="#">
-	      <i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
+				<i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               
 				<li class="active"><a href="admin_all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
-				
-					
-				
-               
               </ul>
             </li>
+			
+			<li class="treeview">
+              <a href="#">
+				<i class="ion ion-person-add"></i> <span>Treatment</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+				<li class="active"><a href="admin_active_treatments.php"><i class="fa fa-circle-o"></i>Active Treatment List</a></li>
+				<li class="active"><a href="admin_inactive_treatments.php"><i class="fa fa-circle-o"></i>Inative Treatment List</a></li>
+				
+              </ul>
+            </li>
+			
+			<li class="treeview">
+              <a href="#">
+				<i class="fa fa-fw fa-angle-right"></i> <span>Vivo</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+				<li class="active"><a href="admin_active_vivo.php"><i class="fa fa-circle-o"></i>Active Vivo Experiment</a></li>
+				<li class="active"><a href="admin_inactive_vivo.php"><i class="fa fa-circle-o"></i>Inative Vovo Experiment</a></li>
+				
+              </ul>
+            </li>
+			
+			<li class="treeview">
+              <a href="#">
+				<i class="fa fa-fw fa-angle-right"></i> <span>Vitro</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+				<li class="active"><a href="admin_active_vitro.php"><i class="fa fa-circle-o"></i>Active Vitro Experiment</a></li>
+				<li class="active"><a href="admin_inactive_vitro.php"><i class="fa fa-circle-o"></i>Inative Vitro Experiment</a></li>
+				
+              </ul>
+            </li>
+			
+
+			
 		<?php } ?>
 		
 	
@@ -100,7 +131,7 @@
               <ul class="treeview-menu">
                
 				<li><a href="my-treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
-				<li><a href="all-treatments.php"><i class="fa fa-circle-o"></i>All Treatments List</a></li>
+				<!--<li><a href="all-treatments.php"><i class="fa fa-circle-o"></i>All Treatments List</a></li>-->
               </ul>
             </li>
 		<?php } ?>
@@ -113,12 +144,31 @@
               <ul class="treeview-menu">
                 <li class="active"><a href="add_article.php"><i class="fa fa-circle-o"></i> Add Article</a></li>
 				<li class="active"><a href="all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
-				
-					
-				
-               
               </ul>
             </li>
+			
+			<li class="treeview">
+              <a href="#">
+	      <i class="ion ion-person-add"></i> <span>Treatments</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               
+				<li><a href="doctor_add_patient_history.php"><i class="fa fa-circle-o"></i>Add Treatment</a></li>
+				<li><a href="researcher_treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
+              </ul>
+            </li>
+			
+			<li class="treeview">
+              <a href="add_vivo_experiment.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Add Vivo Experiment</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>  
+			
+			<li class="treeview">
+              <a href="add_vitro_experiment.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Add Vitro Experiment</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
 		<?php } ?>
 
           
