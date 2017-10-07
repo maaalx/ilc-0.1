@@ -186,7 +186,8 @@
           "searching": false,
           "ordering": true,
           "info": true,
-          "autoWidth": false
+          "autoWidth": false,
+		   "order": [[ 3, "desc" ]]
         });
       });
     </script>

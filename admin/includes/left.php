@@ -169,6 +169,12 @@
 					<i class="fa fa-fw fa-angle-right"></i> <span>Add Vitro Experiment</span> <i class="fa  pull-right"></i>
               </a>
 			</li>
+			
+			<li class="treeview">
+              <a href="search.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Search</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
 		<?php } ?>
 
           
