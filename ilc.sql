@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 10:01 AM
+-- Generation Time: Oct 07, 2017 at 12:09 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -315,7 +315,8 @@ CREATE TABLE IF NOT EXISTS `certification_document` (
 --
 
 INSERT INTO `certification_document` (`id`, `user_id`, `document_name`, `added_date`) VALUES
-(5, 186, 'car.jpg', '2017-09-17 15:32:53');
+(-2147483647, -1255002061, '80\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0::1\0\0™', '1310-10-23 25:38:29'),
+(-2147483646, -1254804175, '71\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0::1\0\0™', '1310-12-18 09:38:29');
 
 -- --------------------------------------------------------
 
@@ -746,7 +747,7 @@ INSERT INTO `doctor` (`id`, `ilc_id`, `phone1`, `phone2`, `tfn`, `hospital_code`
 
 CREATE TABLE IF NOT EXISTS `followups` (
   `idfollowUps` int(11) NOT NULL,
-  `treatmentNo` int(11) NOT NULL,
+  `treatmentNo` int(11) DEFAULT NULL,
   `frequency` varchar(45) DEFAULT NULL,
   `efficacyInpercent` varchar(50) DEFAULT NULL,
   `sideEffect` mediumtext,
@@ -754,7 +755,7 @@ CREATE TABLE IF NOT EXISTS `followups` (
   `cancer_type` varchar(50) NOT NULL,
   `other_infections` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `followups`
@@ -765,7 +766,9 @@ INSERT INTO `followups` (`idfollowUps`, `treatmentNo`, `frequency`, `efficacyInp
 (2, 2, '4', '30', 'ss', 'sss', '', '', '2017-09-10 12:20:29'),
 (3, 2, '5', '60', 'sfdsd', 'sdfsdf', '', '', '2017-09-10 12:24:49'),
 (4, 2, '8', '60', 'dfg', 'dfgdfg', '', '', '2017-09-10 12:24:58'),
-(6, 3, '4', '23', 'ww', '6', '', '', '2017-09-20 16:22:26');
+(6, 3, '4', '23', 'ww', '6', '', '', '2017-09-20 16:22:26'),
+(8, 6, '4', '12', 'aa', '5', '', '', '2017-10-06 11:30:41'),
+(9, 10, '2', '78', 'l;', '3', '', '', '2017-10-07 11:46:24');
 
 -- --------------------------------------------------------
 
@@ -837,14 +840,14 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `state` varchar(250) NOT NULL,
   `country` varchar(50) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient`
 --
 
 INSERT INTO `patient` (`id`, `ilc_id`, `phone_1`, `phone_2`, `ethnicity`, `height`, `weight`, `emergency_contact_name`, `emergency_contact_number`, `address_line_1`, `address_line_2`, `suburb`, `state`, `country`, `added_date`) VALUES
-(0, 'P189', '22222', '', '3', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33');
+(1, 'P189', '22222', '', '3', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33');
 
 -- --------------------------------------------------------
 
@@ -871,7 +874,7 @@ CREATE TABLE IF NOT EXISTS `patienttreatment` (
   `description` mediumtext,
   `doctorComment` longtext,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patienttreatment`
@@ -883,8 +886,11 @@ INSERT INTO `patienttreatment` (`idpatientTreatment`, `patientId`, `doctorId`, `
 (3, 189, 190, NULL, 0, '3', '4', '3', '4', 15, 4, 0, '16', 0, '', 'sdddd', NULL, '2017-09-09 10:49:53'),
 (4, 189, 190, NULL, 4, '2', '3', '3', '2', 4, 2, 2, '26', 0, '', 'dsdsdf', NULL, '2017-09-15 17:49:14'),
 (5, 189, 189, NULL, 5, '2', '3', '3', '4', 3, 5, 3, '4', 0, '', 'fffff', NULL, '2017-09-15 19:18:49'),
-(6, 189, 189, NULL, 7, '1', '2', '2', '3', 7, 3, 1, '28', 0, '', 'aaa qqqqqq', NULL, '2017-09-23 15:46:44'),
-(7, 0, 0, 196, 10, '2', '3', '2', '4', 0, 0, 0, '', 0, '', '', NULL, '2017-09-28 11:41:51');
+(6, 189, 189, NULL, 7, '1', '2', '2', '3', 7, 3, 1, '28', 1, '', 'aaa qqqqqq', NULL, '2017-09-23 15:46:44'),
+(7, 0, 0, 196, 10, '2', '3', '2', '4', 0, 0, 0, '', 0, '', '', NULL, '2017-09-28 11:41:51'),
+(8, 189, 190, 0, 12, '3', '3', '3', '0', 0, 0, 0, '', 0, '', '', NULL, '2017-10-04 18:12:46'),
+(9, 0, 0, 196, 14, '3', '3', '0', '5', 0, 0, 0, '', 0, '', '', NULL, '2017-10-06 13:23:04'),
+(10, 0, 0, 196, 15, '2', '2', '3', '3', 2, 6, 2, '3', 0, '', 'wwww', NULL, '2017-10-07 11:39:43');
 
 -- --------------------------------------------------------
 
@@ -942,7 +948,7 @@ CREATE TABLE IF NOT EXISTS `patient_history` (
   `Interpreter_Required` tinyint(4) DEFAULT NULL,
   `comment` longtext,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient_history`
@@ -958,7 +964,12 @@ INSERT INTO `patient_history` (`id`, `patientid`, `doctorid`, `researcher_id`, `
 (7, 189, 189, NULL, '2', '', NULL, '2', '3', '2', '3', '4', '1', '15', '3', '', '3', '4', '2', 123, 1, 'aaaaaa', '2017-09-23 15:46:34'),
 (8, 0, 0, 196, '3', '', NULL, '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:21:42'),
 (9, 0, 0, 196, '2', '', NULL, '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:35:43'),
-(10, 0, 0, 196, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:36:07');
+(10, 0, 0, 196, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:36:07'),
+(11, 189, 190, 0, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:11:02'),
+(12, 189, 190, 0, '6', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:12:35'),
+(13, 189, 190, 0, '2', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-10-04 18:17:13'),
+(14, 0, 0, 196, '3', '', NULL, '2', '0', '0', '0', '0', '1', '', '', '', '', '', '3', 0, 0, '', '2017-10-06 13:22:52'),
+(15, 0, 0, 196, '1', '', NULL, '2', '4', '2', '6', '4', '2', '15', '7', '', '2', '9', '2', 234, 1, 'rrrrrrrrrrr', '2017-10-07 11:39:26');
 
 -- --------------------------------------------------------
 
@@ -1501,7 +1512,7 @@ INSERT INTO `side_effect` (`id`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `strain_data` (
   `id` int(11) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
-  `ilc_id` varchar(250) NOT NULL,
+  `ilc_id` varchar(250) DEFAULT NULL,
   `doctorId` int(11) DEFAULT NULL,
   `researcher_id` int(11) DEFAULT NULL,
   `vivo_id` int(11) DEFAULT NULL,
@@ -1597,7 +1608,7 @@ CREATE TABLE IF NOT EXISTS `strain_data` (
   `terpenoids_pinene` decimal(45,2) NOT NULL,
   `terpenoids_b_pinene` decimal(45,2) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `strain_data`
@@ -1605,10 +1616,14 @@ CREATE TABLE IF NOT EXISTS `strain_data` (
 
 INSERT INTO `strain_data` (`id`, `status`, `ilc_id`, `doctorId`, `researcher_id`, `vivo_id`, `vitro_id`, `patient_history_id`, `common_name`, `any_other_descriptors_1`, `any_other_descriptors_2`, `any_other_descriptors_3`, `any_other_descriptors_4`, `any_other_descriptors_5`, `country_of_origin`, `pedigree`, `pedigree_enter_the_parentage`, `breeder_name_if_known`, `growers`, `manufacturer_name`, `manufacturer_address`, `available_regions`, `available_region_country`, `accession_date`, `gender`, `percent_heterozygosity`, `vcf_file_of_sequence`, `fastq_files_of_sequence`, `location`, `grow_method`, `soil_mix`, `are_you_using_living_soil`, `day_light_during_vegetative_stage`, `night_light_during_vegetative_stage`, `day_light_during_reproductive_stage`, `night_light_during_reproductive_stage`, `temperature_during_vegetative_stage`, `temperature_during_reproductive_stage`, `relative_humidity_during_vegetative_stage`, `relative_humidity_during_reproductive_stage`, `co2_supplementation`, `co2_supplementation_ppm`, `light_spectrum_during_vegetative_stage`, `light_spectrum_during_reproductive_stage`, `lamp_type_vegetative_stage`, `lamp_type_reproductive_stage`, `watering_during_vegetative_stage`, `watering_during_reproductive_stage`, `fertilisers_during_vegetative_stage`, `fertilisers_during_reproductive_stage`, `fertilisers_vegetative_stage`, `fertilisers_reproductive_stage`, `time_from_seed_cutting_to_transplantation`, `time_from_transplantation_to_flower_induction`, `time_from_flower_induction_to_harvest`, `time_of_harvest`, `trichome_maturity`, `average_yield`, `outdoor_sowing_date`, `outdoor_harvest_date`, `average_height`, `cultivation_tips`, `drying_temperature`, `drying_humidity`, `drying_time`, `type_of_packaging`, `storage_temperature`, `storage_time`, `extraction_method`, `flavour_scent`, `cannabinoid_ingredient_thc_thca`, `cannabinoid_ingredient_cbd_cbda`, `cannabinoid_ingredient_thcv_thcva`, `cannabinoid_ingredient_cbc_cbca`, `cannabinoid_ingredient_cbg_cbga`, `cannabinoid_ingredient_cbn_cbna`, `terpenoids_bisabolol`, `terpenoids_borneol`, `terpenoids_camphene`, `terpenoids_carene`, `terpenoids_caryophyllene_oxide`, `terpenoids_carophyllene`, `terpenoids_fenchol`, `terpenoids_geraniol`, `terpenoids_humulene`, `terpenoids_limonene`, `terpenoids_linalool`, `terpenoids_myrcene`, `terpenoids_phellandrene`, `terpenoids_terpinolene`, `terpenoids_terpineol`, `terpenoids_terpinene`, `terpenoids_y_terpinene`, `total_nerolidol`, `total_ocimene`, `terpenoids_pinene`, `terpenoids_b_pinene`, `added_date`) VALUES
 (1, '1', 'S1', 189, 0, 0, 0, 7, 'ddd', 'qqqq', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '14.00', '12.00', '2017-09-23 17:54:02'),
-(2, '0', '', 0, 196, 0, 0, 10, 'wwwwwwwwwwwer', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '12.00', '2017-09-28 11:56:07'),
-(3, '0', '', NULL, 196, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 11:30:09'),
+(2, '1', 'S2', 0, 196, 0, 0, 10, 'wwwwwwwwwwwer', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '12.00', '2017-09-28 11:56:07'),
+(3, '1', 'S3', NULL, 196, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 11:30:09'),
 (4, '1', 'S4', NULL, 196, 7, NULL, NULL, 'asdas', 'dasd', 'asd', 'aaa', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 11:31:45'),
-(5, '0', '', NULL, 196, NULL, 4, NULL, 'sdas', 'asd', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:53');
+(5, '1', 'S5', NULL, 196, NULL, 4, NULL, 'sdas', 'asd', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:53'),
+(6, '1', 'S6', 190, 0, NULL, NULL, 12, '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-04 18:13:41'),
+(7, '0', 'S7', 0, 196, NULL, NULL, 14, 'qaaaaaaaa', 'aa', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-06 13:23:36'),
+(8, '0', 'S8', 0, 196, NULL, NULL, 15, 'conn', 'conn3', 'conn2', 'sd', 'conndf', 'df', '16', 'sativa', '34', 'ws', 'ssg', 0, 0, 'Maharashtra', '', '1987-12-12', 'male', '34.00', '', '', 'indoor', 'soil', 8, 'no', 14, 16, 14, 4, '34.0', '34.0', '34.0', '23.0', 'no', '23.00', '23.00', '2.00', 'metal_halide', 'metal_halide', '45.00', '45.00', 'organic_based', 'mineral_based', '54.00', '44.00', '45.00', '43.00', '3.00', 'afternoon', 'majority_clear', '34.00', '0000-00-00', '0000-00-00', '4.00', '34', '34.00', '34.00', '0.00', '', '34.00', '34.00', 'gfdfgh', 'fgh', '54.00', '67.00', '768.00', '678.00', '68.00', '68.00', '68.00', '0.00', '0.00', '8.00', '67.00', '678.00', '678.00', '789.00', '68.00', '446.00', '678.00', '45.00', '56.00', '56.00', '67.00', '789.00', '789.00', '789.00', '0.00', '0.00', '0.00', '2017-10-07 11:41:55'),
+(9, '0', 'S9', NULL, 196, 23, NULL, NULL, 'sd', 'df', 'df', 'ds', 'ds', 'sdf', '162', 'hybrid', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-07 12:27:15');
 
 -- --------------------------------------------------------
 
@@ -2008,7 +2023,7 @@ CREATE TABLE IF NOT EXISTS `vivo_experiment` (
   `side_effects_of_cannabis_treatment` varchar(200) NOT NULL,
   `full_reference_of_the_study_including_dio` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vivo_experiment`
@@ -2036,7 +2051,8 @@ INSERT INTO `vivo_experiment` (`id`, `researcher_id`, `animal_name`, `animal_mod
 (19, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:16'),
 (20, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:28'),
 (21, 196, 'df', 'sdf', 'male', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 19:02:34'),
-(22, 196, 'asd', 'asd', 'male', '0.00', 9, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 19:04:32');
+(22, 196, 'asd', 'asd', 'male', '0.00', 9, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 19:04:32'),
+(23, 196, 'parot', 'parot', 'female', '0.00', 3, 0, '', '', '23.0', 'Balanced THC & CBD', '', '23.000000', '23.000000', '233.000000', 'dsss', '3.000000', 'ffffff', '34.000000', 'rrrrrrr', '4.000000', 32, 4, 3, 'during_meals', 3, '23.00', '43.00', '34.00', '34.00', '1,2', '3dfsd', '2017-10-07 12:26:32');
 
 -- --------------------------------------------------------
 
@@ -2451,7 +2467,7 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `followups`
 --
 ALTER TABLE `followups`
-  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `follow_up_comments`
 --
@@ -2463,10 +2479,15 @@ ALTER TABLE `follow_up_comments`
 ALTER TABLE `follow_up_frequency`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `patient`
+--
+ALTER TABLE `patient`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `patienttreatment`
 --
 ALTER TABLE `patienttreatment`
-  MODIFY `idpatientTreatment` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `idpatientTreatment` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `patient_ethnicity`
 --
@@ -2476,7 +2497,7 @@ ALTER TABLE `patient_ethnicity`
 -- AUTO_INCREMENT for table `patient_history`
 --
 ALTER TABLE `patient_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `patient_history_accommodation_type_during_admission`
 --
@@ -2551,7 +2572,7 @@ ALTER TABLE `side_effect`
 -- AUTO_INCREMENT for table `strain_data`
 --
 ALTER TABLE `strain_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `strain_data_soil_mix`
 --
@@ -2616,7 +2637,7 @@ ALTER TABLE `vitro_experiment`
 -- AUTO_INCREMENT for table `vivo_experiment`
 --
 ALTER TABLE `vivo_experiment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `vivo_follow_up_frequency`
 --
