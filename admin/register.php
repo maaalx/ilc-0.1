@@ -24,17 +24,19 @@ include("../includes/header.php"); ?>
   
    <section class="contact-1">
               <div class="container">
+<br><br>
                   <div class="section-content">
                       <div class="row">
                          
                           <div class=" col-md-8">
-						  
+		     				  
     <div class="login-box">
       <div class="login-logo">
         
 	 <div class="login-box-body">
         
-        
+   
+
         <form action="index.php" method="post">
            <div class="register-box-body">
         <p class="login-box-msg">Register a new membership</p>
@@ -145,7 +147,7 @@ include("../includes/header.php"); ?>
         <a href="<?php echo SITEROOT; ?>/login.php" class="text-center">I already have a membership</a>
       </div><!-- /.form-box -->
         </form>
-
+<br><br>
         </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 	
