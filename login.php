@@ -1,5 +1,3 @@
-
-
 <?php
 include( "db.php" );
 include( "includes/header.php" );
@@ -277,7 +275,18 @@ include( "includes/header.php" );
 
 	} );
 </script>
-
+ <section class="overlay overlay-green parallax"  data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-title">
+                        <h2>Login</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
 <section id="loginbox" class="contact-1">
 	<div class="container">
 		<div class="section-content">
@@ -292,7 +301,7 @@ include( "includes/header.php" );
 				<br>
 				<br>
 				<br>
-					<h2 id="fadeinandout" style="left: 5%">Login</h2>
+					<!--<h2 id="fadeinandout" style="left: 5%">Login</h2>-->
 					<div class="box1 colorbox"><span>-</span></div>
 					<div class="box2 colorbox"><span>W</span></div>
 					<div class="box3 colorbox"><span>E</span></div>
@@ -312,7 +321,7 @@ include( "includes/header.php" );
 					<br>
 					<br>
 					
-					<form class="contact-form" method="post" role="form" id="loginform">
+					<form class="contact-form" method="post" role="form" id="loginform" autocomplete="on">
 						<div class="col-md-12" style="width: 400px;">
 							<div class="form-group">
 								<label for="form_name">Email</label>
@@ -331,7 +340,7 @@ include( "includes/header.php" );
 					</form>
 					
 					<div class="col-md-12">
-							<input type="submit" class="btn btn-info btn-send sign-in" value="Login">
+			<input type="submit" class="btn btn-info btn-send sign-in" value="Login">
 						</div>
 				</div>
 				
