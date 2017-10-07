@@ -34,23 +34,26 @@
         <div class="top-left pull-left">
           <ul class="info-nav clearfix">
             <li> 
-              <!--Social Links-->
-              <div class="social-links pull-left"> <span class="text-theme-color">Follow Us</span> : <a href="#"><span class="fa fa-facebook-f"></span></a> <a href="#"><span class="fa fa-twitter"></span></a> <a href="#"><span class="fa fa-google-plus"></span></a> <a href="#"><span class="fa fa-linkedin"></span></a> </div>
+
+
+              <!--tilte-->
+             <div class="social-links pull-left"> <font color="black" size="3"> International Library Cannabinoid</font>  <a href="#"> 
+
             </li>
-            <li><a href="mailto:yourmail@gmail.com"><span class="icon icon-Mail mr10"></span>Opening Hours</a></li>
-          </ul>
         </div>
         <!--Top Right-->
         <div class="top-right pull-right clearfix"> 
           <!--Lang Bar-->
           <ul class="info-nav clearfix">
-            <li><a href="#"><i class="icon icon-Phone mr10 text-theme-color"></i><span class="ml5">Emergency Line</span> (+123) 2456 987</a></li>
+         
 			<?php if(isset($_SESSION['admin_user_id'])){
 				?>
 				 <li><a href="<?php echo SITEROOT; ?>/admin/index.php" class="text-uppercase appoinment"> Dashboard</a></li>
 				<li><a href="<?php echo SITEROOT; ?>/admin/logout.php" class="text-uppercase appoinment"> Logout</a></li>
 			<?php 	
 			}else{		?>
+
+<li><a href="<?php echo SITEROOT; ?>/index.php" class="text-uppercase appoinment"> Home</a></li>
             <li><a href="<?php echo SITEROOT; ?>/login.php" class="text-uppercase appoinment"> Login</a></li>
 			<li><a href="<?php echo SITEROOT; ?>/admin/register.php" class="text-uppercase appoinment"> Register</a></li>
 			<?php } ?>
@@ -61,6 +64,7 @@
     <!-- Header Top End --> 
     
     <!--Header-Main Box-->
+<!--
     <div class="header-mainbox">
       <div class="container ptn pbn">
         <div class="clearfix">
@@ -74,22 +78,25 @@
                 <!-- Toggle Button -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
               </div>
+<!--
               <div class="navbar-collapse collapse clearfix">
                 <ul class="navigation clearfix">
                   <li class="current dropdown"> <a href="<?php echo SITEROOT; ?>/index.php">Home</a>
                     </li>
-                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>/about-us.php">About us</a>
+                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>admin/about-us.php">About us</a>
                    </li>
                   
-                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>/blog.php">Blog</a>
+                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>admin/blog.php">Blog</a>
                     
                   </li>
-                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>/contact-us.php">Contact Us</a>
+                  <li class="dropdown"> <a href="<?php echo SITEROOT; ?>admin/contact-us.php">Contact Us</a>
                     
                   </li>
                 </ul>
               </div>
+
             </nav>
+-->
             <!-- Main Menu End--> 
           </div>
         </div>
@@ -97,4 +104,4 @@
     </div>
     <!--Header Main Box End--> 
   </header>
-  <!--End Main Header --> 
+  <!--End Main Header -->

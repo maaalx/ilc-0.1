@@ -39,7 +39,7 @@
         <!--Footer Column-->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="footer-4">
-            <h4>Flickr</h4>
+            <!-- <h4>Flickr</h4>
             <div class="flickr-feed clearfix">
               <ul>
                 <li> <a href="images/flicker/1.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/flicker/1.jpg" alt=""></a> </li>
@@ -48,7 +48,7 @@
                 <li> <a href="images/flicker/4.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/flicker/4.jpg" alt=""></a> </li>
                 <li> <a href="images/flicker/5.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/flicker/5.jpg" alt=""></a> </li>
                 <li> <a href="images/flicker/6.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/flicker/6.jpg" alt=""></a> </li>
-              </ul>
+              </ul>-->
             </div>
           </div>
         </div>
