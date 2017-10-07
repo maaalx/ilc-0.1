@@ -297,4 +297,4 @@ include("../includes/header.php"); ?>
         
       });
     </script>
- <?php include("../includes/register-footer.php"); ?>
+ <?php include("../includes/footer.php"); ?>
