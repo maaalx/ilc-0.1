@@ -1,62 +1,27 @@
- <script src="../js/jquery-3.2.1.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-
-
 <?php  include("../db.php");
-include("../includes/header.php");?>
-<style>	
-.invalid{
-	color: indianred;
-}
+include("../includes/header.php"); ?>
 
-.valid{
-	color: darkseagreen;
-}
-#passwordinfo{
-	position: absolute;
-	margin: -20px 0 0 0;
-	width: 300PX;
-	height: 200px;
-	top: 42%;
-	left: 100%;
-	opacity: 0.7;
-	border: grey 1px solid;
-	text-align: center;
-}
-#passwordrequirement{
-	font-size: 100%
-}
-.signinvalid{
-	
-}
-.weakvalid{
-	background-color: indianred;
-}
-.mediumvalid{
-	background-color: yellow;
-}
-.highvalid{
-	background-color: palegreen;
-}
-	#registertitle{
-		position: absolute;
-		padding: 60px 0 20px 0;
-		top: 0%;
-		left: 2%;
-	}
-	
-</style>
-
-
+ <section class="overlay overlay-green parallax"  data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-title">
+                        <h2>Register</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+   
+ <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
    <section class="contact-1">
               <div class="container">
                   <div class="section-content">
@@ -70,23 +35,18 @@ include("../includes/header.php");?>
 	 <div class="login-box-body">
         
         
-        <form action="index.php" method="post" id="registerform">
+        <form action="index.php" method="post">
            <div class="register-box-body">
-           <br>
-           <br>
-           <br>
-           <br>
-           <br>
-        <p class="login-box-msg"> <h2 id="registertitle">Register</h2></p>
+        <p class="login-box-msg">Register a new membership</p>
 		<div style="color:red" id="check_user_text"></div>
         <form action="../../index.html" method="post">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First name">
-           
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 		  <div class="form-group has-feedback">
             <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last name">
-            
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 		  <div class="form-group ">
 					<div class="form-group">
@@ -103,7 +63,7 @@ include("../includes/header.php");?>
                         <?php } ?>
                       </select>
                     </div>
-            
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 		  
 		  <div  style="display:none" class="form-group choose-doctor">
@@ -118,49 +78,30 @@ include("../includes/header.php");?>
                         <?php } ?>
                       </select>
                     </div>
-            
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 		  
           <div class="form-group has-feedback">
             <input type="email" name="user_email" id="user_email" class="form-control" placeholder="Email">
-            
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-           
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
-          <table class="table table-condensed table-bordered" style="width: 100%;margin: -20px 0 20px 0;text-align: center">
-			
-			<tr>
-				<td id="weak" style="width: 33%">Weak</td>
-				<td id="medium" style="width: 33%">Medium</td>
-				<td id="high" style="width: 33%">High</td>
-			</tr>
-			
-		</table>
-	</div>
-	<div id="passwordinfo" hidden>
-		<h4 id="passwordrequirement">Password must contain following requirement</h4>
-		<ul>
-			<li id="sign" class="invalid">At least <strong>one special characters</strong></li>
-			<li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
-			<li id="number" class="invalid">At least <strong>one number</strong></li>
-			<li id="length" class="invalid">At least <strong>8 characters</strong></li>
-		</ul>
-	</div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Retype password">
-            
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
           </div>
 		  <div class="form-group">
 		   <label>Date Of Birth</label>
-            <div class="input-group" id="date">
+            <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input type="text" name="date" id="dob" class="form-control pickdate" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
-                    </div>
-                   
+                      <input type="text" name="dob" id="dob" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+                    </div><!-- /.input group -->
+          </div>
 		  <div class="form-group ">
 					<div class="form-group">
                       <label>Security Question</label>
@@ -183,7 +124,7 @@ include("../includes/header.php");?>
                       </select>
                     </div>
 					<input type="text" class="form-control" name="security_answer" id="security_answer" placeholder="Security Answer">
-            
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-8">
@@ -199,10 +140,9 @@ include("../includes/header.php");?>
             </div><!-- /.col -->
           </div>
         </form>
-        <a href="<?php echo SITEROOT; ?>/login.php" class="text-center" style="text-decoration:underline"><i>I already have a membership</i></a>
-        <br>
-        <br>
-        <br>
+
+
+        <a href="<?php echo SITEROOT; ?>/login.php" class="text-center">I already have a membership</a>
       </div><!-- /.form-box -->
         </form>
 
@@ -230,7 +170,6 @@ include("../includes/header.php");?>
     <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
     <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <!-- date-range-picker -->
-    <script src="../js/jquery-ui/jquery-ui.min.js"></script>
 	
     <script type="text/javascript">
      function check_type(type_id){
@@ -248,7 +187,7 @@ include("../includes/header.php");?>
       $(document).ready(function(){
 		$(".register").click(function(){  
 					if($( "#first_name" ).val()==''){
-						alert ("First name is required.");
+						alert ("First name is required."); 
 						$("#first_name").focus();
 						return false;
 					}
@@ -326,8 +265,6 @@ include("../includes/header.php");?>
 				  
 				  $(".loading").show();
 				  $.ajax({url: "save-register.php"+dataString, success: function(result){
-
-                                  console.log(result);
 					   $(".loading").hide();
 					  if (result==1){
 							alert("Successfully Registered. We have sent you account activate link on your email address.");
@@ -358,101 +295,4 @@ include("../includes/header.php");?>
         
       });
     </script>
-    <script>
-$(document).ready(function(){
-	
-	$('input[type="password"]').keyup(function(){
-		var password = $(this).val();
-		var value = 0;
-		//1-length
-		if(password.length<6){
-			$('#length').removeClass('valid').addClass('invalid');
-		}
-		else if(password.length<8){
-			$('#length').removeClass('invalid').addClass('valid');
-			value+=10;
-		}
-		else if(password.length<9){
-			$('#length').removeClass('invalid').addClass('valid');
-			value+=15;
-		}
-		else{
-			$('#length').removeClass('invalid').addClass('valid');
-			value+=20;
-			
-		}
-		
-		//2-sign
-		if(password.match(/[!.@.#.$./.\.%.^]/)){
-			$('#sign').removeClass('invalid').addClass('valid');
-			value +=20;
-		}
-		else{
-			$('#sign').removeClass('valid').addClass('invalid');
-		}
-		//3-capital
-		if(password.match(/[A-Z]/)){
-			$("#capital").removeClass('invalid').addClass('valid');
-			value +=20;
-		}
-		else{
-			$("#capital").removeClass('valid').addClass('invalid');
-		}
-		
-		//4-number
-		if(password.match(/\d/)){
-			$("#number").removeClass('invalid').addClass('valid');
-			value += 20;
-		}
-		else{
-			$("#number").removeClass('valid').addClass('invalid');
-		}
-		//security1
-		if(value==0){
-			$("#medium").removeClass('mediumvalid');
-			$('#high').removeClass('highvalid');
-			$("#weak").removeClass('weakvalid');
-		}
-		else if(value<=50){
-			$("#weak").addClass('weakvalid');
-			$("#medium").removeClass('mediumvalid');
-			$('#high').removeClass('highvalid');
-			
-		}
-		else if(value<=70){
-			$("#medium").addClass('mediumvalid');
-			$("#weak").removeClass('weakvalid');
-			$("#high").removeClass('highvalid');
-		}
-		else{
-			$("#high").addClass('highvalid');
-			$("#medium").removeClass('mediumvalid');
-			$("#weak").removeClass('weakvalid');
-		}
-		
-	}).focus(function(){
-		$('#passwordinfo').show();
-	}).blur(function(){
-		$('#passwordinfo').hide();
-	});	
-});
-</script>
- <script>
-	 $(document).ready(function(){
-		  $('#registertitle').fadeIn(1000).fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000);
-	 });
-</script>
-<script src="../js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
-
-
-
-<script>
-  $('#date').datepicker({
-    format: "dd/mm/yyyy"
-});
-</script>
-	
-
-<?php include("../includes/register-footer.php"); ?>
- 
+ <?php include("../includes/register-footer.php"); ?>

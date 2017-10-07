@@ -6,11 +6,11 @@
 	   	
 	}
 	
-	if(!checkPermissions($_SESSION['admin_user_id'],array(2))){ 
+	if(!checkPermissions($_SESSION['admin_user_id'],array(2,4))){ 
 		header("location:index.php");
 	 }
 	 
-	$query=mysqli_query($db,"select pt.*,u.fname,u.lname from patienttreatment pt inner join users u on pt.patientId=u.user_id where pt.idpatientTreatment='$treatment_id'"); 
+	$query=mysqli_query($db,"select pt.* from patienttreatment pt where pt.idpatientTreatment='$treatment_id'"); 
 	$data=mysqli_fetch_assoc($query);
 ?>
 
@@ -70,13 +70,7 @@
                     </div>
             
 			</div>
-			<div class="form-group ">
-					<div class="form-group">
-                      <label>Times Of Target Dose Intake:</label>
-                      <?php echo $data['timesOfTargetDoseIntake']; ?>
-                    </div>
-            
-			</div>
+			
 			<div class="form-group ">
 					<div class="form-group">
                       <label>Frequency:</label>
