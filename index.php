@@ -295,26 +295,31 @@ require("db.php");
 		<button type="button" class="btn btn-default">Submit</button>
 	</form>
 	<div class="col-sm-3 col-xs-12"> <img class="img-thumbnail" id="map" src="images/map.jpg"> </div>
-	<div class="col-sm-3 col-xs-12" id="contactdetails">
+<!--Footer Column-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+
+
 		<ul>
 			<li>
 				<h4>Address</h4>
 			</li>
-			<li>124 La Trobe St, Melbourne VIC 3000</li>
+			<li><font color="white">124 La Trobe St, Melbourne VIC 3000 </font></li>
 			<li></li>
 			<li>
 				<h4>Phone</h4>
 			</li>
 			
-			<li>(03) 9925 2000</li>
+			<li><font color="white"> (03) 9925 2000 </font></li>
 			<li></li>
 			<li>
 				<h4>E-mail</h4>
 			</li>
-			<li>ILC@gmail.com</li>
+			<li><font color="white">ILC@gmail.com</font></li>
 		</ul>
 	</div>
-</div>
+
+        
+          
 <div id="footer" class="container-fluid">
 	<p id="footerinfo">©2017 International Library Cannabinoid, Inc. All rights reserved. </p>
 </div>
