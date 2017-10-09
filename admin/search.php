@@ -14,7 +14,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-				Search
+				Disease Search
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
@@ -31,8 +31,16 @@
                   
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                <!-- form start -->
-                <form role="form" name="search" id="search" action="search.php" method="post">  
+				
+				<div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="search.php" >Disease Search</a></li>
+                  <li><a href="strain_search.php" >Strain Search</a></li>
+                  
+                </ul>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="activity">
+                    <form role="form" name="search" id="search" action="search.php" method="post">  
 				
 				
 				
@@ -55,6 +63,20 @@
 					<img style="display:none" class="loading" src="img/loading.gif">
                   </div>
                 </form>
+
+                    
+
+                 
+                  </div><!-- /.tab-pane -->
+                  <div class="tab-pane" id="timeline">
+                   
+                  </div><!-- /.tab-pane -->
+
+
+                </div><!-- /.tab-content -->
+              </div><!-- /.nav-tabs-custom -->
+                <!-- form start -->
+                
 				
 				<?php 
 				
@@ -185,7 +207,7 @@ if(($row['data_src']=='patienttreatment' || $row['data_src']=='patienttreatment_
 <?php } ?>
 
 <?php if($row['data_src']=='vitro' || $row['data_src']=='vitro_cancer_type'){ ?>
-<a href="view_vitro_experiment.php?id=<?php echo $vitro_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View Vivo Details</button></a>
+<a href="view_vitro_experiment.php?id=<?php echo $vitro_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View Vitro Details</button></a>
 <?php } ?>
 </td>
 </tr>
