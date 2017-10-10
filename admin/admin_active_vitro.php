@@ -42,9 +42,7 @@
                     <thead>
                       <tr>
                         <th>Cell Density Per Treatment</th>
-                        
                         <th>Conditions Being Investigated</th>
-                       
                         <th>Action</th>
                         </tr>
                     </thead>
@@ -65,30 +63,16 @@ $temp_row=mysqli_fetch_assoc($temp_q);
 ?>
 
 <tr><td><?php echo $row1['cell_density_per_treatment']; ?></td>
-
 <td><?php echo $temp_row['name']; ?></td>
-
-
-<td >
-
-
-<!--
-
-
-<a href="edit_treatment.php?treatment_id=<?php echo $row1['treatment_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Edit Treatement</button></a>
--->
-<a href="edit_strain_data.php?strain_id=<?php echo $row1['strain_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Edit Strain Data</button></a>
-<!--
-<button onclick="return approve_stain(<?php echo $row1['strain_id']; ?>)" style="width: auto;" class="btn-success disabled" name="approved">Approve Strain Data</button>
-
-<a href="add_followup_by_doctor.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Add Follow Ups</button></a>
--->
-<a onclick="return confirm('Are you sure?')" href="contact-list.php?id=<?php echo $row1['id']; ?>">
-</a>
+<td><a href="edit_strain_data.php?strain_id=<?php echo $row1['strain_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Edit Strain Data</button></a>
 </td>
 </tr>
 <?php } ?>
+</tbody>
 
+
+                  </table>
+				  
 <script type="text/javascript">
 
 function approve_stain(strain_id){
@@ -103,14 +87,11 @@ function approve_stain(strain_id){
 		}});
       }
       
-</script>
-
-                  </table>
-                </div><!-- /.box-body -->
+</script>				  
+                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div><!-- /.col -->
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-      
 <?php require_once("includes/footer.php"); ?>
