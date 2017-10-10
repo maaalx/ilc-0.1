@@ -37,6 +37,19 @@
           </li>  
 		  
 		  <?php if(checkPermissions($_SESSION['admin_user_id'],array(5))){ ?>
+		  
+		  <li class="treeview">
+              <a href="become_reseacher_patient.php">
+				<span>Become Researcher<br>(Patients)</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+             
+            </li>
+			<li class="treeview">
+              <a href="become_reseacher_doctor.php">
+				<span>Become Researcher<br>(Doctors)</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+             
+            </li>
             <li class="treeview">
               <a href="#">
 				<i class="ion ion-person-add"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
@@ -48,14 +61,14 @@
               </ul>
             </li>
 			
-			<li class="treeview">
+			<!--<li class="treeview">
               <a href="#">
 				<i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
 				<li class="active"><a href="admin_all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
               </ul>
-            </li>
+            </li> -->
 			
 			<li class="treeview">
               <a href="#">
@@ -97,6 +110,35 @@
 	
 		
 		<?php if(checkPermissions($_SESSION['admin_user_id'],array(2))){ ?>
+	      <?php
+				$user_i=$_SESSION['admin_user_id'];
+				
+				$query=mysqli_query($db,"select * from become_researcher where user_id='$user_i' && user_type_id='2'");
+				$total_rows=mysqli_num_rows($query);
+				$temp_row=mysqli_fetch_assoc($query);
+				if($total_rows<1){
+		  ?>	
+		   <li class="treeview">
+              <a href="become_researcher.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Become Researcher<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Send Request)</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
+				<?php } ?>
+				<?php if($temp_row['approved']=='no'){
+					?>
+						<li class="treeview">
+             
+					<i class="fa fa-fw fa-angle-right"></i> <span>Your request to Become Researcher is pending for approve
+              
+					</li>
+					<?php 
+				}?>
+				
+				<?php if($temp_row['approved']=='yes'){
+					?><li class="treeview">
+					<i class="fa fa-fw fa-angle-right"></i> <span>You are now Reseacher</li>
+					<?php
+				}?>
             <li class="treeview">
               <a href="#">
 	      <i class="ion ion-person-add"></i> <span>Treatments</span> <i class="fa fa-angle-left pull-right"></i>
@@ -113,6 +155,36 @@
 		<?php } ?>
 		
 		<?php if(checkPermissions($_SESSION['admin_user_id'],array(3))){ ?>
+			 <?php
+				$user_i=$_SESSION['admin_user_id'];
+				
+				$query=mysqli_query($db,"select * from become_researcher where user_id='$user_i' && user_type_id='3'");
+				$total_rows=mysqli_num_rows($query);
+				$temp_row=mysqli_fetch_assoc($query);
+				if($total_rows<1){
+		  ?>
+			<li class="treeview">
+              <a href="become_researcher.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Become Researcher<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Send Request)</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
+				<?php } ?>
+				
+				<?php if($temp_row['approved']=='no'){
+					?>
+						<li class="treeview">
+             
+					<i class="fa fa-fw fa-angle-right"></i> <span>Your request to Become Researcher is pending for approve
+              
+					</li>
+					<?php 
+				}?>
+				
+				<?php if($temp_row['approved']=='yes'){
+					?><li class="treeview">
+					<i class="fa fa-fw fa-angle-right"></i> <span>You are now Reseacher</li>
+					<?php
+				}?>
             <li class="treeview">
               <a href="#">
 	      <i class="ion ion-person-add"></i> <span>Patients</span> <i class="fa fa-angle-left pull-right"></i>
@@ -137,7 +209,7 @@
 		<?php } ?>
 		
 		<?php if(checkPermissions($_SESSION['admin_user_id'],array(4))){ ?>
-            <li class="treeview">
+           <!-- <li class="treeview">
               <a href="#">
 	      <i class="ion ion-person-add"></i> <span>Articles</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -145,8 +217,8 @@
                 <li class="active"><a href="add_article.php"><i class="fa fa-circle-o"></i> Add Article</a></li>
 				<li class="active"><a href="all_articles.php"><i class="fa fa-circle-o"></i>Article List</a></li>
               </ul>
-            </li>
-			
+            </li>-->
+			<?php if(show_only_for_searcher($_SESSION['admin_user_id'])){ ?>
 			<li class="treeview">
               <a href="#">
 	      <i class="ion ion-person-add"></i> <span>Treatments</span> <i class="fa fa-angle-left pull-right"></i>
@@ -157,6 +229,7 @@
 				<li><a href="researcher_treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
               </ul>
             </li>
+			<?php } ?>
 			
 			<li class="treeview">
               <a href="add_vivo_experiment.php">
