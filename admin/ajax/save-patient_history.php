@@ -7,18 +7,38 @@
 
 $doctor_id=NULL;
 $researcher_id=NULL;
+$patient_id		=addslashes($_POST['patient_id']);
+
 if(checkPermissions($_SESSION['admin_user_id'],array(3))){
 	$doctor_id=$_SESSION['admin_user_id'];
 }
 
 if(checkPermissions($_SESSION['admin_user_id'],array(4))){
 	$researcher_id=$_SESSION['admin_user_id'];
+	
+	$first_name		=addslashes($_POST['first_name']);
+	$last_name		=addslashes($_POST['last_name']);
+	
+	$dob		=addslashes($_POST['dob']);
+	$height		=addslashes($_POST['height']);
+	$weight		=addslashes($_POST['weight']);
+	$ethnicity		=addslashes($_POST['ethnicity']);
+	
+	$query=mysqli_query($db,"insert into users(fname,lname)values('$first_name','$last_name')");
+	$last_user_id=mysqli_insert_id($db);
+	$patient_id=$last_user_id;
+	$ilc_id='P'.$last_user_id;
+	
+	$query=mysqli_query($db,"update users set ilc_id='$ilc_id' where user_id='$last_user_id'");
+	
+	$query=mysqli_query($db,"insert into patient(ilc_id,ethnicity,height,weight)values('$ilc_id','$ethnicity','$height','$weight')");
+	
 }
 
 
 /*Get all form fields*/
 $other_admission_type							=addslashes($_POST['other_admission_type']);
-$patient_id										=addslashes($_POST['patient_id']);
+
 $admission_type									=addslashes($_POST['admission_type']);
 $qualification_status							=addslashes($_POST['qualification_status']);
 $criterion_for_admission						=addslashes($_POST['criterion_for_admission']);
