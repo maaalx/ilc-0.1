@@ -74,8 +74,8 @@ $total_followups=mysqli_num_rows($queryf);
 -->
 <a href="treatment_followups.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View FollowUps(<?php echo $total_followups; ?>)</button></a>
 
-<!--
-<a href="add_followup_by_doctor.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Add Follow Ups</button></a>-->
+
+<a href="add_followup_by_researcher.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Add Follow Ups</button></a>
 
 <a onclick="return confirm('Are you sure?')" href="contact-list.php?id=<?php echo $row1['id']; ?>">
 </a>

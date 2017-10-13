@@ -41,6 +41,57 @@
                 <!-- form start -->
                 <form role="form" name="add_patient_history" id="add_patient_history" action="" method="post">  
 				<input type="hidden" name="patient_id" id="patient_id" value="<?php echo addslashes($patient_id); ?>">
+				
+				<?php if(checkPermissions($_SESSION['admin_user_id'],array(4))){  ?>
+				<div class="form-group ">
+						<label>First Name <span style="color:red">*</span></label>
+						<input type="text" value="" class="form-control" name="first_name" id="first_name" placeholder="First name">
+						<span class="glyphicon glyphicon-user form-control-feedback"></span>
+				</div>
+		  
+				  <div class="form-group ">
+					<label>Last Name <span style="color:red">*</span></label>
+					<input type="text" value="" class="form-control" name="last_name" id="last_name" placeholder="Last name">
+					<span class="glyphicon glyphicon-user form-control-feedback"></span>
+				  </div>
+				  
+				   <div class="form-group">
+					   <label>Date Of Birth</label>
+						<div class="input-group">
+								  <div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								  </div>
+								  <input value="" type="text" name="dob" id="dob" class="form-control" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
+								</div><!-- /.input group -->
+					  </div>
+					  
+				<div class="form-group has-feedback">
+				<label>Height in (Foot,Inches)</label>
+				<input value="" type="text" name="height" id="height" class="form-control" placeholder="Height">
+				
+			</div>
+			
+			<div class="form-group has-feedback">
+				<label>Weight(Kilograms)</label>
+				<input value="" type="text" name="weight" id="weight" class="form-control" placeholder="Weight">
+				
+			</div>
+         
+			<div class="form-group has-feedback">
+				<label>Ethnicity</label>
+				<select name="ethnicity" id="ethnicity" class="form-control">
+					  <option value='0'>Select</option>
+					  <?php $temp_query=mysqli_query($db,"select * from patient_ethnicity order by name");
+						while($eth_row=mysqli_fetch_assoc($temp_query)){
+						?>
+                        <option value="<?php echo $eth_row['id']; ?>"><?php echo $eth_row['name']; ?></option>
+                        <?php } ?>
+                      </select>
+				
+			</div>
+				<?php } ?>
+			
+			
 				<div class="form-group ">
 					<div class="form-group">
                       <label>Admission Type(<span style="color:red">*</span>)</label>
@@ -266,15 +317,15 @@
                       </select>
                     </div>
 			</div>
-			<div class="box-body">
-                    
-
+			<div class="form-group ">
+				<div class="form-group">
                     <div class="form-group">
                       <label>Hospital Campus Code(<span style="color:red">*</span>)</label>
                       <input class="form-control" type="text" name="hospital_campus_code" id="hospital_campus_code" placeholder="Hospital Campus Code">
                     </div>
                    
                   </div>
+			</div>	  
 			<div class="form-group ">
 					<div class="form-group">
                       <label>Interpreter Required(<span style="color:red">*</span>)</label>
@@ -293,7 +344,7 @@
                       </select>
                     </div>
 			</div>	
-                  <div class="box-body">
+                  <div class="form-group">
                     
 
                     <div class="form-group">
@@ -318,7 +369,28 @@
 
       
 <?php require_once("includes/footer.php"); ?>
+<!-- Select2 -->
+    <script src="plugins/select2/select2.full.min.js"></script>
+	 <!-- InputMask -->
+    <script src="plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	
+	 <script>
+      $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
 
+        //Datemask dd/mm/yyyy
+        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+        //Datemask2 mm/dd/yyyy
+        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+        //Money Euro
+        $("[data-mask]").inputmask();
+
+        
+      });
+    </script>
 <script type="text/javascript">
 function check_referral_care(referral_care){
 	if(referral_care==9){
