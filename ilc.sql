@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2017 at 04:37 PM
+-- Generation Time: Oct 13, 2017 at 04:55 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -773,6 +773,9 @@ INSERT INTO `doctor` (`id`, `ilc_id`, `phone1`, `phone2`, `tfn`, `hospital_code`
 CREATE TABLE IF NOT EXISTS `followups` (
   `idfollowUps` int(11) NOT NULL,
   `treatmentNo` int(11) DEFAULT NULL,
+  `patientId` int(11) DEFAULT NULL,
+  `doctor_id` int(11) DEFAULT NULL,
+  `researcher_id` int(11) DEFAULT NULL,
   `frequency` varchar(45) DEFAULT NULL,
   `efficacyInpercent` varchar(50) DEFAULT NULL,
   `sideEffect` mediumtext,
@@ -780,20 +783,21 @@ CREATE TABLE IF NOT EXISTS `followups` (
   `cancer_type` varchar(50) NOT NULL,
   `other_infections` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `followups`
 --
 
-INSERT INTO `followups` (`idfollowUps`, `treatmentNo`, `frequency`, `efficacyInpercent`, `sideEffect`, `improvementInSecondaryCondition`, `cancer_type`, `other_infections`, `added_date`) VALUES
-(1, 3, '2', '30', 'asda', 'asd', '', '', '2017-09-09 18:40:54'),
-(2, 2, '4', '30', 'ss', 'sss', '', '', '2017-09-10 12:20:29'),
-(3, 2, '5', '60', 'sfdsd', 'sdfsdf', '', '', '2017-09-10 12:24:49'),
-(4, 2, '8', '60', 'dfg', 'dfgdfg', '', '', '2017-09-10 12:24:58'),
-(6, 3, '4', '23', 'ww', '6', '', '', '2017-09-20 16:22:26'),
-(8, 6, '4', '12', 'aa', '5', '', '', '2017-10-06 11:30:41'),
-(9, 10, '2', '78', 'l;', '3', '', '', '2017-10-07 11:46:24');
+INSERT INTO `followups` (`idfollowUps`, `treatmentNo`, `patientId`, `doctor_id`, `researcher_id`, `frequency`, `efficacyInpercent`, `sideEffect`, `improvementInSecondaryCondition`, `cancer_type`, `other_infections`, `added_date`) VALUES
+(1, 3, NULL, NULL, NULL, '2', '30', 'asda', 'asd', '', '', '2017-09-09 18:40:54'),
+(2, 2, NULL, NULL, NULL, '4', '30', 'ss', 'sss', '', '', '2017-09-10 12:20:29'),
+(3, 2, NULL, NULL, NULL, '5', '60', 'sfdsd', 'sdfsdf', '', '', '2017-09-10 12:24:49'),
+(4, 2, NULL, NULL, NULL, '8', '60', 'dfg', 'dfgdfg', '', '', '2017-09-10 12:24:58'),
+(6, 3, NULL, NULL, NULL, '4', '23', 'ww', '6', '', '', '2017-09-20 16:22:26'),
+(8, 6, NULL, NULL, NULL, '4', '12', 'aa', '5', '', '', '2017-10-06 11:30:41'),
+(9, 10, NULL, NULL, NULL, '2', '78', 'l;', '3', '', '', '2017-10-07 11:46:24'),
+(10, 9, NULL, 0, 196, '2', '34', 'wd', '2', '', '', '2017-10-13 16:53:59');
 
 -- --------------------------------------------------------
 
@@ -865,14 +869,17 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `state` varchar(250) NOT NULL,
   `country` varchar(50) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient`
 --
 
 INSERT INTO `patient` (`id`, `ilc_id`, `phone_1`, `phone_2`, `ethnicity`, `height`, `weight`, `emergency_contact_name`, `emergency_contact_number`, `address_line_1`, `address_line_2`, `suburb`, `state`, `country`, `added_date`) VALUES
-(1, 'P189', '22222', '', '1', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33');
+(1, 'P189', '22222', '', '1', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33'),
+(3, 'P', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(4, 'P200', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(5, 'P201', '', '', '3', '8', '8', '', '', '', '', '', '', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2207,7 +2214,7 @@ CREATE TABLE IF NOT EXISTS `patient_history` (
   `Interpreter_Required` tinyint(4) DEFAULT NULL,
   `comment` longtext,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient_history`
@@ -2227,8 +2234,7 @@ INSERT INTO `patient_history` (`id`, `patientid`, `doctorid`, `researcher_id`, `
 (11, 189, 190, 0, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:11:02'),
 (12, 189, 190, 0, '6', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:12:35'),
 (13, 189, 190, 0, '2', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-10-04 18:17:13'),
-(14, 0, 0, 196, '3', '', NULL, '2', '0', '0', '0', '0', '1', '', '', '', '', '', '3', 0, 0, '', '2017-10-06 13:22:52'),
-(15, 0, 0, 196, '1', '', NULL, '2', '4', '2', '6', '4', '2', '15', '7', '', '2', '9', '2', 234, 1, 'rrrrrrrrrrr', '2017-10-07 11:39:26');
+(16, 201, 0, 196, '1', '', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '', '1', '1', '', 0, 1, 'dfsdf', '2017-10-13 16:28:29');
 
 -- --------------------------------------------------------
 
@@ -3122,7 +3128,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `is_block` enum('0','1') CHARACTER SET utf8 NOT NULL DEFAULT '0',
   `dob` date DEFAULT NULL,
   `added_date` datetime DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=198 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=202 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -3137,11 +3143,15 @@ INSERT INTO `users` (`user_id`, `ilc_id`, `is_reseacher`, `fname`, `lname`, `pho
 (186, '', 'no', 'kkk f', 'lll', '', 'lll@h.com ', '1', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'selected', '', NULL, 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '142941ccf61cba96fb9679e5fda6da9c', 'on', '0', '0000-00-00', '2017-08-27 17:56:41'),
 (187, '', 'no', 'hari', 'div', '', 'jj@gmail.com', '3', 0, NULL, 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 'Make and model of your first car', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '8d7248decbf8a5f490d75b5172b69f60', 'on', '0', '0000-00-00', '2017-09-04 15:55:50'),
 (188, '', 'no', 'test', 'test', '', 'raj1@gmail.com', '1', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'caeec350527b82e66e365408ff5cf3a0', 'on', '0', '1987-12-12', '2017-09-07 16:47:18'),
-(189, 'P189', 'yes', 'amit', 'bhat', '', 'amit@gmail.com ', '2', 190, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Your favorite sports team', 'resr', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '21d3ba531714c719f775cc5a159954db', 'on', '0', '1984-12-12', '2017-09-08 14:37:54'),
+(189, 'P189', 'no', 'amit', 'bhat', '', 'amit@gmail.com ', '2', 190, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Your favorite sports team', 'resr', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '21d3ba531714c719f775cc5a159954db', 'on', '0', '1984-12-12', '2017-09-08 14:37:54'),
 (190, 'D190', 'yes', 'prasad', 'mull', '', 'prasa@gmail.com ', '3', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Your favorite singer', 'ttt', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'c1466a93170a0490b36ca6c38beee538', 'on', '0', '1999-09-02', '2017-09-08 14:48:06'),
-(197, 'P197', 'no', 'ee', 'eee', '', 'p@gmail.com', '2', 187, NULL, 'bcc67d8524948bbd873e4df12c89b182', NULL, 'Make and model of your first car', 'wer', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd80daddf34f19eb1a01934344a1d3163', 'on', '0', '1988-12-12', '2017-10-09 19:14:45'),
-(193, 'D193', 'no', 'prakah', 'bose', '', 'p@gmail.com', '3', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'Make and model of your first car', 'ddd', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '7aa875cd55d516fbaa1b9f3ebc32e81a', 'on', '0', '1987-12-12', '2017-09-16 11:08:06'),
-(196, 'R196', 'no', 'atul', 'zaa', '', 'a@gmail.com ', '4', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 'a', 'b1.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd12fde1a3358d8942a282aa2ffd2cd9f', 'on', '0', '1990-12-12', '2017-09-16 17:29:11');
+(197, 'P197', 'no', 'ee', 'eee', '', 'p@gmail.com', '2', 187, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'wer', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd80daddf34f19eb1a01934344a1d3163', 'on', '0', '1988-12-12', '2017-10-09 19:14:45'),
+(193, 'D193', 'no', 'prakah', 'bose', '', 'p@gmail.com', '3', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'ddd', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '7aa875cd55d516fbaa1b9f3ebc32e81a', 'on', '0', '1987-12-12', '2017-09-16 11:08:06'),
+(196, 'R196', 'no', 'atul', 'zaa', '', 'a@gmail.com ', '4', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 'a', 'b1.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd12fde1a3358d8942a282aa2ffd2cd9f', 'on', '0', '1990-12-12', '2017-09-16 17:29:11'),
+(198, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
+(199, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
+(200, 'P200', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
+(201, 'P201', 'no', 'io', 'iopip', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3737,7 +3747,7 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `followups`
 --
 ALTER TABLE `followups`
-  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `follow_up_comments`
 --
@@ -3752,7 +3762,7 @@ ALTER TABLE `follow_up_frequency`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `patienttreatment`
 --
@@ -3767,7 +3777,7 @@ ALTER TABLE `patient_ethnicity`
 -- AUTO_INCREMENT for table `patient_history`
 --
 ALTER TABLE `patient_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `patient_history_accommodation_type_during_admission`
 --
@@ -3887,7 +3897,7 @@ ALTER TABLE `treatment_target_dose_min`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=198;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=202;
 --
 -- AUTO_INCREMENT for table `user_type`
 --
