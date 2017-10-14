@@ -6,8 +6,26 @@
 	if(isset($_GET['id']) && $_GET['id']!='' ){
 	   $user_id=$_GET['id'];
 	   
-	   $query=mysqli_query($db,"delete from contacts where id='$user_id'");
-	  
+	   $q=mysqli_query($db,"select user_type,ilc_id,user_id from where user_id='$user_id'");
+	   $temp_row=mysqli_fetch_assoc($q);
+	   
+	   $user_type=$temp_row['user_type'];
+	   $ilc_id=$temp_row['ilc_id'];
+	   
+	   if($user_type==2){
+		   $query=mysqli_query($db,"delete from patient where ilc_id='$ilc_id'");
+	   }
+	   
+	   if($user_type==3){
+		   $query=mysqli_query($db,"delete from doctor where ilc_id='$ilc_id'");
+	   }
+	   
+	   if($user_type==4){
+		   $query=mysqli_query($db,"delete from researcher where ilc_id='$ilc_id'");
+	   }
+	   
+	   $query=mysqli_query($db,"delete from users where user_id='$user_id'");
+	  header("location:user-list.php?msg=Deleted Successfully");exit;
 	   	
 	}
 	
@@ -37,7 +55,14 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                 
+				<?php if(isset($_GET['msg'])){ ?>
+                 <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4>	<i class="icon fa fa-check"></i> Success!</h4>
+                    <?php echo $_GET['msg']; ?>
+                  </div>
+				<?php } ?>
+				  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                  
@@ -78,7 +103,7 @@ while($row1=mysqli_fetch_assoc($query1)){
 <a href="admin-edit-profile.php?user_id=<?php echo $row1['user_id']; ?>">
 <button style="width: auto;" class="btn-success disabled" name="approved">Edit</button>
 
-<a onclick="return confirm('Are you sure?')" href="contact-list.php?id=<?php echo $row1['id']; ?>">
+<a onclick="return confirm('Are you sure?')" href="user-list.php?id=<?php echo $row1['user_id']; ?>">
 <button style="width: auto;" class="btn-danger" name="Delete">Delete</button></a>
 </td>
 </tr>

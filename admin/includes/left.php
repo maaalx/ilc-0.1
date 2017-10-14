@@ -55,7 +55,7 @@
 				<i class="ion ion-person-add"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="add-user.php"><i class="fa fa-circle-o"></i> Add User</a></li>
+                <li class="active"><a href="admin_add_user.php"><i class="fa fa-circle-o"></i> Add User</a></li>
                 <li><a href="user-list.php"><i class="fa fa-circle-o"></i> all Users</a></li>
                
               </ul>

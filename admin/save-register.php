@@ -24,6 +24,12 @@ include("../db.php");
     }else{
 		$doctor_id=0;
 	}
+	
+	$query=mysqli_query($db,"select id from users where email='$user_email'");
+	if(mysqli_num_rows($query)>0){
+		echo 2;
+		return false;
+	}
 	$ip_address=$_SERVER['REMOTE_ADDR'];
 	$q = "insert into users(doctor_id,fname,lname,email,user_type,password,security_question,security_answer,dob,status,added_date,ip_address,activate_token)
 	values('$doctor_id','$fname','$lname','$user_email','$user_type',md5('$password'),'$security_question','$security_answer','$dob','0',now(),'$ip_address','$uid')";

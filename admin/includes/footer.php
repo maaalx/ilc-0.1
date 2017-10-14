@@ -187,7 +187,7 @@
           "ordering": true,
           "info": true,
           "autoWidth": false,
-		   "order": [[ 3, "desc" ]]
+		   "order": [[ 1, "desc" ]]
         });
       });
     </script>

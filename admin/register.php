@@ -82,8 +82,10 @@ include("../includes/header.php"); ?>
           </div>
 		  
           <div class="form-group has-feedback">
-            <input type="email" name="user_email" id="user_email" class="form-control" placeholder="Email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input onkeyup="return checkemil()" type="email" name="user_email" id="user_email" class="form-control" placeholder="Email">
+            <span  class="glyphicon glyphicon-envelope form-control-feedback " ></span>
+			<div style="color:red" class="email-error"></div>
+			
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="password" id="password" placeholder="Password">
@@ -172,6 +174,19 @@ include("../includes/header.php"); ?>
     <!-- date-range-picker -->
 	
     <script type="text/javascript">
+	function checkemil(){
+		var user_email = $( "#user_email" ).val();
+		var dataString = '?user_email='+ $("#user_email").val();
+		$(".loading").show();
+		$.ajax({url: "ajax/check_email.php"+dataString, success: function(result){
+					   $(".loading").hide();
+					  if (result==1){
+							$(".email-error").html("Email address already exist. Please enter another email.");
+					  }else{
+						 $(".email-error").html(""); 
+					  }
+				  }});
+	}
      function check_type(type_id){
 		 if(type_id==2){
 			 $(".choose-doctor").show();
@@ -269,6 +284,9 @@ include("../includes/header.php"); ?>
 					  if (result==1){
 							alert("Successfully Registered. We have sent you account activate link on your email address.");
 						    window.location="../login.php";
+					  }else if(result==2){
+						  alert("Email address already used. Please enter another email address.");
+						  $("#check_user_text").text("Email address already used. Please enter another email address.");
 					  } else{
 						$("#check_user_text").text("Something went wrong. Please try again");
 						alert("Something went wrong. Please try again");

@@ -8,7 +8,7 @@ include("includes/header.php"); ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="inner-title">
-                        <h2>Login</h2>
+                        <h2>Forget Password</h2>
                         
                     </div>
                 </div>
@@ -23,29 +23,23 @@ include("includes/header.php"); ?>
                          
                           <div class=" col-md-8">
                               <!-- Contact Form -->
-                                  <h2>Login <span></span> </h2>
+                                  
 								  <div style="color:red" id="check_user_text"></div>
                               <form class="contact-form" method="post"  role="form">
                                 <div class="messages"></div>
                                 <div class="controls">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="form_name">Email *</label>
-                                                <input id="email_id" type="text" name="name" class="form-control" placeholder="Please enter your Email *" required="required" data-error="Name is required.">
+											
+                                                <label for="form_name">Please enter your email we will send you new password in email</label>
+                                                <input id="email_id" type="text" name="email_id" class="form-control" placeholder="Please enter your Email *" required="required" data-error="Email is required.">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="form_lastname">Paswword *</label>
-                                                <input id="password" type="password" name="phone" class="form-control" placeholder="Please enter your password *" required="required" data-error="Phone number is required.">
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
+                                       
 										<div class="col-md-12">
-                                            <input type="submit" class="btn btn-success btn-send sign-in" value="Login">
-											<a href="forget_password.php">Forget Password</a>
+                                            <input type="submit" class="btn btn-success btn-send forget-pass" value="Submit">
                                         </div>
                                     </div>
 
@@ -60,26 +54,21 @@ include("includes/header.php"); ?>
     
       
       $(document).ready(function(){
-		$(".sign-in").click(function(){  
+		$(".forget-pass").click(function(){  
 				  if($( "#email_id" ).val()==''){
 					alert ("Email is required.");
 					  $("#email_id").focus();
 					  return false;
 				  }
-
-				  if($( "#password" ).val()==''){
-					alert ("Password is required.");
-					  $("#password").focus();
-					  return false;
-				  }
 				  
-				  var dataString = '?username='+ $("#email_id").val() + '&password=' + $("#password").val();
+				  var dataString = '?email_id='+ $("#email_id").val();
 				  
-				  $.ajax({url: "admin/save-admin-login.php"+dataString, success: function(result){
+				  $.ajax({url: "admin/ajax/forget_password.php"+dataString, success: function(result){
 					  if (result==1){
-						    window.location="admin/index.php";
+						    alert("New password has been successfully sent on your email address");
+						    window.location="login.php";
 					  } else{
-						$("#check_user_text").text("Wrong username and password.");
+						$("#check_user_text").text("Email id does not exit.");
 					  }
 				  }});
 				  

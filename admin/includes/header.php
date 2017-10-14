@@ -6,6 +6,19 @@ if(!isset($_SESSION['admin_user_id'])){
     header("location:".SITEROOT."/login.php");exit;
 }
 
+$inactive =1800; /* 1/2 hour*/
+if( !isset($_SESSION['timeout']) ){
+	$_SESSION['timeout'] = time(); 
+}
+
+$session_life = time() - $_SESSION['timeout'];
+if($session_life > $inactive)
+{
+	header("location:".SITEROOT."/admin/logout.php");exit;
+	
+}
+$_SESSION['timeout']=time();
+
 $user_id=$_SESSION['admin_user_id'];
 $query=mysqli_query($db,"select * from users where user_id='$user_id'");
 $user_data=mysqli_fetch_assoc($query);

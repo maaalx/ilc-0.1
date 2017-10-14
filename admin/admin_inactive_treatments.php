@@ -72,10 +72,7 @@ $total_followups=mysqli_num_rows($queryf);
 
 
 <td >
-<!--
-<a href="view-user.php?user_id=<?php echo $row1['user_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View</button></a>
 
-<a href="treatment_followups.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View FollowUps(<?php echo $total_followups; ?>)</button></a>-->
 
 <a href="edit_patient_history.php?hisory_id=<?php echo $row1['history_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Edit Patient History</button></a>
 
@@ -85,11 +82,8 @@ $total_followups=mysqli_num_rows($queryf);
 <a href="edit_strain_data.php?strain_id=<?php echo $row1['strain_id']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Edit Strain Data</button></a>
 
 <button onclick="return approve_stain(<?php echo $row1['strain_id']; ?>)" style="width: auto;" class="btn-success disabled" name="approved">Approve Strain Data</button>
-<!--
-<a href="add_followup_by_doctor.php?treatment_id=<?php echo $row1['idpatientTreatment']; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">Add Follow Ups</button></a>
--->
-<a onclick="return confirm('Are you sure?')" href="contact-list.php?id=<?php echo $row1['id']; ?>">
-</a>
+
+
 </td>
 </tr>
 <?php } ?>
