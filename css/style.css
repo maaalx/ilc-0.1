@@ -221,8 +221,8 @@ ul,li{
 
 .container,
 .container-fluid{
-	padding-top: 70px;
-	padding-bottom: 70px;
+	#padding-top: 70px;
+	#padding-bottom: 70px;
 }
 
 .section-title {
@@ -606,14 +606,16 @@ ul,li{
 }
 
 .main-header .appoinment {
-	border: 1px solid #0798BC;
+	#border: 1px solid #0798BC;
 	padding: 8px 10px;
+	
 }
 
 .main-header .info-nav li a{
 	position:relative;
 	line-height:30px;
 	font-size:12px;
+	
 }
 
 .main-header .info-nav li a .icon{
@@ -628,6 +630,7 @@ ul,li{
 
 .theme-green .main-header .info-nav li a .icon{
 	color: #0798BC;	
+	
 }
 
 .main-header .social-links{
@@ -2341,7 +2344,7 @@ hr {
 ***/
 
 .contact-form h2{
-	font-size:30px;
+	font-size:15px;
 	color:#333333;
 	text-transform:uppercase;
 	letter-spacing:2px;
@@ -2355,6 +2358,7 @@ hr {
     border-radius: 0;
     background-color: #f6f7f3;
     font-family: 'Roboto Slab', serif;
+	
 }
 .contact-form h2 {
     font-size: 36px;
@@ -2362,7 +2366,8 @@ hr {
 }
 
 .contact-1 {
-	position: relative;
+	position:relative;
+	
 }
 
 .contact-1 h2,

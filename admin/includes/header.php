@@ -1,3 +1,11 @@
+<style>
+	ul,li,div,section,aside,a,p,h,nav,header,body: ;{
+		font-size: 1.05em;
+	}
+
+</style>  
+
+
 <?php session_start();
 
 include("lib/functions.php");
@@ -116,7 +124,7 @@ function marknotiread(){
               </li>
 			  <li>
 				 
-                      <a href="<?php echo SITEROOT ?>/blog.php" class="btn btn-default btn-flat">Blog</a>
+                      <a href="<?php echo SITEROOT ?>/blog.php" class="btn btn-default btn-flat">Products</a>
                    
               </li>
 			  <li>

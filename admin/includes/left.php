@@ -1,4 +1,13 @@
-      <link rel="shortcut icon" type="image/x-icon" href="https://secretivepleasures.com/images/favicon.ico">
+<style>
+	ul,li,div,section,aside,a,p,h，i,span,nav{
+		font-size: 1.05em;
+	}
+	.active li:hover{
+		background-color: #282828;
+	}
+
+</style>     
+       <link rel="shortcut icon" type="image/x-icon" href="../../images/leave.png">
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
