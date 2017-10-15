@@ -2,7 +2,7 @@
 international library of cannabies 
 
 
-Fix the db.php to connect you host with sql
+fill in you localhost info in db.php to connect you host with DB
 
 users :
 
