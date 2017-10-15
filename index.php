@@ -8,6 +8,11 @@ require("db.php");
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="International Lbrary of Cannabies">
+ <meta property="og:title" content="International Lbrary of Cannabies" />
+ <meta property="og:image" content="images/leave.png" />
+ <meta property="og:description" content="International Lbrary of Cannabies" />
+ 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,7 +24,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 </script>
 
 <link rel="stylesheet" href="css/style2.css">
-<title>ILC</title>
+<title>International Lbrary of Cannabies</title>
 <link rel="shortcut icon" href="images/leave.png">
 </head>
 <!--Header-->
