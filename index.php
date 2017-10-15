@@ -11,6 +11,13 @@ require("db.php");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript"> //<![CDATA[ 
+var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]>
+</script>
+
 <link rel="stylesheet" href="css/style2.css">
 <title>ILC</title>
 <link rel="shortcut icon" href="images/leave.png">
@@ -311,10 +318,17 @@ require("db.php");
 			</li>
 			<li>ILC@gmail.com</li>
 		</ul>
-	</div>
+		<br>
 </div>
+	<script language="JavaScript" type="text/javascript">
+TrustLogo("http://maaalx.com/comodo_secure_seal.png", "CL1", "none");
+</script>
+<a  href="https://ssl.comodo.com" id="comodoTL">SSL Certificates</a>
+
+	</div>
 <div id="footer" class="container-fluid">
 	<p id="footerinfo">©2017 International Library Cannabinoid, Inc. All rights reserved. </p>
+	
 </div>
 
 <script src="js/my_scripts.js"></script>
