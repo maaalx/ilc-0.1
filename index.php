@@ -103,10 +103,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 							<td>Search</td>
 							<td class="Description">ILC provides search function for researchers who hold a valid certificate.The search function includes advance search which provides extremely accurate search.</td>
 						</tr>
-						<tr>
-							<td>Peer Review</td>
-							<td class="Descriptions">ILC invites researchers who hold a valid certificate to rate and add comments for public articles</td>
-						</tr>
+					
 						<tr>
 							<td>Browse Patient Case</td>
 							<td class="Descriptions">Researchers can search and browse any patient case to help their research. </td>
@@ -149,7 +146,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Upload Case </td>
-							<td class="Description">ILC provides storage space for patient to save their cases which can be browsed by doctors and researchers</td>
+							<td class="Description">ILC provides database for patient to save their cases which can be browsed by doctors to add feedback and researchers to analysis</td>
 						</tr>
 					</tbody>
 				</table>
@@ -169,7 +166,12 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Modify Data </td>
-							<td class="Description">Admins can modify data which include add label for specific article or change strain data.</td>
+							<td class="Description">Admins can modify data which include change strain data , user profile, modify treatment , Vivo and Vitro data </td>
+						</tr>
+						
+							<tr>
+							<td>System administrator </td>
+							<td class="Description">Admins can aprrove request to become researcher, add and delete users and all the system administration</td>
 						</tr>
 					</tbody>
 				</table>
