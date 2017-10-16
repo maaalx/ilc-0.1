@@ -114,7 +114,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					</tbody>
 				</table>
 				<a href="login.php"><button class="btn btn-default">
-				 Get start
+				 Login
 				</button></a>
 			</div>
 			<div id="Doctor" class="tab-pane fade">
@@ -154,7 +154,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					</tbody>
 				</table>
 				<a href="login.php"><button class="btn btn-default">
-				 Get start
+				 Login
 				</button></a>
 			</div>
 			<div id="Admin" class="tab-pane fade">
@@ -174,7 +174,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					</tbody>
 				</table>
 				<a href="login.php"><button class="btn btn-default">
-				 Get start
+				 Login
 				</button></a>
 			</div>
 		</div>
