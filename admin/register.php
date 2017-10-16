@@ -145,7 +145,7 @@
                       <label>Select Doctor</label>
                       <select name="doctor_id" id="doctor_id" class="form-control">
 					  <option value='0'>Select Doctor</option>
-					  <?php $temp_query=mysqli_query($db,"select * from users where user_type='3' order by fname,lname");
+					  <?php $temp_query=mysqli_query($db,"select * from users where user_type='3' and status ='1' order by fname,lname");
 						while($row=mysqli_fetch_assoc($temp_query)){
 						?>
                         <option value="<?php echo $row['user_id']; ?>"><?php echo $row['fname'].' '.$row['lname']; ?></option>
