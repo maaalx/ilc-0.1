@@ -39,7 +39,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 			<h4 id="rightlinearlabel">Accurate</h4>
 		</div>
 		<div id="welcomelabel">
-			<h3 id="welcome">Welcome to ILC</h3>
+			<h3 id="welcome">Welcome to International Lbrary of Cannabies</h3>
 			<p id="welcomecontent">Our features are</p>
 		</div>
 	</div>
