@@ -63,14 +63,19 @@
 				</div>
 				
 				<ul id="navbarrighttop" class="nav navbar-nav navbar-right">
-					<?php if(isset($_SESSION['admin_user_id'])){
-				?>
+					<?php if(isset($_SESSION['admin_user_id'])){ ?>
+				   
+				    
 					<li id="fadeinout"><a href="<?php echo SITEROOT; ?>/admin/index.php" class="appoinment" ><span class="glyphicon glyphicon-th-list"></span> Dashboard</a>
 					</li>
+				
 					<li><a href="<?php echo SITEROOT; ?>/admin/logout.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
 					</li>
 					<?php 	
 			}else{		?>
+			       
+				    <li><a href="/index.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-log-in"></span> Home</a>
+				    </li>
 					<li><a href="<?php echo SITEROOT; ?>/login.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-log-in"></span> Login</a>
 					</li>
 					<li><a href="<?php echo SITEROOT; ?>/admin/register.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-user"></span> Register</a>
@@ -81,20 +86,20 @@
 
 			</nav>
 			<!--navbar bottom-->
-			<nav class="navbar navbar-inverse navbar-fixed-bottom" id="navbarbottom">
+		<nav class="navbar navbar-inverse navbar-fixed-bottom" id="navbarbottom">
 
 				
 				<div class="navbar-header">
 					<div class="social-links pull-left" id="sociallink"> <span class="text-theme-color" style="color:gainsboro;font-size: 90% ">Follow Us</span> : <a href="#"><span class="fa fa-facebook-f"></span></a> <a href="#"><span class="fa fa-twitter"></span></a> <a href="#"><span class="fa fa-google-plus"></span></a> <a href="#"><span class="fa fa-linkedin"></span></a> </div>
 				</div>
 				<ul id="navbarrightbottom" class="nav navbar-nav navbar-right">
-					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-home"></span></a>
 					</li>
-					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-question-sign"></span> About us</a>
+					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-question-sign"></span> </a>
 					</li>
-					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-shopping-cart"></span> Products</a>
+					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-shopping-cart"></span> </a>
 					</li>
-					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-earphone"></span> Contact us</a>
+					<li><a href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-earphone"></span> </a>
 					</li>
 				</ul>
 
