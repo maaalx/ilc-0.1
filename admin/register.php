@@ -63,6 +63,15 @@
 	.space{
 		margin: 0 ;
 	}
+	
+	<style>
+
+.frmSearch {border: 1px solid #a8d4b1;background-color: #c6f7d0;margin: 2px 0px;padding:40px;border-radius:4px;}
+#country-list{z-index: 99;float:left;list-style:none;margin-top:-3px;padding:0;width:65%;position: absolute;}
+#country-list li{padding: 10px; background: #f0f0f0; border-bottom: #bbb9b9 1px solid;}
+#country-list li:hover{background:#ece3d2;cursor: pointer;}
+#search-box{padding: 10px;border: #a8d4b1 1px solid;border-radius:4px;}
+</style>
 </style>
 
  <?php
@@ -141,16 +150,40 @@
           </div>
 		  
 		  <div  style="display:none" class="form-group choose-doctor">
+		  <script>
+			$(document).ready(function(){
+				$("#search-box").keyup(function(){
+					$.ajax({
+					type: "POST",
+					url: "readdoctor.php",
+					data:'keyword='+$(this).val(),
+					beforeSend: function(){
+						$("#search-box").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+					},
+					success: function(data){
+						$("#suggesstion-box").show();
+						$("#suggesstion-box").html(data);
+						$("#search-box").css("background","#FFF");
+					}
+					});
+				});
+			});
+
+			function selectCountry(val,user_id) {
+			$("#search-box").val(val);
+			$("#suggesstion-box").hide();
+			$("#doctor_id").val(user_id);
+			}
+			</script>
+		  
 					<div class="form-group">
-                      <label>Select Doctor</label>
-                      <select name="doctor_id" id="doctor_id" class="form-control">
-					  <option value='0'>Select Doctor</option>
-					  <?php $temp_query=mysqli_query($db,"select * from users where user_type='3' and status ='1' order by fname,lname");
-						while($row=mysqli_fetch_assoc($temp_query)){
-						?>
-                        <option value="<?php echo $row['user_id']; ?>"><?php echo $row['fname'].' '.$row['lname']; ?></option>
-                        <?php } ?>
-                      </select>
+					<label>Doctor Name</label><div class="frmSearch">
+					<input class="form-control" type="text" id="search-box" placeholder="Doctor Name" />
+						<div id="suggesstion-box"></div>
+						<input type="hidden" name="doctor_id" id="doctor_id">
+					</div>
+                      
+                     
                     </div>
          
           </div>
