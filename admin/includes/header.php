@@ -1,6 +1,6 @@
 <style>
 	ul,li,div,section,aside,a,p,h,nav,header,body: ;{
-		font-size: 1.05em;
+		font-size: 1.02em;
 	}
 
 </style>  
@@ -117,21 +117,7 @@ function marknotiread(){
                       <a href="<?php echo SITEROOT ?>" class="btn btn-default btn-flat">Home</a>
                    
               </li>
-			  <li>
-				 
-                      <a href="<?php echo SITEROOT ?>/about-us.php" class="btn btn-default btn-flat">About Us</a>
-                   
-              </li>
-			  <li>
-				 
-                      <a href="<?php echo SITEROOT ?>/blog.php" class="btn btn-default btn-flat">Products</a>
-                   
-              </li>
-			  <li>
-				 
-                      <a href="<?php echo SITEROOT ?>/contact-us.php" class="btn btn-default btn-flat">Contact Us</a>
-                   
-              </li>
+			  
 			</ul>
 		</div>	
           <div class="navbar-custom-menu">
