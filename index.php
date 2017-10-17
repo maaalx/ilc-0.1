@@ -16,13 +16,11 @@ require("db.php");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <script type="text/javascript"> //<![CDATA[ 
 var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
 document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
 //]]>
 </script>
-
 <link rel="stylesheet" href="css/style2.css">
 <title>International Lbrary of Cannabies</title>
 <link rel="shortcut icon" href="images/leave.png">
@@ -39,7 +37,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 			<h4 id="rightlinearlabel">Accurate</h4>
 		</div>
 		<div id="welcomelabel">
-			<h3 id="welcome">International Lbrary of Cannabies</h3>
+			<h3 id="welcome">International Library Cannabinoid</h3>
 			<p id="welcomecontent">Our features are</p>
 		</div>
 	</div>
@@ -54,9 +52,12 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul id="navUl" class="nav navbar-nav navbar-right">
 					<li><a href="#" ><span class="glyphicon glyphicon-home"></span> Home</a></li>
-					<li><a href="#section1" ><span class="glyphicon glyphicon-question-sign"></span> About Us</a></li>
-					<li><a href="#section2" ><span class="glyphicon glyphicon-shopping-cart"></span> Products</a></li>
-					<li><a href="#section3" ><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
+					
+					<li><a href="login.php"><span class="glyphicon glyphicon-question-sign"></span> Login</a></li>
+					
+					
+					<li><a href="<?php echo SITEROOT; ?>/admin/register.php"><span class="glyphicon glyphicon-shopping-cart"></span> Register</a></li>
+				
 				</ul>
 			</div>
 		</div>
@@ -65,7 +66,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 
 <!--Left Carousel -->
 <div class="row" id="leftCarousel">
-	<div class="col-sm-9">
+	<div class="col-sm-8">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -125,7 +126,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="#" data-toggle="tooltip" title="only for charges">Management Patient Case<span class="glyphicon glyphicon-question-sign"> </span></a></td>
+							<td>Management Patient Case<span class="glyphicon glyphicon-question-sign"> </span></a></td>
 							<td class="Description">ILC provides function for doctors to manage their patient's cases.Doctor can add comments and annotations for individual case.</td>
 						</tr>
 					</tbody>
@@ -325,17 +326,14 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 			</li>
 			<li>ILC@gmail.com</li>
 		</ul>
-		<br>
-</div>
-	<script language="JavaScript" type="text/javascript">
-TrustLogo("http://maaalx.com/comodo_secure_seal.png", "CL1", "none");
-</script>
-<a  href="https://ssl.comodo.com" id="comodoTL">SSL Certificates</a>
-
 	</div>
+	<script language="JavaScript" type="text/javascript">
+TrustLogo("http://maaalx.com/comodo_secure_seal.png");
+</script>
+
+</div>
 <div id="footer" class="container-fluid">
 	<p id="footerinfo">©2017 International Library Cannabinoid, Inc. All rights reserved. </p>
-	
 </div>
 
 <script src="js/my_scripts.js"></script>
