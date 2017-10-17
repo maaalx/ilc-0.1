@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 17, 2017 at 09:41 PM
+-- Generation Time: Oct 17, 2017 at 09:43 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.8
 
@@ -19,29 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `id2573673_ilc`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `articles`
---
-
-CREATE TABLE `articles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `url` text NOT NULL,
-  `researcher_id` int(11) NOT NULL,
-  `status` enum('pending','approved') NOT NULL DEFAULT 'pending',
-  `added_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `articles`
---
-
-INSERT INTO `articles` (`id`, `name`, `url`, `researcher_id`, `status`, `added_date`) VALUES
-(4, 'aq', 'http%3A%2F%2Flocalhost%3A8080%2Filc%2Fadmin%2Fadd_article.php', 196, 'pending', '2017-09-18 13:06:26'),
-(5, 'r1', 'http%3A%2F%2Flocalhost%3A8080%2Filc%2Fadmin%2Fadd_article.php', 196, 'approved', '2017-09-18 13:06:36');
 
 -- --------------------------------------------------------
 
@@ -3436,12 +3413,6 @@ INSERT INTO `vivo_method_of_administration` (`id`, `name`) VALUES
 --
 
 --
--- Indexes for table `articles`
---
-ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `become_researcher`
 --
 ALTER TABLE `become_researcher`
@@ -3745,11 +3716,6 @@ ALTER TABLE `vivo_method_of_administration`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `articles`
---
-ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `become_researcher`
 --
