@@ -1,6 +1,6 @@
 <style>
 	ul,li,div,section,aside,a,p,h，i,span,nav{
-		font-size: 1.05em;
+		font-size:1.02em;
 	}
 	.active li:hover{
 		background-color: #282828;
@@ -137,7 +137,7 @@
 					?>
 						<li class="treeview">
              
-					<i class="fa fa-fw fa-angle-right"></i> <span>Your request to Become Researcher is pending for approve
+					<i style="color:red" class="fa fa-fw fa-angle-right"></i> <span style="color:red;font-size:12px">Your request to Become <br> Researcher is pending for approve</span>
               
 					</li>
 					<?php 
@@ -183,7 +183,7 @@
 					?>
 						<li class="treeview">
              
-					<i class="fa fa-fw fa-angle-right"></i> <span>Your request to Become Researcher is pending for approve
+					<i  class="fa fa-fw fa-angle-right"></i> <span style="color:red;font-size:12px;margin-left:5px">Your request to Become<br> Researcher is pending for approve</span>
               
 					</li>
 					<?php 
