@@ -11,17 +11,28 @@ users :
 Admin
 admin@gmail.com
 admin
+maaalx@hotmail.com
+admin
 
 Patient : 
 aa@gmail.com
+admin
+p@gmail.com
 admin
  
 Doctor :
 amit@gmail.com
 admin
+jj@gmail.com
+admin
+prasa@gmail.com
+admin
+
 
 Researcher
 a@gmail.com
+admin
+r@gmail.com
 admin
 
 
