@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 17, 2017 at 09:43 PM
+-- Generation Time: Oct 19, 2017 at 03:45 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.8
 
@@ -45,7 +45,8 @@ INSERT INTO `become_researcher` (`id`, `user_id`, `user_type_id`, `why_researche
 (4, 189, 2, 'dasd', 'Chrysanthemum.jpg', 'no', '2017-10-09 20:24:03'),
 (5, 189, 2, 'sd', 'Chrysanthemum.jpg', 'no', '2017-10-09 20:24:11'),
 (6, 190, 3, 'fghfghfgh', 'b1.jpg', 'yes', '2017-10-09 20:29:29'),
-(7, 203, 2, 'wdcwd', '????? ???? ????.pdf', 'no', '2017-10-17 21:31:29');
+(7, 203, 2, 'wdcwd', '????? ???? ????.pdf', 'yes', '2017-10-17 21:31:29'),
+(8, 204, 3, 'wcew', 'Bitnami Google Cloud Platform Launchpad.pdf', 'yes', '2017-10-18 08:53:35');
 
 -- --------------------------------------------------------
 
@@ -741,7 +742,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `ilc_id`, `phone1`, `phone2`, `tfn`, `hospital_name`, `hospital_code`, `license_bumber`, `address_line_1`, `address_line_2`, `suburb`, `state`, `postcode`, `country`, `added_date`) VALUES
-(2, 'D190', '2222', '2255555', 'werwe', 'sssssha', 'wewrw3333', 'wr34', 'dffdg', '', 'gfff', 'maha', '4343434', 'IN', '2017-09-16 17:02:19');
+(2, 'D190', '2222', '2255555', 'werwe', 'sssssha', 'wewrw3333', 'wr34', 'dffdg', '', 'gfff', 'maha', '4343434', 'IN', '2017-09-16 17:02:19'),
+(3, 'D204', '', '', '', '', '', '', '', '', '', '', '', '', '2017-10-18 08:57:09');
 
 -- --------------------------------------------------------
 
@@ -768,7 +770,8 @@ CREATE TABLE `doctor_clinic` (
 --
 
 INSERT INTO `doctor_clinic` (`id`, `doctor_id`, `clinic_name`, `clinic_code`, `address_line1`, `address_line2`, `suburb`, `state`, `post_code`, `country`, `added_date`) VALUES
-(1, 'D190', 'test', '21323', 'wwe', 'wer', '3333', 'bbb', '232323', 'BH', '2017-10-17 11:38:02');
+(1, 'D190', 'test', '21323', 'wwe', 'wer', '3333', 'bbb', '232323', 'BH', '2017-10-17 11:38:02'),
+(2, 'D204', '', '', '', '', '', '', '', '', '2017-10-18 08:57:09');
 
 -- --------------------------------------------------------
 
@@ -885,7 +888,16 @@ INSERT INTO `patient` (`id`, `ilc_id`, `phone_1`, `phone_2`, `ethnicity`, `heigh
 (1, 'P189', '22222', '', '1', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33'),
 (3, 'P', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
 (4, 'P200', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
-(5, 'P201', '', '', '3', '8', '8', '', '', '', '', '', '', '', '0000-00-00 00:00:00');
+(5, 'P201', '', '', '3', '8', '8', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(6, 'P185', '', '', '', '', '', '', '', '', '', '', '', '', '2017-10-17 21:48:50'),
+(7, 'P205', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(8, 'P206', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(9, 'P207', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(10, 'P212', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(11, 'P213', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(12, 'P214', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(13, 'P215', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
+(14, 'P216', '', '', '', '', '', '', '', '', '', '', '', '', '2017-10-18 22:02:03');
 
 -- --------------------------------------------------------
 
@@ -2240,7 +2252,19 @@ INSERT INTO `patient_history` (`id`, `patientid`, `doctorid`, `researcher_id`, `
 (11, 189, 190, 0, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:11:02'),
 (12, 189, 190, 0, '6', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:12:35'),
 (13, 189, 190, 0, '2', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-10-04 18:17:13'),
-(16, 201, 0, 196, '1', '', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '', '1', '1', '', 0, 1, 'dfsdf', '2017-10-13 16:28:29');
+(16, 201, 0, 196, '1', '', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '', '1', '1', '', 0, 1, 'dfsdf', '2017-10-13 16:28:29'),
+(17, 205, 0, 125, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 00:14:38'),
+(18, 206, 0, 125, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 00:17:37'),
+(19, 207, 0, 125, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 08:08:15'),
+(20, 0, 0, 0, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 20:10:48'),
+(21, 0, 0, 0, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 20:33:11'),
+(22, 0, 0, 0, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 20:34:09'),
+(23, 0, 0, 0, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 20:38:37'),
+(24, 212, 0, 196, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 21:15:23'),
+(25, 213, 0, 196, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 21:16:11'),
+(26, 214, 0, 196, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 21:16:11'),
+(27, 215, 0, 196, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 21:16:11'),
+(28, 0, 0, 0, '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '2017-10-18 22:01:13');
 
 -- --------------------------------------------------------
 
@@ -3141,24 +3165,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `ilc_id`, `is_reseacher`, `fname`, `lname`, `phone`, `email`, `user_type`, `doctor_id`, `username`, `password`, `pincode`, `security_question`, `security_answer`, `photo`, `certification_doc`, `q1`, `a1`, `q2`, `a2`, `ip_address`, `regdate`, `last_login`, `status`, `activate_token`, `safe_mode`, `is_block`, `dob`, `added_date`) VALUES
-(125, 'A125', 'no', 'admin', 'admin', '', 'admin@gmail.com ', '5', 0, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'Make and model of your first car', 'tata', 'microphone.jpg', 'office-863815_1280.jpg', '', '', '', '', '107.194.158.78', '1450721132', '0000-00-00 00:00:00', '1', '', 'on', '0', '1987-12-12', '0000-00-00 00:00:00'),
-(183, 'D183', 'no', 'Rajesh', 'Divekar', '9860819294', '', '3', 0, NULL, NULL, NULL, NULL, '', NULL, 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', '0000-00-00', '2016-09-12 17:33:00'),
-(185, '', 'no', 'ss', 'ss', '', 'aa@gmail.com ', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'selected', 'qqq', 'certainty-229115_640.jpg', 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', 'on', '0', '1987-12-12', '2017-08-27 15:18:02'),
+(1, '', 'no', 'admin', 'admin', '', ' admin@gmail.com', '5', 0, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', '', '', 'Admin.png', 'office-863815_1280.jpg', '', '', '', '', '107.194.158.78', '1450721132', '0000-00-00 00:00:00', '1', '', 'on', '0', '0000-00-00', '0000-00-00 00:00:00'),
 (186, '', 'no', 'kkk f', 'lll', '', 'lll@h.com ', '1', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'selected', '', NULL, 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '142941ccf61cba96fb9679e5fda6da9c', 'on', '0', '0000-00-00', '2017-08-27 17:56:41'),
-(187, '', 'no', 'hari', 'div', '', 'jj@gmail.com', '3', 0, NULL, 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 'Make and model of your first car', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '8d7248decbf8a5f490d75b5172b69f60', 'on', '0', '0000-00-00', '2017-09-04 15:55:50'),
-(188, '', 'no', 'test', 'test', '', 'raj1@gmail.com', '1', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'caeec350527b82e66e365408ff5cf3a0', 'on', '0', '1987-12-12', '2017-09-07 16:47:18'),
-(189, 'P189', 'no', 'amit', 'bhat', '', 'amit@gmail.com ', '2', 190, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your favorite sports team', 'resr', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '21d3ba531714c719f775cc5a159954db', 'on', '0', '1984-12-12', '2017-09-08 14:37:54'),
-(190, 'D190', 'yes', 'prasad222223', 'testtt', '', 'prasa@gmail.com ', '3', 0, NULL, 'bcc67d8524948bbd873e4df12c89b182', NULL, 'Your favorite singer', 'ttt', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'c1466a93170a0490b36ca6c38beee538', 'on', '0', '1999-09-02', '2017-09-08 14:48:06'),
-(197, 'P197', 'no', 'ee', 'eee', '', 'p@gmail.com', '2', 187, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'wer', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd80daddf34f19eb1a01934344a1d3163', 'on', '0', '1988-12-12', '2017-10-09 19:14:45'),
-(193, 'D193', 'no', 'prakah', 'bose', '', 'p@gmail.com', '3', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'ddd', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '7aa875cd55d516fbaa1b9f3ebc32e81a', 'on', '0', '1987-12-12', '2017-09-16 11:08:06'),
-(196, 'R196', 'no', 'atul', 'zaa', '', 'a@gmail.com ', '4', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'The name of your elementary school', 'a', 'b1.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd12fde1a3358d8942a282aa2ffd2cd9f', 'on', '0', '1990-12-12', '2017-09-16 17:29:11'),
-(198, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(199, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(200, 'P200', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(201, 'P201', 'no', 'io', 'iopip', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(202, '', 'no', 'rajjj', 'jadhaav', '', 'raj@gmail.com', '3', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'Your first pets name', '1', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', '1987-12-12', '2017-10-14 17:41:01'),
-(203, 'P203', 'no', 'Abdulrahman', 'Mal', '', 'maaalx@hotmail.com', '2', 0, NULL, 'c07b8a56939cffe3a75e4de5231338d0', NULL, 'Your first pets name', 'wd cw', NULL, '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '0', 'db585d500846c0835193e2779b8e403e', 'on', '0', '0000-00-00', '2017-10-17 21:29:49'),
-(204, 'D204', 'no', 'qcxwcwdcw', 'wecw', '', 'admin@hotmail.com', '3', 0, NULL, 'c07b8a56939cffe3a75e4de5231338d0', NULL, 'Your first pets name', 'saas', NULL, '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '1', '89fdca8744af37e3eeea4fa61b589d0a', 'on', '0', '0000-00-00', '2017-10-17 21:35:42');
+(187, '', 'no', 'hari', 'div', '', 'jj@gmail.com', '3', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Make and model of your first car', 's', 'doctor.png', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '8d7248decbf8a5f490d75b5172b69f60', 'on', '0', '0000-00-00', '2017-09-04 15:55:50'),
+(188, '', 'no', 'test', 'test', '', 'raj1@gmail.com', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'The name of your elementary school', 's', 'paitent.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'caeec350527b82e66e365408ff5cf3a0', 'on', '0', '1987-12-12', '2017-09-07 16:47:18'),
+(189, 'P189', 'no', 'amit', 'bhat', '', 'amit@gmail.com ', '3', 190, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your favorite sports team', 'resr', 'doctor.png', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '21d3ba531714c719f775cc5a159954db', 'on', '0', '1984-12-12', '2017-09-08 14:37:54'),
+(190, 'D190', 'yes', 'prasad222223', 'testtt', '', 'prasa@gmail.com ', '3', 0, NULL, 'bcc67d8524948bbd873e4df12c89b182', NULL, 'Your favorite singer', 'ttt', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', 'c1466a93170a0490b36ca6c38beee538', 'on', '0', '1999-09-02', '2017-09-08 14:48:06'),
+(211, 'P211', 'no', 'paitent', 'm', '', 'pp@gmail.com', '2', 0, NULL, 'c07b8a56939cffe3a75e4de5231338d0', NULL, 'Your first pets name', 'edew', NULL, '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '0', 'e92c9b65ec3e14e4c887047679a87744', 'on', '0', '0000-00-00', '2017-10-18 20:37:40'),
+(193, 'D193', 'no', 'prakah', 'bose', '', 'p@gmail.com', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Make and model of your first car', 'ddd', 'paitent.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '7aa875cd55d516fbaa1b9f3ebc32e81a', 'on', '0', '1987-12-12', '2017-09-16 11:08:06'),
+(196, 'R196', 'no', 'atul', 'zaa', '', 'a@gmail.com ', '4', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'The name of your elementary school', 'a', 'researcher.png', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', 'd12fde1a3358d8942a282aa2ffd2cd9f', 'on', '0', '1990-12-12', '2017-09-16 17:29:11'),
+(210, 'R210', 'no', 'researcher', 'a', '', 'r@gmail.com', '4', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your best friends nickname', 'wdxc', 'researcher.png', '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '0', '211ccbc90b427e2086d6e7323ea142bb', 'on', '0', '0000-00-00', '2017-10-18 19:24:49'),
+(202, '', 'no', 'rajjj', 'jadhaav', '', 'raj@gmail.com', '3', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'Your first pets name', '1', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', 'on', '0', '1987-12-12', '2017-10-14 17:41:01'),
+(203, 'P203', 'yes', 'Abdulrahman', 'Mal', '', 'maaalx@hotmail.com', '5', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your first pets name', 'wd cw', 'Admin.png', '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '1', 'db585d500846c0835193e2779b8e403e', 'on', '0', '0000-00-00', '2017-10-17 21:29:49'),
+(216, 'P216', 'no', '', '', '', ' ', '', 0, NULL, 'c07b8a56939cffe3a75e4de5231338d0', NULL, '', '', NULL, '', NULL, NULL, NULL, NULL, '188.49.126.166', NULL, NULL, '0', '57ae0946be99710f3a91d090df78edb0', 'on', '0', '0000-00-00', '2017-10-18 22:00:19');
 
 -- --------------------------------------------------------
 
@@ -3256,7 +3275,8 @@ INSERT INTO `vitro_experiment` (`id`, `researcher_id`, `condition_being_investig
 (1, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-01 19:00:59'),
 (2, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-01 19:01:14'),
 (3, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-01 19:01:23'),
-(4, 196, 6, 0, '', 'qw', 'qwe', 'qwe', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-01 19:01:44');
+(4, 196, 6, 0, '', 'qw', 'qwe', 'qwe', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-01 19:01:44'),
+(5, 196, 0, 0, '', '', '', '', 0, '', '', '', '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, '2017-10-18 21:42:29');
 
 -- --------------------------------------------------------
 
@@ -3328,7 +3348,9 @@ INSERT INTO `vivo_experiment` (`id`, `researcher_id`, `animal_name`, `animal_mod
 (20, 196, '', '', '', 0.00, 0, 0, '', '', 0.0, '0', '', 0.000000, 0.000000, 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0, 0, '', 0, 0.00, 0.00, 0.00, 0.00, '', '', '2017-10-01 17:27:28'),
 (21, 196, 'df', 'sdf', 'male', 0.00, 0, 0, '', '', 0.0, '0', '', 0.000000, 0.000000, 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0, 0, '', 0, 0.00, 0.00, 0.00, 0.00, '', '', '2017-10-01 19:02:34'),
 (22, 196, 'asd', 'asd', 'male', 0.00, 9, 0, '', '', 0.0, '0', '', 0.000000, 0.000000, 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0, 0, '', 0, 0.00, 0.00, 0.00, 0.00, '', '', '2017-10-01 19:04:32'),
-(23, 196, 'parot', 'parot', 'female', 0.00, 3, 0, '', '', 23.0, 'Balanced THC & CBD', '', 23.000000, 23.000000, 233.000000, 'dsss', 3.000000, 'ffffff', 34.000000, 'rrrrrrr', 4.000000, 32, 4, 3, 'during_meals', 3, 23.00, 43.00, 34.00, 34.00, '1,2', '3dfsd', '2017-10-07 12:26:32');
+(23, 196, 'parot', 'parot', 'female', 0.00, 3, 0, '', '', 23.0, 'Balanced THC & CBD', '', 23.000000, 23.000000, 233.000000, 'dsss', 3.000000, 'ffffff', 34.000000, 'rrrrrrr', 4.000000, 32, 4, 3, 'during_meals', 3, 23.00, 43.00, 34.00, 34.00, '1,2', '3dfsd', '2017-10-07 12:26:32'),
+(24, 125, '', '', '', 0.00, 0, 0, '', '', 0.0, '', '', 0.000000, 0.000000, 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0, 0, '', 0, 0.00, 0.00, 0.00, 0.00, '', '', '2017-10-18 08:07:29'),
+(25, 196, '', '', '', 0.00, 0, 0, '', '', 0.0, '', '', 0.000000, 0.000000, 0.000000, '', 0.000000, '', 0.000000, '', 0.000000, 0, 0, 0, '', 0, 0.00, 0.00, 0.00, 0.00, '', '', '2017-10-18 21:29:50');
 
 -- --------------------------------------------------------
 
@@ -3720,7 +3742,7 @@ ALTER TABLE `vivo_method_of_administration`
 -- AUTO_INCREMENT for table `become_researcher`
 --
 ALTER TABLE `become_researcher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cancer_types`
 --
@@ -3750,12 +3772,12 @@ ALTER TABLE `diary`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `doctor_clinic`
 --
 ALTER TABLE `doctor_clinic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `followups`
 --
@@ -3775,7 +3797,7 @@ ALTER TABLE `follow_up_frequency`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `patienttreatment`
 --
@@ -3790,7 +3812,7 @@ ALTER TABLE `patient_ethnicity`
 -- AUTO_INCREMENT for table `patient_history`
 --
 ALTER TABLE `patient_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `patient_history_accommodation_type_during_admission`
 --
@@ -3910,7 +3932,7 @@ ALTER TABLE `treatment_target_dose_min`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 --
 -- AUTO_INCREMENT for table `user_type`
 --
@@ -3925,12 +3947,12 @@ ALTER TABLE `vitro_cell_culture_method`
 -- AUTO_INCREMENT for table `vitro_experiment`
 --
 ALTER TABLE `vitro_experiment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `vivo_experiment`
 --
 ALTER TABLE `vivo_experiment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `vivo_follow_up_frequency`
 --
