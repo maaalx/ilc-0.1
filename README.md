@@ -27,6 +27,8 @@ jj@gmail.com
 admin
 prasa@gmail.com
 admin
+fufufi@asorent.com
+Mn123456
 
 
 Researcher
