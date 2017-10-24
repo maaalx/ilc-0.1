@@ -81,7 +81,14 @@
 					if(isset($_POST['strain_name'])){
 						$strain_name=$_POST['strain_name'];
 						$search_query="select st.researcher_id,st.common_name,st.id,pt.	idpatientTreatment,st.vivo_id,st.vitro_id,st.patient_history_id,st.common_name,any_other_descriptors_1,st.any_other_descriptors_2,st.any_other_descriptors_3,st.any_other_descriptors_4,st.any_other_descriptors_5 from strain_data as st left join patienttreatment pt on st.patient_history_id=pt.patient_history_id where (st.ilc_id IS NOT NULL OR st.ilc_id!='') and (st.common_name like '%$strain_name%' OR st.any_other_descriptors_1 like '%$strain_name%' OR st.any_other_descriptors_2 like '%$strain_name%' OR st.any_other_descriptors_3 like '%$strain_name%' OR st.any_other_descriptors_4 like '%$strain_name%' OR st.any_other_descriptors_5 like '%$strain_name%')";
-					
+						
+					$exe_query=mysqli_query($db,$search_query);
+					$total_rec=mysqli_num_rows($exe_query);
+						
+					if($total_rec<1){
+						echo "<span style='color:red'>No result was found</span>";
+					}
+					if($total_rec>0){
 				?>
 				
 				<table id="example2" class="table table-bordered table-striped">
@@ -97,7 +104,7 @@
                      
           <?php
 
-$exe_query=mysqli_query($db,$search_query);		  
+		  
 while($row=mysqli_fetch_assoc($exe_query)){
 	$efficacyInpercent='';
 	$diseaseName='';
@@ -191,7 +198,7 @@ if($row['patient_history_id']!=NULL && $row['patient_history_id']!=''){ ?>
 </tr>
 <?php } ?>
 </table>
-<?php } ?>
+					<?php } } ?>
               
             </div><!-- /.col -->
           </div><!-- /.row -->

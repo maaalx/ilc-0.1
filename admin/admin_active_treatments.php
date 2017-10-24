@@ -1,6 +1,9 @@
 <?php  	require("../db.php"); ?>
+<?php
+$url = urlencode(base64_encode($adresa));
+?>
 <?php 
-	
+
 	require_once("includes/header.php");
 	require_once("includes/left.php");
 		

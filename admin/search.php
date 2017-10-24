@@ -110,7 +110,14 @@
 						) collectone where (patient_history_id IS NOT NULL OR patientId IS NOT NULL
 						 OR idpatientTreatment IS NOT NULL OR efficacyInpercent IS NOT NULL) order by efficiency desc
 						";
-					
+						
+						$exe_query=mysqli_query($db,$search_query);
+						$total_rec=mysqli_num_rows($exe_query);
+						
+					if($total_rec<1){
+						echo "<span style='color:red'>No result was found</span>";
+					}
+					if($total_rec>0){
 				?>
 				
 				<table id="example2" class="table table-bordered table-striped">
@@ -126,7 +133,7 @@
                      
           <?php
 
-$exe_query=mysqli_query($db,$search_query);		  
+		  
 while($row=mysqli_fetch_assoc($exe_query)){
 	if($row['data_src']=='patienttreatment'){
 		$patient_history_id=$row['patient_history_id'];
@@ -213,7 +220,7 @@ if(($row['data_src']=='patienttreatment' || $row['data_src']=='patienttreatment_
 </tr>
 <?php } ?>
 </table>
-<?php } ?>
+					<?php } } ?>
               
             </div><!-- /.col -->
           </div><!-- /.row -->

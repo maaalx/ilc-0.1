@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 require("db.php");
 //require_once("includes/header.php");
 //require_once("includes/left.php");
@@ -51,13 +51,23 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 		<div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul id="navUl" class="nav navbar-nav navbar-right">
+				<?php if(isset($_SESSION['admin_user_id'])){ ?>
+				   
+				    
+					<li id="fadeinout"><a href="<?php echo SITEROOT; ?>/admin/index.php" class="appoinment" ><span class="glyphicon glyphicon-th-list"></span> Dashboard</a>
+					</li>
+				
+					<li><a href="<?php echo SITEROOT; ?>/admin/logout.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+					</li>
+					<?php 	
+			}else{		?>
 					<li><a href="#" ><span class="glyphicon glyphicon-home"></span> Home</a></li>
 					
 					<li><a href="login.php"><span class="glyphicon glyphicon-question-sign"></span> Login</a></li>
 					
 					
 					<li><a href="<?php echo SITEROOT; ?>/admin/register.php"><span class="glyphicon glyphicon-shopping-cart"></span> Register</a></li>
-				
+			<?php } ?>	
 				</ul>
 			</div>
 		</div>
@@ -111,9 +121,11 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 						</tr>
 					</tbody>
 				</table>
+				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
+				 <?php } ?>
 			</div>
 			<div id="Doctor" class="tab-pane fade">
 				<h4>Doctor function</h4>
@@ -131,9 +143,11 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 						</tr>
 					</tbody>
 				</table>
+				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
+				 <?php } ?>
 			</div>
 			<div id="Patient" class="tab-pane fade">
 				<h4>Patient function</h4>
@@ -151,9 +165,11 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 						</tr>
 					</tbody>
 				</table>
+				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
+				 <?php } ?>
 			</div>
 			<div id="Admin" class="tab-pane fade">
 				<h4>Admin function</h4>
@@ -176,12 +192,15 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 						</tr>
 					</tbody>
 				</table>
+				 <?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
+				 <?php } ?>
 			</div>
 		</div>
 	</div>
+	
 </div>
 <div id="section1" class="container-fluid">
 	<h3 id="aboutus">About ILC</h3>

@@ -10,6 +10,9 @@
 		$query=mysqli_query($db,"select * from doctor where ilc_id='$ilc_id'");
 		$doctor=mysqli_fetch_assoc($query);
 		
+		$query=mysqli_query($db,"select * from doctor_clinic where doctor_id='$ilc_id'");
+		$clinic=mysqli_fetch_assoc($query);
+		
 ?>
 
     <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
@@ -136,10 +139,7 @@
            
           </div>
 		  
-					<div class="box-footer">
-                    <div class="error" style="color:red"></div>
-                    <button type="submit"  class="btn btn-primary">Update</button>
-                  </div>
+					
 		  </div><!-- /.col -->
 				<div class="col-xs-6">
 						<div class="form-group has-feedback">
@@ -153,57 +153,56 @@
 						<input value="<?php echo $doctor['phone2']; ?>" type="text" name="phone2" id="phone2" class="form-control" placeholder="Phone 2">
 						
 						</div>
-						
+
 						<div class="form-group has-feedback">
-						<label>Tax File Number <span style="color:red">*</span></label>
-						<input value="<?php echo $doctor['tfn']; ?>" type="text" name="tfn" id="tfn" class="form-control" placeholder="Tax File Number">
+						<label>Hospital Name <span style="color:red">*</span></label>
+						<input value="<?php echo $doctor['hospital_code']; ?>" type="text" name="hospital_code" id="hospital_code" class="form-control" placeholder="Hospital Name">
 						
 						</div>
-						
 						<div class="form-group has-feedback">
 						<label>Hospital Code <span style="color:red">*</span></label>
-						<input value="<?php echo $doctor['hospital_code']; ?>" type="text" name="hospital_code" id="hospital_code" class="form-control" placeholder="Hospital Code">
+						<input value="<?php echo $doctor['hospital_name']; ?>" type="text" name="hospital_name" id="hospital_name" class="form-control" placeholder="Hospital Code">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>License No. <span style="color:red">*</span></label>
+						<label>Hospital License No. <span style="color:red">*</span></label>
 						<input value="<?php echo $doctor['license_bumber']; ?>" type="text" name="license_bumber" id="license_bumber" class="form-control" placeholder="License No.">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>Address Line 1 <span style="color:red">*</span></label>
+						<label>Hospital Address Line 1 <span style="color:red">*</span></label>
 						<input value="<?php echo $doctor['address_line_1']; ?>" type="text" name="address_line_1" id="address_line_1" class="form-control" placeholder="Address Line 1">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>Address Line 2 </label>
+						<label>Hospital Address Line 2 </label>
 						<input value="<?php echo $doctor['address_line_2']; ?>" type="text" name="address_line_2" id="address_line_2" class="form-control" placeholder="Address Line 2">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>Suburb <span style="color:red">*</span></label>
+						<label>Hospital Suburb <span style="color:red">*</span></label>
 						<input value="<?php echo $doctor['suburb']; ?>" type="text" name="suburb" id="suburb" class="form-control" placeholder="Suburb">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>State <span style="color:red">*</span></label>
+						<label>Hospital State <span style="color:red">*</span></label>
 						<input value="<?php echo $doctor['state']; ?>" type="text" name="state" id="state" class="form-control" placeholder="State">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>Postcode <span style="color:red">*</span></label>
+						<label>Hospital Postcode <span style="color:red">*</span></label>
 						<input value="<?php echo $doctor['postcode']; ?>" type="text" name="postcode" id="postcode" class="form-control" placeholder="Postcode">
 						
 						</div>
 						
 						<div class="form-group has-feedback">
-						<label>Country <span style="color:red">*</span></label>
+						<label>Hospital Country <span style="color:red">*</span></label>
 						<select name="country" id="country" class="form-control">
 							  <option value='0'>Select</option>
 							  <?php $temp_query=mysqli_query($db,"select * from country order by name");
@@ -216,7 +215,71 @@
 						</div>
 
                   
-				</div><!-- /.col -->  
+				</div><!-- /.col -->
+
+				<div class="col-xs-12">	
+					<h2>Clinic Details</h2>
+					<div class="col-xs-6">
+						<div class="form-group has-feedback">
+						<label>Clinic Name <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['clinic_name']; ?>" type="text" name="clinic_name" id="clinic_name" class="form-control" placeholder="Clinic Name">
+						
+						</div>
+						<div class="form-group has-feedback">
+						<label>Clinic Code <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['clinic_code']; ?>" type="text" name="clinic_code" id="clinic_code" class="form-control" placeholder="Clinic Code">
+						
+						</div>
+						<div class="form-group has-feedback">
+						<label>Clinic Address Line 1 <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['address_line1']; ?>" type="text" name="clinic_address_line1" id="clinic_address_line1" class="form-control" placeholder="Clinic Line 1">
+						
+						</div>
+						
+						<div class="form-group has-feedback">
+						<label>Clinic Address Line 2 </label>
+						<input value="<?php echo $clinic['address_line2']; ?>" type="text" name="clinic_address_line2" id="clinic_address_line2" class="form-control" placeholder="Clinic Line 2">
+						
+						</div>
+					</div>
+					<div class="col-xs-6">
+					<div class="form-group has-feedback">
+						<label>Clinic Suburb <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['suburb']; ?>" type="text" name="clinic_suburb" id="clinic_suburb" class="form-control" placeholder="Clinic Suburb">
+						
+						</div>
+						
+						<div class="form-group has-feedback">
+						<label>Clinic State <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['state']; ?>" type="text" name="clinic_state" id="clinic_state" class="form-control" placeholder="Clinic State">
+						
+						</div>
+						
+						<div class="form-group has-feedback">
+						<label>Clinic Postcode <span style="color:red">*</span></label>
+						<input value="<?php echo $clinic['post_code']; ?>" type="text" name="clinic_postcode" id="clinic_postcode" class="form-control" placeholder="Clinic Postcode">
+						
+						</div>
+						
+						<div class="form-group has-feedback">
+						<label>Clinic Country <span style="color:red">*</span></label>
+						<select name="clinic_country" id="clinic_country" class="form-control">
+							  <option value='0'>Select</option>
+							  <?php $temp_query=mysqli_query($db,"select * from country order by name");
+								while($c_row=mysqli_fetch_assoc($temp_query)){
+								?>
+								<option <?php if($clinic['country']==$c_row['iso'])echo "selected"; ?> value="<?php echo $c_row['iso']; ?>"><?php echo $c_row['name']; ?></option>
+								<?php } ?>
+							  </select>
+						
+						</div>
+					</div>
+					
+					<div class="box-footer">
+                    <div class="error" style="color:red"></div>
+                    <button type="submit"  class="btn btn-primary">Update</button>
+                  </div>
+ 				</div>
                 </form>
               
             

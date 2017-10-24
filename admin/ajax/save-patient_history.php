@@ -24,7 +24,7 @@ if(checkPermissions($_SESSION['admin_user_id'],array(4))){
 	$weight		=addslashes($_POST['weight']);
 	$ethnicity		=addslashes($_POST['ethnicity']);
 	
-	$query=mysqli_query($db,"insert into users(fname,lname)values('$first_name','$last_name')");
+	$query=mysqli_query($db,"insert into users(fname,lname,dob,added_date)values('$first_name','$last_name','$dob',now())");
 	$last_user_id=mysqli_insert_id($db);
 	$patient_id=$last_user_id;
 	$ilc_id='P'.$last_user_id;
@@ -70,7 +70,7 @@ $comments											=addslashes($_POST['comments']);
   mysqli_close($db);
 
   /*Return with success message*/
-  $arr = array('error' => "0",'msg'=>'success',"success"=>'1',"history_id"=>$history_id);
+  $arr = array('error' => "0",'msg'=>'success',"success"=>'1',"history_id"=>$history_id,'patient_id'=>$patient_id);
   echo json_encode($arr);return true;
 
 ?>

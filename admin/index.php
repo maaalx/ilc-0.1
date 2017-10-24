@@ -92,7 +92,7 @@ require_once("includes/left.php");
 
             </section><!-- right col -->
           </div><!-- /.row (main row) -->
- 
+
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <?php require_once("includes/footer.php"); ?>

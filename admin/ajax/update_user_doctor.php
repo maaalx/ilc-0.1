@@ -2,6 +2,7 @@
 include("../../db.php");
 
     $user_id=$_SESSION['admin_user_id'];
+	
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
         die();
     }
@@ -89,7 +90,7 @@ include("../../db.php");
 	
 	$phone1 = filter_var(addslashes($_POST["phone1"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$phone2 = filter_var(addslashes($_POST["phone2"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
-	$tfn = filter_var(addslashes($_POST["tfn"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	
 	$hospital_code = filter_var(addslashes($_POST["hospital_code"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$license_bumber = filter_var(addslashes($_POST["license_bumber"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	
@@ -106,10 +107,29 @@ include("../../db.php");
 	$query=mysqli_query($db,"select id from doctor where ilc_id='$ilc_id'");
 	$total_row=mysqli_num_rows($query);
 	if($total_row>0){
-		 $query="update doctor set phone1='$phone1',phone2='$phone2',tfn='$tfn',hospital_code='$hospital_code',license_bumber='$license_bumber',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',postcode='$postcode',country='$country' where ilc_id='$ilc_id'";
+		 $query="update doctor set phone1='$phone1',phone2='$phone2',hospital_code='$hospital_code',license_bumber='$license_bumber',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',postcode='$postcode',country='$country' where ilc_id='$ilc_id'";
 		$exe_query=mysqli_query($db,$query);
 	}else{
-		$query="insert into doctor(ilc_id,phone1,phone2,tfn,	hospital_code,license_bumber,address_line_1,address_line_2,suburb,state,postcode,country,added_date)values('$ilc_id','$phone1','$phone2','$tfn','$hospital_code','$license_bumber','$address_line_1','$address_line_2','$suburb','$state','$postcode','$country',now())";
+		$query="insert into doctor(ilc_id,phone1,phone2,hospital_code,license_bumber,address_line_1,address_line_2,suburb,state,postcode,country,added_date)values('$ilc_id','$phone1','$phone2','$hospital_code','$license_bumber','$address_line_1','$address_line_2','$suburb','$state','$postcode','$country',now())";
+		$exe_query=mysqli_query($db,$query);
+	}
+	
+	$clinic_name = filter_var(addslashes($_POST["clinic_name"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_code = filter_var(addslashes($_POST["clinic_code"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_address_line1 = filter_var(addslashes($_POST["clinic_address_line1"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_address_line2 = filter_var(addslashes($_POST["clinic_address_line2"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_suburb = filter_var(addslashes($_POST["clinic_suburb"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_state = filter_var(addslashes($_POST["clinic_state"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_postcode = filter_var(addslashes($_POST["clinic_postcode"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$clinic_country = filter_var(addslashes($_POST["clinic_country"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	
+	$query=mysqli_query($db,"select id from doctor_clinic where doctor_id='$ilc_id'");
+	$total_row=mysqli_num_rows($query);
+	if($total_row>0){
+		 $query="update doctor_clinic set clinic_name='$clinic_name',clinic_code='$clinic_code',address_line1='$clinic_address_line1',address_line2='$clinic_address_line2',suburb='$clinic_suburb',	state='$clinic_state',post_code='$clinic_postcode',country='$clinic_country' where doctor_id='$ilc_id'";
+		$exe_query=mysqli_query($db,$query);
+	}else{
+		 $query="insert into doctor_clinic(doctor_id,clinic_name,clinic_code,address_line1,address_line2,suburb,	state,post_code,country,added_date)values('$ilc_id','$clinic_name','$clinic_code','$clinic_address_line1','$clinic_address_line2','$clinic_suburb','$clinic_state','$clinic_postcode','$clinic_country',now())";
 		$exe_query=mysqli_query($db,$query);
 	}
 	

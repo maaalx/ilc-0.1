@@ -257,6 +257,12 @@
 					<i class="fa fa-fw fa-angle-right"></i> <span>Search</span> <i class="fa  pull-right"></i>
               </a>
 			</li>
+			
+			<li class="treeview">
+              <a href="search_advanced.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Advance Search</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
 		<?php } ?>
 
           

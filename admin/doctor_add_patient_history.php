@@ -429,7 +429,7 @@ success: function(data)   // A function to be called if request succeeds
       $(".error").html(obj.msg);
   }else{
 	    alert("Submitted successfully");
-		window.location="doctor_add_treatment.php?user_id=<?php echo $patient_id; ?>&history_id="+obj.history_id;
+		window.location="doctor_add_treatment.php?user_id="+obj.patient_id+"&history_id="+obj.history_id;
   }
 
 }

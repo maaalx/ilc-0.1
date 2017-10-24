@@ -121,6 +121,7 @@ function update_status(user_id,status){
 					}else{
 						$("#update-status"+user_id).text("Approve");
 					}
+					location.reload();
 		}});
       }
       

@@ -51,6 +51,22 @@
           </div>
 		  
 		  <div class="form-group ">
+					<div class="form-group">
+                      <label>Gender</label>
+					  
+                      <select name="gender" id="gender" class="form-control">
+					   <option  value="">Select</option>
+					  <option <?php if($patient['gender']=='male')echo "selected"; ?> value="male">Male</option>
+                      <option <?php if($patient['gender']=='female')echo "selected"; ?> value="female">Female</option>  
+                      <option <?php if($patient['gender']=='other')echo "selected"; ?> value="other">Other</option>  
+						
+                        
+                      </select>
+                    </div>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+		  
+		  <div class="form-group ">
 		  <label>Profile Picture</label>
             <input type="file" name="profile_pic" id="profile_pic">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>

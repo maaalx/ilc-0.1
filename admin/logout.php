@@ -5,7 +5,7 @@ include("../db.php");
 
 unset ($_SESSION['user_id']);
 session_destroy();
-header("location:".SITEROOT."/login.php");exit;
+header("location:".SITEROOT."/");exit;
 
 mysqli_close($db);
 ?>

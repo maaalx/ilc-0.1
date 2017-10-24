@@ -42,10 +42,10 @@
 			<div class="form-group ">
 					<div class="form-group">
                       <label>Condition being investigated</label>
-                      <select onchange="check_condition_investigated(this.value)" name="condition_being_investigated" id="	condition_being_investigated" class="form-control">
+                      <select onchange="check_condition_investigated(this.value)" name="condition_being_investigated" id="condition_being_investigated" class="form-control">
 						<option value="0">Select</option>
                        <?php 
-						$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+						$query=mysqli_query($db,"select * from conditionsofbeingtreated order by name");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
 						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>

@@ -2,40 +2,25 @@
 international library of cannabies 
 
 
-change you localhost info in db.php to connect you host with DB
+Fix the db.php to connect you host with sql
 
 users :
 
+general user :
+raj1@gmail.com
+admin
 
 
 Admin
 admin@gmail.com
 admin
-maaalx@hotmail.com
-admin
 
 Patient : 
-aa@gmail.com
-admin
-p@gmail.com
-admin
+maaalx@hotmail.com
+123456
  
 Doctor :
-amit@gmail.com
-admin
 jj@gmail.com
 admin
-prasa@gmail.com
-admin
-fufufi@asorent.com
-Mn123456
-
-
-Researcher
-a@gmail.com
-admin
-r@gmail.com
-admin
-
 
 

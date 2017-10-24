@@ -42,6 +42,7 @@ include("../../db.php");
     $uid = md5(uniqid(time()));
     $fname = filter_var(addslashes($_POST["first_name"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
     $lname = filter_var(addslashes($_POST["last_name"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
+	$gender = filter_var(addslashes($_POST["gender"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	
 	$user_type = filter_var(addslashes($_POST["user_type"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
 	$user_email = filter_var(addslashes($_POST["user_email"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH);
@@ -106,10 +107,10 @@ include("../../db.php");
 	$query=mysqli_query($db,"select id from patient where ilc_id='$ilc_id'");
 	$total_row=mysqli_num_rows($query);
 	if($total_row>0){
-		 $query="update patient set phone_1='$phone1',phone_2='$phone2',ethnicity='$ethnicity',height='$height',weight='$weight',emergency_contact_name='$emergency_contact_name',emergency_contact_number='$emergency_contact_number',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',country='$country' where ilc_id='$ilc_id'";
+		 $query="update patient set gender='$gender',phone_1='$phone1',phone_2='$phone2',ethnicity='$ethnicity',height='$height',weight='$weight',emergency_contact_name='$emergency_contact_name',emergency_contact_number='$emergency_contact_number',address_line_1='$address_line_1',address_line_2='$address_line_2',suburb='$suburb',state='$state',country='$country' where ilc_id='$ilc_id'";
 		$exe_query=mysqli_query($db,$query);
 	}else{
-		$query="insert into patient(ilc_id,phone_1,phone_2,ethnicity,height,weight,emergency_contact_name,emergency_contact_number,address_line_1,address_line_2,suburb,state,country,added_date)values('$ilc_id','$phone1','$phone2','$ethnicity','$height','$weight','$emergency_contact_name','$emergency_contact_number','$address_line_1','$address_line_2','$suburb','$state','$country',now())";
+		$query="insert into patient(ilc_id,gender,phone_1,phone_2,ethnicity,height,weight,emergency_contact_name,emergency_contact_number,address_line_1,address_line_2,suburb,state,country,added_date)values('$ilc_id','$gender','$phone1','$phone2','$ethnicity','$height','$weight','$emergency_contact_name','$emergency_contact_number','$address_line_1','$address_line_2','$suburb','$state','$country',now())";
 		$exe_query=mysqli_query($db,$query);
 	}
 	

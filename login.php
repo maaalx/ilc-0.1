@@ -1,4 +1,6 @@
+<?php session_start();
 
+ ?>
 <script src="js/jquery-3.2.1.js"></script>
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -12,6 +14,9 @@
 <?php
 include( "db.php" );
 include( "includes/header.php" );
+if(isset($_SESSION['admin_user_id'])){
+    header("location:".SITEROOT."/admin");exit;
+}
 ?>
 <style>
 	/* CSS Document */
@@ -300,7 +305,7 @@ include( "includes/header.php" );
 			<div class=" col-md-8">
 				<!-- Contact Form -->
 
-				<div style="color:indianred" id="check_user_text"></div>
+				
 				
 				<div class="trigger">
 				<br>
@@ -325,7 +330,7 @@ include( "includes/header.php" );
 					<div class="box16 colorbox"><span>-</span></div>
 					<br>
 					<br>
-					
+					<div id="check_user_text" style="color:indianred"></div>
 					<form class="contact-form" method="post" role="form" id="loginform">
 						<div class="col-md-12" style="width: 400px;">
 							<div class="form-group">
@@ -386,6 +391,12 @@ include( "includes/header.php" );
 			return false;
 		} );
 	} );
+	
+	$(document).keypress(function(event){
+    if(event.keyCode == 13){
+     $('.sign-in').click();
+    }
+});
 </script>
 <br>
 <br>

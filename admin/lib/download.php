@@ -6,7 +6,7 @@ function output_file($file, $name, $mime_type='')
  /*
  This function takes a path to a file to output ($file),  the filename that the browser will see ($name) and  the MIME type of the file ($mime_type, optional).
  */
- echo $file;
+ 
  //Check the file premission
  if(!is_readable($file)) die('File not found or inaccessible!');
  
@@ -118,7 +118,7 @@ $file_path=$_REQUEST['filename'];
 
 
 //Call the download function with file path,file name and file type
-output_file($file_path, ''.$_REQUEST['filename'].'', 'text/plain');
+output_file($file_path, ''.$_REQUEST['filename'].'', '');
 
 	/*
 	//This application is developed by www.webinfopedia.com

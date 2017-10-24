@@ -30,14 +30,14 @@ include( "includes/header.php" );
 			<div class=" col-md-8">
 				<!-- Contact Form -->
 
-				<div style="color:red" id="check_user_text"></div>
+				
 				<form class="contact-form" method="post" role="form">
 					<div class="messages"></div>
 					<div class="controls">
 						<div class="row" id="pleaseenteremail">
 							<div class="col-md-12">
 								<div class="form-group">
-
+									<div style="color:red" id="check_user_text"></div>
 									<label for="form_name">Please enter your email we will send you new password in email</label>
 									<input id="email_id" type="text" name="email_id" class="form-control" placeholder="Please enter your Email *" required="required" data-error="Email is required.">
 									<div class="help-block with-errors"></div>
@@ -71,7 +71,7 @@ include( "includes/header.php" );
 				url: "admin/ajax/forget_password.php" + dataString,
 				success: function ( result ) {
 					if ( result == 1 ) {
-						alert( "New password has been successfully sent on your email address" );
+						alert( "Update password instructions successfully sent, Please check email inbox." );
 						window.location = "login.php";
 					} else {
 						$( "#check_user_text" ).text( "Email id does not exit." );

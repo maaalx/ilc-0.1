@@ -14,15 +14,15 @@ include("../../db.php");
 	$result = mysqli_query($db,$q);
 	if (mysqli_num_rows($result)>0) {
 		$user_email=$email_id;
-		$new_pass= mt_rand();
-		$query=mysqli_query($db,"update users set password=md5('$new_pass') where email = '$email_id'");
+		$token_pass= mt_rand();
+		$query=mysqli_query($db,"update users set forget_password_token='$token_pass' where email = '$email_id'");
 		
 		$row=mysqli_fetch_assoc($result);
 		$fname=$row['fname'];
 		
 		$subject="Forget Password Request";
-		$message="New Password: ".$new_pass."<br><br>";
-		$message.="Click below to login<br>";
+		$message="Please click below link to update password<br>";
+		$message.="";
 		
 		$email_text = file_get_contents('../email_notification.html');
 		$email_text=str_replace("[[SITETITLE]]","International Library of Cannabinoids",$email_text);
@@ -36,7 +36,7 @@ include("../../db.php");
 
 		$email_text=str_replace("[[firstname]]",$fname,$email_text);
 
-		$activate_link=SITEROOT.'/login.php';
+		$activate_link=SITEROOT.'/update_password.php?token='.$token_pass;
 		$email_text=str_replace("[[link]]",$activate_link,$email_text);
 		
 	  
