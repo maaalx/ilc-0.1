@@ -88,7 +88,7 @@ while($row1=mysqli_fetch_assoc($query1)){
 	  $status_msg='Approve';
 	  $temp_status=1;
   }else{
-	  $status_msg='DisApprove';
+	  $status_msg='Disapprove';
 	  $temp_status=0;
   }
 ?>
@@ -117,11 +117,10 @@ function update_status(user_id,status){
 
       $.ajax({url: "ajax/update_status.php"+dataString, success: function(result){
 					if(status==1){
-						$("#update-status"+user_id).text("DisApprove");
+						$("#update-status"+user_id).text("Disapprove");
 					}else{
 						$("#update-status"+user_id).text("Approve");
 					}
-					location.reload();
 		}});
       }
       

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require("db.php");
 //require_once("includes/header.php");
 //require_once("includes/left.php");
@@ -22,7 +22,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 //]]>
 </script>
 <link rel="stylesheet" href="css/style2.css">
-<title>International Lbrary of Cannabies</title>
+<title>International Library of Cannabinoids</title>
 <link rel="shortcut icon" href="images/leave.png">
 </head>
 <!--Header-->
@@ -37,7 +37,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 			<h4 id="rightlinearlabel">Accurate</h4>
 		</div>
 		<div id="welcomelabel">
-			<h3 id="welcome">International Library Cannabinoid</h3>
+			<h3 id="welcome">International Library Cannabinoids</h3>
 			<p id="welcomecontent">Our features are</p>
 		</div>
 	</div>
@@ -47,27 +47,17 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span> International Library Cannabinoid</a> </div>
+			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span> International Library Cannabinoids</a> </div>
 		<div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul id="navUl" class="nav navbar-nav navbar-right">
-				<?php if(isset($_SESSION['admin_user_id'])){ ?>
-				   
-				    
-					<li id="fadeinout"><a href="<?php echo SITEROOT; ?>/admin/index.php" class="appoinment" ><span class="glyphicon glyphicon-th-list"></span> Dashboard</a>
-					</li>
-				
-					<li><a href="<?php echo SITEROOT; ?>/admin/logout.php" class="appoinment fadeinout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-					</li>
-					<?php 	
-			}else{		?>
 					<li><a href="#" ><span class="glyphicon glyphicon-home"></span> Home</a></li>
 					
 					<li><a href="login.php"><span class="glyphicon glyphicon-question-sign"></span> Login</a></li>
 					
 					
 					<li><a href="<?php echo SITEROOT; ?>/admin/register.php"><span class="glyphicon glyphicon-shopping-cart"></span> Register</a></li>
-			<?php } ?>	
+				
 				</ul>
 			</div>
 		</div>
@@ -101,7 +91,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 		</ul>
 		<div class="tab-content">
 			<div id="Researcher" class="tab-pane fade in active">
-				<h4>Researcher function</h4>
+				<h4><b>Researcher function</b></h4>
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
@@ -112,23 +102,21 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Search</td>
-							<td class="Description">ILC provides search function for researchers who hold a valid certificate.The search function includes advance search which provides extremely accurate search.</td>
+							<td class="Description" style="font-size:0.9em">ILC provides search function for researchers who hold a valid certificate.The search function includes advance search which allows comprehensive investigation of strain data and patient data.</td>
 						</tr>
 					
 						<tr>
 							<td>Browse Patient Case</td>
-							<td class="Descriptions">Researchers can search and browse any patient case to help their research. </td>
+							<td class="Descriptions"  style="font-size:0.9em">Researchers can browse any patient case to help their research. </td>
 						</tr>
 					</tbody>
 				</table>
-				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
-				 <?php } ?>
 			</div>
 			<div id="Doctor" class="tab-pane fade">
-				<h4>Doctor function</h4>
+				<h4><b>Doctor function</b></h4>
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
@@ -138,19 +126,17 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					</thead>
 					<tbody>
 						<tr>
-							<td>Management Patient Case<span class="glyphicon glyphicon-question-sign"> </span></a></td>
-							<td class="Description">ILC provides function for doctors to manage their patient's cases.Doctor can add comments and annotations for individual case.</td>
+							<td>Management Patient Case</a></td>
+							<td class="Description" style="font-size:0.9em">Doctors can manage their patient's cases. They can add comments and annotations for individual case.</td>
 						</tr>
 					</tbody>
 				</table>
-				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
-				 <?php } ?>
 			</div>
 			<div id="Patient" class="tab-pane fade">
-				<h4>Patient function</h4>
+				<h4><b>Patient function</b></h4>
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
@@ -161,18 +147,16 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Upload Case </td>
-							<td class="Description">ILC provides database for patient to save their cases which can be browsed by doctors to add feedback and researchers to analysis</td>
+							<td class="Description" style="font-size:0.9em">Patients can add their treatment history including severity of condition and effectiveness of particulat formulations. They can keep track of their treatment history to understand what works for their condition. Their assigned doctors will have access to patient treatment data to help customise treatment.</td>
 						</tr>
 					</tbody>
 				</table>
-				<?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
-				 <?php } ?>
 			</div>
 			<div id="Admin" class="tab-pane fade">
-				<h4>Admin function</h4>
+				<h4><b>Admin function</b></h4>
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
@@ -183,24 +167,21 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Modify Data </td>
-							<td class="Description">Admins can modify data which include change strain data , user profile, modify treatment , Vivo and Vitro data </td>
+							<td class="Description" style="font-size:0.9em">Admin can edit all daat including strain data, research data, npatient data. They can also edit user profiles and authorise individual entries </td>
 						</tr>
 						
 							<tr>
 							<td>System administrator </td>
-							<td class="Description">Admins can aprrove request to become researcher, add and delete users and all the system administration</td>
+							<td class="Description" style="font-size:0.9em">Admins can aprrove request to become researcher, add and delete users and all the system administration</td>
 						</tr>
 					</tbody>
 				</table>
-				 <?php if(!isset($_SESSION['admin_user_id'])){ ?>
 				<a href="login.php"><button class="btn btn-default">
 				 Login
 				</button></a>
-				 <?php } ?>
 			</div>
 		</div>
 	</div>
-	
 </div>
 <div id="section1" class="container-fluid">
 	<h3 id="aboutus">About ILC</h3>
@@ -210,9 +191,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 				<h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >Who We Are</a> </h4>
 			</div>
 			<div id="collapse1" class="panel-collapse collapse-in">
-				<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco  	laboris nisi ut aliquip ex ea commodo consequat.</div>
+				<div class="panel-body">This database has been created by RMIT University in collaboration with MGC Pharmaceuticals and BuddingTech Pty Ltd. It is designed to curate data cannabinoids. from growers, patients, doctors and researchers. </div>
 			</div>
 		</div>
 		<div class="panel panel-default">
@@ -251,58 +230,15 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 									<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 										quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
 							</tr>
-						<td><h3><span class="glyphicon glyphicon-cloud"></span> Security</h3>
-								<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
-							<td><h3><span class="glyphicon glyphicon-piggy-bank"></span> Low price</h3>
-								<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
-								</tbody>
+						
+						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div id="section2" class="container-fluid">
-	<div>
-		<h3>ILC Products and Plans</h3>
-		<ul class="panels">
-			<li class="spuare">
-				<div class="front" style="background-color: darkgrey">1 Day</div>
-				<div class="back" style="background-color: dimgrey">AUD 1</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color: darkseagreen">3 Days</div>
-				<div class="back" style="background-color: forestgreen">AUD 3</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color: #0789BC">7 Days</div>
-				<div class="back" style="background-color: dodgerblue">AUD 6.5</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color:navajowhite">14 Days</div>
-				<div class="back" style="background-color:burlywood">AUD 12</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color:darkgrey">1 Month</div>
-				<div class="back" style="background-color: dimgrey">AUD 25</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color:darkseagreen">3 Months</div>
-				<div class="back" style="background-color: forestgreen">AUD 70</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color:#0789BC">6 Months</div>
-				<div class="back" style="background-color: dodgerblue">AUD 135</div>
-			</li>
-			<li class="spuare">
-				<div class="front" style="background-color: navajowhite">1 Year</div>
-				<div class="back" style="background-color: burlywood">AUD 260</div>
-			</li>
-		</ul>
-	</div>
-</div>
+
 <div id="section3" class="container-fluid">
 	<canvas id="canvas"></canvas>
 	<h3 id="contactusheader">Contact Us</h3>
@@ -352,7 +288,7 @@ TrustLogo("http://maaalx.com/comodo_secure_seal.png");
 
 </div>
 <div id="footer" class="container-fluid">
-	<p id="footerinfo">©2017 International Library Cannabinoid, Inc. All rights reserved. </p>
+	<p id="footerinfo">©2017 International Library Cannabinoids, Inc. All rights reserved. </p>
 </div>
 
 <script src="js/my_scripts.js"></script>
