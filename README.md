@@ -1,40 +1,20 @@
 # ilc-0.1
-international library of cannabies 
+International Library of Cannabinoids system
 
 
-change you localhost info in db.php to connect you host with DB
+1-
+Modify the db.php file to connect you host with Database
+make sure the right DB name and host name on db.php
 
-users :
+2-
+index.php the homepage file
 
 
-
-Admin
+3-
+Admin User
+Username :
 admin@gmail.com
-admin
-maaalx@hotmail.com
-admin
-
-Patient : 
-aa@gmail.com
-admin
-p@gmail.com
-admin
- 
-Doctor :
-amit@gmail.com
-admin
-jj@gmail.com
-admin
-prasa@gmail.com
-admin
-fufufi@asorent.com
-Mn123456
-
-
-Researcher
-a@gmail.com
-admin
-r@gmail.com
+Password :
 admin
 
 
