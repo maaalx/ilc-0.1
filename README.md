@@ -14,7 +14,7 @@ index.php the homepage file
 3-
 Admin User
 Username :
-admin@gmail.com
+admin@ilc.com
 Password :
 admin
 
