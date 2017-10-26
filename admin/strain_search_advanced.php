@@ -62,14 +62,14 @@
 						  <div class="form-group">
 							  <label>Terpenoids α-Bisabolol (%)</label>
 							  <input value="<?php if(isset($_POST['terpenoids_bisabolol']))echo $_POST['terpenoids_bisabolol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_bisabolol" id="terpenoids_bisabolol" placeholder="Terpenoids α-Bisabolol (%)">
-							  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+							  <span style="color:red">Enter number here with up to two decimal places</span>
 							</div>      
 						</div>
 						<div class="col-xs-6">
 						  <div class="form-group">
 							  <label>Terpenoids Borneol (%)</label>
 							  <input value="<?php if(isset($_POST['terpenoids_borneol']))echo $_POST['terpenoids_borneol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_borneol" id="terpenoids_borneol" placeholder="Terpenoids Borneol (%)">
-							  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+							  <span style="color:red">Enter number here with up to two decimal places</span>
 							</div>      
 						</div>
 				
@@ -77,7 +77,7 @@
 						  <div class="form-group">
 							  <label>Terpenoids Camphene (%)</label>
 							  <input value="<?php if(isset($_POST['terpenoids_camphene']))echo $_POST['terpenoids_camphene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_camphene" id="terpenoids_camphene" placeholder="Terpenoids Camphene (%)">
-							  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+							  <span style="color:red">Enter number here with up to two decimal places</span>
 							</div>      
 						</div>
 				
@@ -85,7 +85,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Carene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_carene']))echo $_POST['terpenoids_carene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_carene" id="terpenoids_carene" placeholder="Terpenoids Carene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -93,15 +93,15 @@
 					  <div class="form-group">
 						  <label>Terpenoids Caryophyllene Oxide (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_caryophyllene_oxide']))echo $_POST['terpenoids_caryophyllene_oxide']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_caryophyllene_oxide" id="terpenoids_caryophyllene_oxide" placeholder="Terpenoids Caryophyllene Oxide (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
 					<div class="col-xs-6">
 					  <div class="form-group">
-						  <label>Terpenoids β-Carophyllene (%))</label>
+						  <label>Terpenoids β-Carophyllene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_carophyllene']))echo $_POST['terpenoids_carophyllene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_carophyllene" id="terpenoids_carophyllene" placeholder="Terpenoids Carene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -109,7 +109,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Fenchol (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_fenchol']))echo $_POST['terpenoids_fenchol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_fenchol" id="terpenoids_fenchol" placeholder="Terpenoids Carene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -117,7 +117,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Geraniol (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_geraniol']))echo $_POST['terpenoids_geraniol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_geraniol" id="terpenoids_geraniol" placeholder="Terpenoids Geraniol (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -125,7 +125,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids α-Humulene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_humulene']))echo $_POST['terpenoids_humulene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_humulene" id="terpenoids_humulene" placeholder="Terpenoids α-Humulene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -133,7 +133,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Limonene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_limonene']))echo $_POST['terpenoids_limonene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_limonene" id="terpenoids_limonene" placeholder="Terpenoids Limonene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -141,7 +141,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Linalool (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_linalool']))echo $_POST['terpenoids_linalool']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_linalool" id="terpenoids_linalool" placeholder="Terpenoids Linalool (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">(Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -149,7 +149,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Myrcene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_myrcene']))echo $_POST['terpenoids_myrcene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_myrcene" id="terpenoids_myrcene" placeholder="Terpenoids Myrcene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -157,7 +157,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids α- Phellandrene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_phellandrene']))echo $_POST['terpenoids_phellandrene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_phellandrene" id="terpenoids_phellandrene" placeholder="Terpenoids α- Phellandrene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -165,7 +165,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids Terpinolene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_terpinolene']))echo $_POST['terpenoids_terpinolene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpinolene" id="terpenoids_terpinolene" placeholder="Terpenoids Terpinolene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -173,7 +173,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids α-Terpineol (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_terpineol']))echo $_POST['terpenoids_terpineol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpineol" id="terpenoids_terpineol" placeholder="Terpenoids α-Terpineol (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -181,7 +181,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids α-Terpinene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_terpinene']))echo $_POST['terpenoids_terpinene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpinene" id="terpenoids_terpinene" placeholder="Terpenoids α-Terpinene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -189,7 +189,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids γ-Terpinene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_y_terpinene']))echo $_POST['terpenoids_y_terpinene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_y_terpinene" id="terpenoids_y_terpinene" placeholder="Terpenoids γ-Terpinene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -197,7 +197,7 @@
 					  <div class="form-group">
 						  <label>Total Nerolidol (%)</label>
 						  <input value="<?php if(isset($_POST['total_nerolidol']))echo $_POST['total_nerolidol']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="total_nerolidol" id="total_nerolidol" placeholder="Total Nerolidol (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">(Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -205,7 +205,7 @@
 					  <div class="form-group">
 						  <label>Total Ocimene (%)</label>
 						  <input value="<?php if(isset($_POST['total_ocimene']))echo $_POST['total_ocimene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="total_ocimene" id="total_ocimene" placeholder="Total Ocimene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -213,7 +213,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids α-Pinene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_pinene']))echo $_POST['terpenoids_pinene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_pinene" id="terpenoids_pinene" placeholder="Terpenoids α-Pinene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				
@@ -222,7 +222,7 @@
 					  <div class="form-group">
 						  <label>Terpenoids β-Pinene (%)</label>
 						  <input value="<?php if(isset($_POST['terpenoids_b_pinene']))echo $_POST['terpenoids_b_pinene']; ?>" class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_b_pinene" id="terpenoids_b_pinene" placeholder="Terpenoids β-Pinene (%)">
-						  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+						  <span style="color:red">Enter number here with up to two decimal places</span>
 						</div>      
 					</div>
 				</div>

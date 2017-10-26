@@ -22,7 +22,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-           View Vitro Experiment
+           View In vitro Experiment
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>

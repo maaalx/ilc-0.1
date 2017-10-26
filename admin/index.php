@@ -41,9 +41,29 @@ require_once("includes/left.php");
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+   
               </div>
             </div><!-- ./col -->
+            
+                  <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                <?php 
+                  $query1=mysqli_query($db,"select * from users where user_type='5'");
+                  $count_groups=mysqli_num_rows($query1);
+                ?>
+                  <h3><?php echo $count_groups; ?></h3>
+                  <p>Admin</p>
+                </div>
+                <div class="icon">
+                  <img src="dist/img/icon_reviews.png">
+                </div>
+           
+              </div>
+            </div><!-- ./col -->
+            
+            
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-red">
@@ -58,7 +78,7 @@ require_once("includes/left.php");
                 <div class="icon">
                   <img src="dist/img/icon_reviews.png">
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+           
               </div>
             </div><!-- ./col -->
 			
@@ -76,7 +96,25 @@ require_once("includes/left.php");
                 <div class="icon">
                   <img src="dist/img/icon_reviews.png">
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            
+              </div>
+            </div><!-- ./col -->
+            
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                <?php 
+                  $query1=mysqli_query($db,"select * from users where user_type='4'");
+                  $count_groups=mysqli_num_rows($query1);
+                ?>
+                  <h3><?php echo $count_groups; ?></h3>
+                  <p>Researcher</p>
+                </div>
+                <div class="icon">
+                  <img src="dist/img/icon_reviews.png">
+                </div>
+           
               </div>
             </div><!-- ./col -->
             

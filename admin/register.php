@@ -84,7 +84,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="inner-title">
-					<h2 style="text-shadow: ">Register</h2>
+					<h2 style="text-shadow: "></h2>
 
 				</div>
 			</div>

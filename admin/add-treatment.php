@@ -179,11 +179,11 @@
 			</div>
 			<div class="form-group ">
 					<div class="form-group">
-                      <label>Conditions Of Being Treated</label>
-                      <select onchange="check_condition_treated(this.value)" name="conditionsOfBeingTreated" id="conditionsOfBeingTreated" class="form-control">
+                      <label>Conditions Being Treated</label>
+                      <select onchange="check_condition_treated(this.value)" name="conditionsofbeingtreated" id="conditionsofbeingtreated" class="form-control">
 						<option value="">Select</option>
 						<?php
-							$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+							$query=mysqli_query($db,"select * from conditionsofbeingtreated order by name");
 							while($row=mysqli_fetch_assoc($query)){
 								?>
 								<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>

@@ -82,10 +82,25 @@
                   <div class="box-body">
                     
 
-                    <div class="form-group">
-                      <label>Side Effect</label>
-                      <textarea  name="sideEffect" id="sideEffect" class="form-control" rows="3" placeholder="Side Effect"></textarea>
-                    </div>
+               				<div class="form-group ">
+					<div class="form-group">
+                      <label>Side Effects</label>
+                      <select multiple name="side_effects_of_cannabis_treatment[]" id="side_effects_of_cannabis_treatment" class="form-control">
+						<option value="0">Select</option>
+                       <?php 
+						$query=mysqli_query($db,"select * from side_effect order by name");
+						while($row=mysqli_fetch_assoc($query)){
+						?>
+						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<?php 	
+						}
+					   ?>
+						
+                        
+                      </select>
+					  <span style="color:red">Press control key to select multiple</span>
+				</div>
+			</div>
                    
                   </div><!-- /.box-body -->
 				  
@@ -96,7 +111,7 @@
                       <select onchange="check_condition_treated(this.value)" name="improvementInSecondaryCondition" id="improvementInSecondaryCondition" class="form-control">
 						<option value="">Select</option>
 						<?php
-							$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+							$query=mysqli_query($db,"select * from conditionsofbeingtreated order by name");
 							while($row=mysqli_fetch_assoc($query)){
 								?>
 								<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>

@@ -37,12 +37,13 @@
                 <div class="box-header">
                   
                 </div><!-- /.box-header -->
-                <div class="box-body">
                 <!-- form start -->
                 <form role="form" name="save_vitro_strain_data" id="save_vitro_strain_data" action="" enctype="multipart/form-data" method="post">  
 				<input type="hidden" name="vitro_id" id="vitro_id" value="<?php echo $_GET['vitro_id']; ?>">
-				
-				<div class="box-body">
+			
+                
+                
+                <div class="box-body">
                   <div class="form-group">
                       <label>Common Name(<span style="color:red">*</span>)</label>
                       <input class="form-control" type="text" name="common_name" id="common_name" placeholder="Common Name">
@@ -194,7 +195,7 @@
                   <div class="form-group">
                       <label>Percent Heterozygosity</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="percent_heterozygosity" id="percent_heterozygosity" placeholder="Percent Heterozygosity">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number here with Up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -332,18 +333,18 @@
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Temperature during Vegetative Stage (o Celsius)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="temperature_during_vegetative_stage" id="temperature_during_vegetative_stage" placeholder="Temperature during Vegetative Stage (o Celsius)">
-					  <span style="color:red">(Can enter a number with one decimal place)</span>
+                      <label>Temperature during Vegetative Stage (° Celsius)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="temperature_during_vegetative_stage" id="temperature_during_vegetative_stage" placeholder="Temperature during Vegetative Stage (° Celsius)">
+					  <span style="color:red">Enter a number with one decimal place</span>
                     </div>      
                 </div>
 				
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Temperature during Reproductive Stage (o Celsius)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="temperature_during_reproductive_stage" id="temperature_during_reproductive_stage" placeholder="Temperature during Reproductive Stage (o Celsius)">
-					  <span style="color:red">(Can enter a number with one decimal place)</span>
+                      <label>Temperature during Reproductive Stage (° Celsius)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="temperature_during_reproductive_stage" id="temperature_during_reproductive_stage" placeholder="Temperature during Reproductive Stage (° Celsius)">
+					  <span style="color:red">Enter a number with one decimal place</span>
                     </div>      
                 </div>
 				
@@ -351,7 +352,7 @@
                   <div class="form-group">
                       <label>Relative Humidity during Vegetative Stage (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="relative_humidity_during_vegetative_stage" id="relative_humidity_during_vegetative_stage" placeholder="Relative Humidity during Vegetative Stage (%)">
-					  <span style="color:red">(Can enter a number with one decimal place)</span>
+					  <span style="color:red">Enter a number with one decimal place</span>
                     </div>      
                 </div>
 				
@@ -359,12 +360,12 @@
                   <div class="form-group">
                       <label>Relative Humidity during Reproductive Stage (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,1" type="text" name="relative_humidity_during_reproductive_stage" id="relative_humidity_during_reproductive_stage" placeholder="Relative Humidity during Reproductive Stage (%)">
-					  <span style="color:red">(Can enter a number with one decimal place)</span>
+					  <span style="color:red">Enter a number with one decimal place</span>
                     </div>      
                 </div>
 				
 				<div class="form-group ">
-                      <label>CO2 supplementation</label>
+                      <label>CO₂ supplementation</label>
 					<div class="form-group">
                       <select name="co2_supplementation" id="co2_supplementation" class="form-control">
 						<option value="">Select</option>
@@ -376,9 +377,9 @@
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>CO2 supplementation (ppm)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="co2_supplementation_ppm" id="co2_supplementation_ppm" placeholder="CO2 supplementation (ppm)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+                      <label>CO₂ supplementation (ppm)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="co2_supplementation_ppm" id="co2_supplementation_ppm" placeholder="CO₂ supplementation (ppm)">
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -387,7 +388,7 @@
                   <div class="form-group">
                       <label>Light spectrum during vegetative stage (kelvin)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="light_spectrum_during_vegetative_stage" id="light_spectrum_during_vegetative_stage" placeholder="Light spectrum during vegetative stage (kelvin)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -395,7 +396,7 @@
                   <div class="form-group">
                       <label>Light spectrum during reproductive stage (kelvin)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="light_spectrum_during_reproductive_stage" id="light_spectrum_during_reproductive_stage" placeholder="Light spectrum during reproductive stage (kelvin)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -430,7 +431,7 @@
                   <div class="form-group">
                       <label>Watering during vegetative stage (litres per day per sq mt)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="watering_during_vegetative_stage" id="watering_during_vegetative_stage" placeholder="Watering during vegetative stage (litres per day per sq mt)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -438,7 +439,7 @@
                   <div class="form-group">
                       <label>Watering during reproductive stage (litres per day per sq mt)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="watering_during_reproductive_stage" id="watering_during_reproductive_stage" placeholder="Watering during reproductive stage (litres per day per sq mt)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -471,7 +472,7 @@
                   <div class="form-group">
                       <label>Fertilisers (target N:P:K ratio vegetative stage)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="fertilisers_vegetative_stage" id="fertilisers_vegetative_stage" placeholder="Fertilisers (target N:P:K ratio vegetative stage)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -479,7 +480,7 @@
                   <div class="form-group">
                       <label>Fertilisers (target N:P:K ratio reproductive stage)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="fertilisers_reproductive_stage" id="fertilisers_reproductive_stage" placeholder="Fertilisers (target N:P:K ratio reproductive stage)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -487,7 +488,7 @@
                   <div class="form-group">
                       <label>Time from seed/cutting to transplantation (days) </label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="time_from_seed_cutting_to_transplantation" id="time_from_seed_cutting_to_transplantation" placeholder="Time from seed/cutting to transplantation (days) ">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -495,7 +496,7 @@
                   <div class="form-group">
                       <label>Time from transplantation to flower induction (weeks)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="time_from_transplantation_to_flower_induction" id="time_from_transplantation_to_flower_induction" placeholder="Time from transplantation to flower induction (weeks)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -503,7 +504,7 @@
                   <div class="form-group">
                       <label>Time from flower induction to harvest (weeks)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="time_from_flower_induction_to_harvest" id="time_from_flower_induction_to_harvest" placeholder="Time from flower induction to harvest (weeks)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -539,7 +540,7 @@
                   <div class="form-group">
                       <label>Average yield (grams per sq mt)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="average_yield" id="	average_yield" placeholder="Time from transplantation to flower induction (weeks)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -562,9 +563,9 @@
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Average height (mts)</label>
+                      <label>Average height (meters)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="average_height" id="average_height" placeholder="Average height (mts)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -578,9 +579,9 @@
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Drying Temperature (oC)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="drying_temperature" id="drying_temperature" placeholder="Drying Temperature (oC)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+                      <label>Drying Temperature (° Celsius)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="drying_temperature" id="drying_temperature" placeholder="Drying Temperature (° Celsius)">
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -588,7 +589,7 @@
                   <div class="form-group">
                       <label>Drying Humidity (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="drying_humidity" id="drying_humidity" placeholder="Drying Humidity (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -596,7 +597,7 @@
                   <div class="form-group">
                       <label>Drying time (days)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="drying_time" id="drying_time" placeholder="Drying time (days)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -611,17 +612,17 @@
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Storage temperature (oC)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="storage_temperature" id="storage_temperature" placeholder="Storage temperature (oC)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+                      <label>Storage temperature (° Celsius)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="storage_temperature" id="storage_temperature" placeholder="Storage temperature (° Celsius)">
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Storage time (oC)</label>
-                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="storage_time" id="storage_time" placeholder="Storage time (oC)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+                      <label>Storage time (Days)</label>
+                      <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="storage_time" id="storage_time" placeholder="Storage time (Days)">
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -645,7 +646,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient THC + THCA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_thc_thca" id="cannabinoid_ingredient_thc_thca" placeholder="Cannabinoid ingredient THC + THCA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -653,7 +654,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient CBD + CBDA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_cbd_cbda" id="cannabinoid_ingredient_cbd_cbda" placeholder="Cannabinoid ingredient CBD + CBDA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -661,7 +662,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient THCV + THCVA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_thcv_thcva" id="cannabinoid_ingredient_thcv_thcva" placeholder="Cannabinoid ingredient THCV + THCVA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -670,7 +671,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient CBC + CBCA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_cbc_cbca" id="cannabinoid_ingredient_cbc_cbca" placeholder="Cannabinoid ingredient CBC + CBCA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -678,7 +679,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient CBG + CBGA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_cbg_cbga" id="cannabinoid_ingredient_cbg_cbga" placeholder="Cannabinoid ingredient CBG + CBGA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -686,7 +687,7 @@
                   <div class="form-group">
                       <label>Cannabinoid ingredient CBN + CBNA (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="cannabinoid_ingredient_cbn_cbna" id="cannabinoid_ingredient_cbn_cbna" placeholder="Cannabinoid ingredient CBN + CBNA (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -694,7 +695,7 @@
                   <div class="form-group">
                       <label>Terpenoids α-Bisabolol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_bisabolol" id="terpenoids_bisabolol" placeholder="Terpenoids α-Bisabolol (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -702,7 +703,7 @@
                   <div class="form-group">
                       <label>Terpenoids Borneol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_borneol" id="terpenoids_borneol" placeholder="Terpenoids Borneol (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -710,7 +711,7 @@
                   <div class="form-group">
                       <label>Terpenoids Camphene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_camphene" id="terpenoids_camphene" placeholder="Terpenoids Camphene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -718,7 +719,7 @@
                   <div class="form-group">
                       <label>Terpenoids Carene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_carene" id="terpenoids_carene" placeholder="Terpenoids Carene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -726,15 +727,15 @@
                   <div class="form-group">
                       <label>Terpenoids Caryophyllene Oxide (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_caryophyllene_oxide" id="terpenoids_caryophyllene_oxide" placeholder="Terpenoids Caryophyllene Oxide (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
 				<div class="box-body">
                   <div class="form-group">
-                      <label>Terpenoids β-Carophyllene (%))</label>
+                      <label>Terpenoids β-Carophyllene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_carophyllene" id="terpenoids_carophyllene" placeholder="Terpenoids Carene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -742,7 +743,7 @@
                   <div class="form-group">
                       <label>Terpenoids Fenchol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_fenchol" id="terpenoids_fenchol" placeholder="Terpenoids Carene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -750,7 +751,7 @@
                   <div class="form-group">
                       <label>Terpenoids Geraniol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_geraniol" id="terpenoids_geraniol" placeholder="Terpenoids Geraniol (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -758,7 +759,7 @@
                   <div class="form-group">
                       <label>Terpenoids α-Humulene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_humulene" id="terpenoids_humulene" placeholder="Terpenoids α-Humulene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -766,7 +767,7 @@
                   <div class="form-group">
                       <label>Terpenoids Limonene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_limonene" id="terpenoids_limonene" placeholder="Terpenoids Limonene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -774,7 +775,7 @@
                   <div class="form-group">
                       <label>Terpenoids Linalool (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_linalool" id="terpenoids_linalool" placeholder="Terpenoids Linalool (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -782,7 +783,7 @@
                   <div class="form-group">
                       <label>Terpenoids Myrcene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_myrcene" id="terpenoids_myrcene" placeholder="Terpenoids Myrcene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -790,7 +791,7 @@
                   <div class="form-group">
                       <label>Terpenoids α- Phellandrene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_phellandrene" id="terpenoids_phellandrene" placeholder="Terpenoids α- Phellandrene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -798,7 +799,7 @@
                   <div class="form-group">
                       <label>Terpenoids Terpinolene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpinolene" id="terpenoids_terpinolene" placeholder="Terpenoids Terpinolene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -806,7 +807,7 @@
                   <div class="form-group">
                       <label>Terpenoids α-Terpineol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpineol" id="terpenoids_terpineol" placeholder="Terpenoids α-Terpineol (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -814,7 +815,7 @@
                   <div class="form-group">
                       <label>Terpenoids α-Terpinene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_terpinene" id="terpenoids_terpinene" placeholder="Terpenoids α-Terpinene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -822,7 +823,7 @@
                   <div class="form-group">
                       <label>Terpenoids γ-Terpinene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_y_terpinene" id="terpenoids_y_terpinene" placeholder="Terpenoids γ-Terpinene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -830,7 +831,7 @@
                   <div class="form-group">
                       <label>Total Nerolidol (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="total_nerolidol" id="total_nerolidol" placeholder="Total Nerolidol (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -838,7 +839,7 @@
                   <div class="form-group">
                       <label>Total Ocimene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="total_ocimene" id="total_ocimene" placeholder="Total Ocimene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -846,7 +847,7 @@
                   <div class="form-group">
                       <label>Terpenoids α-Pinene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_pinene" id="terpenoids_pinene" placeholder="Terpenoids α-Pinene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 				
@@ -855,13 +856,13 @@
                   <div class="form-group">
                       <label>Terpenoids β-Pinene (%)</label>
                       <input class="form-control maskedExt" maskedFormat="10,2" type="text" name="terpenoids_b_pinene" id="terpenoids_b_pinene" placeholder="Terpenoids β-Pinene (%)">
-					  <span style="color:red">(Enter number here (Up to two decimal points))</span>
+					  <span style="color:red">Enter number with up to two decimal places</span>
                     </div>      
                 </div>
 
                   <div class="box-footer">
                     <div class="error" style="color:red"></div>
-                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button type="submit" class="btn btn-primary">submit</button>
 					<img style="display:none" class="loading" src="img/loading.gif">
                   </div>
                 </form>

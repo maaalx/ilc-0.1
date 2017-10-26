@@ -24,6 +24,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 <link rel="stylesheet" href="css/style2.css">
 <title>International Library of Cannabinoids</title>
 <link rel="shortcut icon" href="images/leave.png">
+
 </head>
 <!--Header-->
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -31,13 +32,13 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 	<div class="col-sm-12 container-fluid" >
 		<div id="particles-js"> </div>
 		<div id="introduction"> <img id="leaf" src="images/leave.png"> <img id="leftup" src="images/left-up.png"> <img id="leftlinear" src="images/lm.png"> <img id="rightup" src="images/right-up.png"> <img id="rightlinear" src="images/rm.png">
-			<h4 id="leftuplabel">Professional</h4>
-			<h4 id="leftlinearlabel">Comprehensive</h4>
-			<h4 id="rightuplabel">Reliable</h4>
-			<h4 id="rightlinearlabel">Accurate</h4>
+			<h4 id="leftuplabel">Purpose</h4>
+			<h4 id="leftlinearlabel">Vision</h4>
+			<h4 id="rightuplabel">Developers</h4>
+			<h4 id="rightlinearlabel">Data Sources</h4>
 		</div>
 		<div id="welcomelabel">
-			<h3 id="welcome">International Library Cannabinoids</h3>
+			<h3 id="welcome">International Library of Cannabinoids</h3>
 			<p id="welcomecontent">Our features are</p>
 		</div>
 	</div>
@@ -47,7 +48,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span> International Library Cannabinoids</a> </div>
+			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span> International Library of Cannabinoids</a> </div>
 		<div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul id="navUl" class="nav navbar-nav navbar-right">
@@ -102,7 +103,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 					<tbody>
 						<tr>
 							<td>Search</td>
-							<td class="Description" style="font-size:0.9em">ILC provides search function for researchers who hold a valid certificate.The search function includes advance search which allows comprehensive investigation of strain data and patient data.</td>
+							<td class="Description" style="font-size:0.9em">Researchers who hold a valid certificate can search for comprehensive investigation of strain data and patient data, also includes advance search function.</td>
 						</tr>
 					
 						<tr>
@@ -196,39 +197,35 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Career Opportunities</a> </h4>
+				<h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Research Opportunities</a> </h4>
 			</div>
 			<div id="collapse2" class="panel-collapse collapse">
-				<div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+				<div class="panel-body">We are interested in hearing from potential research groups and hospitals who are willing to share data and collaborate with us on this community project. Please contact Dr Nitin Mantri (nitin.mantri@rmit.edu.au).</div>
 			</div>
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ILC's Advantages</a> </h4>
+				<h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Website Features</a> </h4>
 			</div>
 			<div id="collapse3" class="panel-collapse collapse">
 				<div class="panel-body">
 					<table class="table-condensed table-responsive">
 						<thead>
 							<tr>
-								<td><h3><span class="glyphicon glyphicon-thumbs-up"></span> Professional</h3>
-									<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
-								<td><h3><span class="glyphicon glyphicon-calendar"></span> Reliable</h3>
-									<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
+								<td><h3><span class="glyphicon glyphicon-star-empty"></span> Purpose</h3>
+									<p>This project aims to provide an integrated and open source platform for cannabinoid research/user data from academia, industry and clinicians.</p></td>
+										
+								<td><h3><span class="glyphicon glyphicon-star-empty"></span> Vision</h3>
+									<p>The vision is that all cannabinoid research/user data will be deposited in a common repository and overtime this repository will provide evidence for efficacy of cannabinoid treatment of various disorders, and help doctors, researchers and industry to choose the right cannabinoid profiles for various conditions.</p></td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td><h3><span class="glyphicon glyphicon-globe"></span> Comprehensive</h3>
-									<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
-								<td><h3><span class="glyphicon glyphicon-screenshot"></span> Accurate</h3>
-									<p>ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-										quis nostrud exercitation ullamco laboris nisi ut aliq</p></td>
+								<td><h3><span class="glyphicon glyphicon-star-empty"></span> Developers</h3>
+									<p>The database will be developed by Project Students, PhD students and Post Doc Fellow from RMIT University. Dr Nitin Mantri has worked on initial design in collaboration with other experts from RMIT University and across the world. Mr Adam Miller (BuddingTech and Medical Cannabis Council) is our industry liaison manager and is facilitating the collaboration with data producers across the world to ensure maximum data deposition and utilisation. MGC Pharmaceuticals is funding the development of the database to serve the Medical Cannabis community including Growers, Doctors, Patients, Researchers, Regulators and Industries.</p></td>
+										
+								<td><h3><span class="glyphicon glyphicon-star-empty"></span> Data Sources</h3>
+									<p>There are two main trusted sources of data that will be initially considered: clinical case studies and research articles. There is enormous amount of data on medical use of cannabis that is right now scattered in a sense that it has not been archived in a systematic (structured) fashion to enable scientific evidence based data mining. This project will systematically archive research and clinical data to ensure all comprehensively performed and recorded cases are captured under one umbrella. Any study or case with poor evidence will be excluded. However the excluded cases will be recorded in a separate section with explanation on reason for exclusion.</p></td>
 							</tr>
 						
 						</tbody>
@@ -239,56 +236,10 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 	</div>
 </div>
 
-<div id="section3" class="container-fluid">
-	<canvas id="canvas"></canvas>
-	<h3 id="contactusheader">Contact Us</h3>
-	<form id="contactus" class="col-sm-4 col-xs-12">
-	
-		<div class="form-group">
-			<label for="name">Name <span class="glyphicon glyphicon-info-sign"></span></label>
-			<input id="name" type="text" class="form-control" required style="width: 400px;" placeholder="Please input your name">
-		</div>
-		<div class="form-group">
-			<label for="email">E-mail <span class="glyphicon glyphicon-info-sign"></span></label>
-			<input id="email" type="email" class="form-control" required style="width: 400px;" placeholder="Please input your E-mail">
-		</div>
-		<div class="form-group">
-			<label for="phone">Phone <span class="glyphicon glyphicon-info-sign"></span></label>
-			<input id="phone" type="text" class="form-control" required style="width: 400px;" placeholder="Please input your phone">
-		</div>
-		<div class="form-group">
-			<label for="Textarea">Textarea <span class="glyphicon glyphicon-info-sign"></span></label>
-			<textarea id="textarea" class="form-control" rows="5" style="width: 400px;" required placeholder="Please input your enquire..."></textarea>
-		</div>
-		<button type="button" class="btn btn-default">Submit</button>
-	</form>
-	<div class="col-sm-3 col-xs-12"> <img class="img-thumbnail" id="map" src="images/map.jpg"> </div>
-	<div class="col-sm-3 col-xs-12" id="contactdetails">
-		<ul>
-			<li>
-				<h4>Address</h4>
-			</li>
-			<li>124 La Trobe St, Melbourne VIC 3000</li>
-			<li></li>
-			<li>
-				<h4>Phone</h4>
-			</li>
-			
-			<li>(03) 9925 2000</li>
-			<li></li>
-			<li>
-				<h4>E-mail</h4>
-			</li>
-			<li>ILC@gmail.com</li>
-		</ul>
-	</div>
-	<script language="JavaScript" type="text/javascript">
-TrustLogo("http://maaalx.com/comodo_secure_seal.png");
-</script>
 
-</div>
-<div id="footer" class="container-fluid">
-	<p id="footerinfo">©2017 International Library Cannabinoids, Inc. All rights reserved. </p>
+<?php include("includes/footer.php"); ?> 
+<div align="center">
+	<p id="footerinfo">©2017 International Library of Cannabinoids, Inc. All rights reserved. </p>
 </div>
 
 <script src="js/my_scripts.js"></script>

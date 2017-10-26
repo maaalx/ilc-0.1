@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 17, 2017 at 03:27 PM
--- Server version: 5.6.24
--- PHP Version: 5.5.24
+-- Host: localhost:3306
+-- Generation Time: Oct 25, 2017 at 11:40 AM
+-- Server version: 10.1.24-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,34 +14,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ilc`
+-- Database: `id2573673_ilc`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `articles`
---
-
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `url` text NOT NULL,
-  `researcher_id` int(11) NOT NULL,
-  `status` enum('pending','approved') NOT NULL DEFAULT 'pending',
-  `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `articles`
---
-
-INSERT INTO `articles` (`id`, `name`, `url`, `researcher_id`, `status`, `added_date`) VALUES
-(4, 'aq', 'http%3A%2F%2Flocalhost%3A8080%2Filc%2Fadmin%2Fadd_article.php', 196, 'pending', '2017-09-18 13:06:26'),
-(5, 'r1', 'http%3A%2F%2Flocalhost%3A8080%2Filc%2Fadmin%2Fadd_article.php', 196, 'approved', '2017-09-18 13:06:36');
 
 -- --------------------------------------------------------
 
@@ -49,7 +26,7 @@ INSERT INTO `articles` (`id`, `name`, `url`, `researcher_id`, `status`, `added_d
 -- Table structure for table `become_researcher`
 --
 
-CREATE TABLE IF NOT EXISTS `become_researcher` (
+CREATE TABLE `become_researcher` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `user_type_id` int(5) NOT NULL,
@@ -57,17 +34,16 @@ CREATE TABLE IF NOT EXISTS `become_researcher` (
   `attachment_doc` text NOT NULL,
   `approved` enum('yes','no') NOT NULL DEFAULT 'no',
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `become_researcher`
 --
 
 INSERT INTO `become_researcher` (`id`, `user_id`, `user_type_id`, `why_researcher`, `attachment_doc`, `approved`, `added_date`) VALUES
-(3, 189, 2, 'dasd', 'Chrysanthemum.jpg', 'yes', '2017-10-09 20:12:12'),
-(4, 189, 2, 'dasd', 'Chrysanthemum.jpg', 'no', '2017-10-09 20:24:03'),
-(5, 189, 2, 'sd', 'Chrysanthemum.jpg', 'no', '2017-10-09 20:24:11'),
-(6, 190, 3, 'fghfghfgh', 'b1.jpg', 'yes', '2017-10-09 20:29:29');
+(11, 273, 2, 'i like research as i want to be a professor in this field.', 'Researcher Application.pdf', 'no', '2017-10-25 10:18:59'),
+(12, 274, 2, 'i have suffered from heart disease for years and self-studied for 3 years. ', 'Researcher Application.pdf', 'yes', '2017-10-25 10:20:29'),
+(13, 275, 3, 'i like research as i want to be a professor in this field.', 'Researcher Application.pdf', 'yes', '2017-10-25 10:25:09');
 
 -- --------------------------------------------------------
 
@@ -75,10 +51,10 @@ INSERT INTO `become_researcher` (`id`, `user_id`, `user_type_id`, `why_researche
 -- Table structure for table `cancer_types`
 --
 
-CREATE TABLE IF NOT EXISTS `cancer_types` (
+CREATE TABLE `cancer_types` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=195 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cancer_types`
@@ -286,7 +262,7 @@ INSERT INTO `cancer_types` (`id`, `name`) VALUES
 -- Table structure for table `cannabinoid strain data`
 --
 
-CREATE TABLE IF NOT EXISTS `cannabinoid strain data` (
+CREATE TABLE `cannabinoid strain data` (
   `idstraindata` int(11) NOT NULL,
   `idCultivation` int(11) NOT NULL,
   `idStorage` int(11) NOT NULL,
@@ -329,19 +305,12 @@ CREATE TABLE IF NOT EXISTS `cannabinoid strain data` (
 -- Table structure for table `certification_document`
 --
 
-CREATE TABLE IF NOT EXISTS `certification_document` (
+CREATE TABLE `certification_document` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `document_name` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `certification_document`
---
-
-INSERT INTO `certification_document` (`id`, `user_id`, `document_name`, `added_date`) VALUES
-(5, 186, 'car.jpg', '2017-09-17 15:32:53');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -349,10 +318,10 @@ INSERT INTO `certification_document` (`id`, `user_id`, `document_name`, `added_d
 -- Table structure for table `conditionsofbeingtreated`
 --
 
-CREATE TABLE IF NOT EXISTS `conditionsofbeingtreated` (
+CREATE TABLE `conditionsofbeingtreated` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `conditionsofbeingtreated`
@@ -375,13 +344,10 @@ INSERT INTO `conditionsofbeingtreated` (`id`, `name`) VALUES
 (15, 'Cancer'),
 (26, 'Cannabidiol'),
 (27, 'Chemotherapy'),
-(28, 'Children'),
 (29, 'Chronic Cystitis'),
 (30, 'Diabetes'),
 (31, 'Depression'),
 (32, 'Dermatitis'),
-(33, 'Dronabinol'),
-(34, 'Drug testing'),
 (35, 'Dystonia'),
 (36, 'Epilepsy'),
 (37, 'Familial Mediterranean Fever'),
@@ -395,21 +361,15 @@ INSERT INTO `conditionsofbeingtreated` (`id`, `name`) VALUES
 (45, 'Hepatitis'),
 (46, 'Herpes'),
 (47, 'Hiccups'),
-(48, 'HIV / AIDS'),
 (49, 'Historical studies'),
-(50, 'Hormones'),
+(50, 'Hormonal Disorder'),
 (51, 'Huntingtons Disease'),
 (52, 'Hysterectomy'),
 (53, 'Idiopathic Intracranial Hypertension'),
-(54, 'IQ'),
-(55, 'Marinol/Synthetics/ cannabinoid mixtures'),
-(56, 'Meiges Syndrome'),
 (57, 'Migraine/ Headache'),
 (58, 'Mortality Rates'),
-(59, 'MS'),
 (60, 'Neurons'),
 (61, 'Neuropathic pain'),
-(62, 'Neuroprotectant'),
 (63, 'Nutrition'),
 (64, 'Obesity'),
 (65, 'Osteoporosis'),
@@ -426,11 +386,7 @@ INSERT INTO `conditionsofbeingtreated` (`id`, `name`) VALUES
 (76, 'Spastic disorders'),
 (77, 'Spinal Cord Injury'),
 (78, 'Stroke'),
-(79, 'Tea as medicine'),
-(80, 'THC/tetrahydrocannabinol'),
-(81, 'Tobacco vs Cannabis'),
 (82, 'Tourettes'),
-(83, 'Vaporizers'),
 (84, 'Wilsons Disease'),
 (85, 'CPOD'),
 (86, 'Gastrointestinal disorders'),
@@ -446,7 +402,7 @@ INSERT INTO `conditionsofbeingtreated` (`id`, `name`) VALUES
 -- Table structure for table `country`
 --
 
-CREATE TABLE IF NOT EXISTS `country` (
+CREATE TABLE `country` (
   `id` int(11) NOT NULL,
   `iso` char(2) NOT NULL,
   `name` varchar(80) NOT NULL,
@@ -454,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `country` (
   `iso3` char(3) DEFAULT NULL,
   `numcode` smallint(6) DEFAULT NULL,
   `phonecode` int(5) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=240 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `country`
@@ -513,7 +469,7 @@ INSERT INTO `country` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `phon
 (50, 'CD', 'CONGO, THE DEMOCRATIC REPUBLIC OF THE', 'Congo, the Democratic Republic of the', 'COD', 180, 242),
 (51, 'CK', 'COOK ISLANDS', 'Cook Islands', 'COK', 184, 682),
 (52, 'CR', 'COSTA RICA', 'Costa Rica', 'CRI', 188, 506),
-(53, 'CI', 'COTE D''IVOIRE', 'Cote D''Ivoire', 'CIV', 384, 225),
+(53, 'CI', 'COTE D\'IVOIRE', 'Cote D\'Ivoire', 'CIV', 384, 225),
 (54, 'HR', 'CROATIA', 'Croatia', 'HRV', 191, 385),
 (55, 'CU', 'CUBA', 'Cuba', 'CUB', 192, 53),
 (56, 'CY', 'CYPRUS', 'Cyprus', 'CYP', 196, 357),
@@ -572,11 +528,11 @@ INSERT INTO `country` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `phon
 (109, 'KZ', 'KAZAKHSTAN', 'Kazakhstan', 'KAZ', 398, 7),
 (110, 'KE', 'KENYA', 'Kenya', 'KEN', 404, 254),
 (111, 'KI', 'KIRIBATI', 'Kiribati', 'KIR', 296, 686),
-(112, 'KP', 'KOREA, DEMOCRATIC PEOPLE''S REPUBLIC OF', 'Korea, Democratic People''s Republic of', 'PRK', 408, 850),
+(112, 'KP', 'KOREA, DEMOCRATIC PEOPLE\'S REPUBLIC OF', 'Korea, Democratic People\'s Republic of', 'PRK', 408, 850),
 (113, 'KR', 'KOREA, REPUBLIC OF', 'Korea, Republic of', 'KOR', 410, 82),
 (114, 'KW', 'KUWAIT', 'Kuwait', 'KWT', 414, 965),
 (115, 'KG', 'KYRGYZSTAN', 'Kyrgyzstan', 'KGZ', 417, 996),
-(116, 'LA', 'LAO PEOPLE''S DEMOCRATIC REPUBLIC', 'Lao People''s Democratic Republic', 'LAO', 418, 856),
+(116, 'LA', 'LAO PEOPLE\'S DEMOCRATIC REPUBLIC', 'Lao People\'s Democratic Republic', 'LAO', 418, 856),
 (117, 'LV', 'LATVIA', 'Latvia', 'LVA', 428, 371),
 (118, 'LB', 'LEBANON', 'Lebanon', 'LBN', 422, 961),
 (119, 'LS', 'LESOTHO', 'Lesotho', 'LSO', 426, 266),
@@ -707,19 +663,12 @@ INSERT INTO `country` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `phon
 -- Table structure for table `diary`
 --
 
-CREATE TABLE IF NOT EXISTS `diary` (
+CREATE TABLE `diary` (
   `id` int(11) NOT NULL,
   `diary_text` text NOT NULL,
   `patient_id` int(11) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `diary`
---
-
-INSERT INTO `diary` (`id`, `diary_text`, `patient_id`, `added_date`) VALUES
-(1, 'dddd', 185, '2017-09-08 13:28:45');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -727,7 +676,7 @@ INSERT INTO `diary` (`id`, `diary_text`, `patient_id`, `added_date`) VALUES
 -- Table structure for table `disease`
 --
 
-CREATE TABLE IF NOT EXISTS `disease` (
+CREATE TABLE `disease` (
   `iddisease` int(11) NOT NULL,
   `diseasename` varchar(45) NOT NULL,
   `diseasetype` varchar(45) NOT NULL,
@@ -740,7 +689,7 @@ CREATE TABLE IF NOT EXISTS `disease` (
 -- Table structure for table `doctor`
 --
 
-CREATE TABLE IF NOT EXISTS `doctor` (
+CREATE TABLE `doctor` (
   `id` int(11) NOT NULL,
   `ilc_id` varchar(100) NOT NULL,
   `phone1` varchar(50) NOT NULL,
@@ -756,14 +705,7 @@ CREATE TABLE IF NOT EXISTS `doctor` (
   `postcode` varchar(100) NOT NULL,
   `country` varchar(100) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `doctor`
---
-
-INSERT INTO `doctor` (`id`, `ilc_id`, `phone1`, `phone2`, `tfn`, `hospital_name`, `hospital_code`, `license_bumber`, `address_line_1`, `address_line_2`, `suburb`, `state`, `postcode`, `country`, `added_date`) VALUES
-(2, 'D190', '2222', '2255555', 'werwe', 'sssssha', 'wewrw3333', 'wr34', 'dffdg', '', 'gfff', 'maha', '4343434', 'IN', '2017-09-16 17:02:19');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -771,7 +713,7 @@ INSERT INTO `doctor` (`id`, `ilc_id`, `phone1`, `phone2`, `tfn`, `hospital_name`
 -- Table structure for table `doctor_clinic`
 --
 
-CREATE TABLE IF NOT EXISTS `doctor_clinic` (
+CREATE TABLE `doctor_clinic` (
   `id` int(11) NOT NULL,
   `doctor_id` varchar(200) NOT NULL,
   `clinic_name` varchar(250) NOT NULL,
@@ -783,14 +725,7 @@ CREATE TABLE IF NOT EXISTS `doctor_clinic` (
   `post_code` varchar(100) NOT NULL,
   `country` varchar(50) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `doctor_clinic`
---
-
-INSERT INTO `doctor_clinic` (`id`, `doctor_id`, `clinic_name`, `clinic_code`, `address_line1`, `address_line2`, `suburb`, `state`, `post_code`, `country`, `added_date`) VALUES
-(1, 'D190', 'test', '21323', 'wwe', 'wer', '3333', 'bbb', '232323', 'BH', '2017-10-17 11:38:02');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -798,7 +733,7 @@ INSERT INTO `doctor_clinic` (`id`, `doctor_id`, `clinic_name`, `clinic_code`, `a
 -- Table structure for table `followups`
 --
 
-CREATE TABLE IF NOT EXISTS `followups` (
+CREATE TABLE `followups` (
   `idfollowUps` int(11) NOT NULL,
   `treatmentNo` int(11) DEFAULT NULL,
   `patientId` int(11) DEFAULT NULL,
@@ -811,21 +746,15 @@ CREATE TABLE IF NOT EXISTS `followups` (
   `cancer_type` varchar(50) NOT NULL,
   `other_infections` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `followups`
 --
 
 INSERT INTO `followups` (`idfollowUps`, `treatmentNo`, `patientId`, `doctor_id`, `researcher_id`, `frequency`, `efficacyInpercent`, `sideEffect`, `improvementInSecondaryCondition`, `cancer_type`, `other_infections`, `added_date`) VALUES
-(1, 3, NULL, NULL, NULL, '2', '30', 'asda', 'asd', '', '', '2017-09-09 18:40:54'),
-(2, 2, NULL, NULL, NULL, '4', '30', 'ss', 'sss', '', '', '2017-09-10 12:20:29'),
-(3, 2, NULL, NULL, NULL, '5', '60', 'sfdsd', 'sdfsdf', '', '', '2017-09-10 12:24:49'),
-(4, 2, NULL, NULL, NULL, '8', '60', 'dfg', 'dfgdfg', '', '', '2017-09-10 12:24:58'),
-(6, 3, NULL, NULL, NULL, '4', '23', 'ww', '6', '', '', '2017-09-20 16:22:26'),
-(8, 6, NULL, NULL, NULL, '4', '12', 'aa', '5', '', '', '2017-10-06 11:30:41'),
-(9, 10, NULL, NULL, NULL, '2', '78', 'l;', '3', '', '', '2017-10-07 11:46:24'),
-(10, 9, NULL, 0, 196, '2', '34', 'wd', '2', '', '', '2017-10-13 16:53:59');
+(16, 26, NULL, 0, 0, '2', '19', '', '64', '', '', '2017-10-25 10:11:14'),
+(17, 28, NULL, 0, 0, '3', '87', '', '32', '', '', '2017-10-25 10:44:25');
 
 -- --------------------------------------------------------
 
@@ -833,24 +762,13 @@ INSERT INTO `followups` (`idfollowUps`, `treatmentNo`, `patientId`, `doctor_id`,
 -- Table structure for table `follow_up_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `follow_up_comments` (
+CREATE TABLE `follow_up_comments` (
   `id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `follow_up_id` int(11) NOT NULL,
   `comment_txt` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `follow_up_comments`
---
-
-INSERT INTO `follow_up_comments` (`id`, `doctor_id`, `follow_up_id`, `comment_txt`, `added_date`) VALUES
-(1, 190, 1, 'rr rrrrr', '2017-09-09 21:37:03'),
-(2, 190, 1, 'asd', '2017-09-09 21:37:58'),
-(3, 190, 1, 'adadasdasd', '2017-09-09 21:40:27'),
-(4, 190, 1, 'asdasdasd', '2017-09-10 11:52:46'),
-(5, 190, 2, 'test', '2017-09-10 19:14:08');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -858,10 +776,10 @@ INSERT INTO `follow_up_comments` (`id`, `doctor_id`, `follow_up_id`, `comment_tx
 -- Table structure for table `follow_up_frequency`
 --
 
-CREATE TABLE IF NOT EXISTS `follow_up_frequency` (
+CREATE TABLE `follow_up_frequency` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `follow_up_frequency`
@@ -881,9 +799,10 @@ INSERT INTO `follow_up_frequency` (`id`, `name`) VALUES
 -- Table structure for table `patient`
 --
 
-CREATE TABLE IF NOT EXISTS `patient` (
+CREATE TABLE `patient` (
   `id` int(11) NOT NULL,
   `ilc_id` varchar(100) NOT NULL,
+  `gender` enum('male','female','other') DEFAULT NULL,
   `phone_1` varchar(250) NOT NULL,
   `phone_2` varchar(250) NOT NULL,
   `ethnicity` varchar(100) NOT NULL,
@@ -897,17 +816,14 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `state` varchar(250) NOT NULL,
   `country` varchar(50) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`id`, `ilc_id`, `phone_1`, `phone_2`, `ethnicity`, `height`, `weight`, `emergency_contact_name`, `emergency_contact_number`, `address_line_1`, `address_line_2`, `suburb`, `state`, `country`, `added_date`) VALUES
-(1, 'P189', '22222', '', '1', '', '', '', '', '', '', '', '5555', 'IN', '2017-09-16 13:45:33'),
-(3, 'P', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
-(4, 'P200', '', '', '3', '8', '89', '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
-(5, 'P201', '', '', '3', '8', '8', '', '', '', '', '', '', '', '0000-00-00 00:00:00');
+INSERT INTO `patient` (`id`, `ilc_id`, `gender`, `phone_1`, `phone_2`, `ethnicity`, `height`, `weight`, `emergency_contact_name`, `emergency_contact_number`, `address_line_1`, `address_line_2`, `suburb`, `state`, `country`, `added_date`) VALUES
+(31, 'P273', '', '', '', '260', '6', '99', 'jack', '0411111888', '', '', '', '', '0', '2017-10-25 10:12:49');
 
 -- --------------------------------------------------------
 
@@ -915,7 +831,7 @@ INSERT INTO `patient` (`id`, `ilc_id`, `phone_1`, `phone_2`, `ethnicity`, `heigh
 -- Table structure for table `patienttreatment`
 --
 
-CREATE TABLE IF NOT EXISTS `patienttreatment` (
+CREATE TABLE `patienttreatment` (
   `idpatientTreatment` int(11) NOT NULL,
   `patientId` int(11) DEFAULT NULL,
   `doctorId` int(11) DEFAULT NULL,
@@ -934,23 +850,16 @@ CREATE TABLE IF NOT EXISTS `patienttreatment` (
   `description` mediumtext,
   `doctorComment` longtext,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patienttreatment`
 --
 
 INSERT INTO `patienttreatment` (`idpatientTreatment`, `patientId`, `doctorId`, `researcher_id`, `patient_history_id`, `cannabinoidRatio`, `doseAmount`, `minimumDaily`, `maximumDaily`, `method_of_administration`, `frequency`, `dosage_type`, `conditionsOfBeingTreated`, `cancer_type`, `other_infections`, `description`, `doctorComment`, `added_date`) VALUES
-(1, 185, 0, NULL, 0, '4', '4', '3', '5', 5, 6, 0, '4', 0, '', 'ss', NULL, '2017-09-09 10:22:41'),
-(2, 189, 0, NULL, 0, '4', '4', '3', '5', 5, 6, 0, '4', 0, '', 'ss', NULL, '2017-09-09 10:23:20'),
-(3, 189, 190, NULL, 0, '3', '4', '3', '4', 15, 4, 0, '16', 0, '', 'sdddd', NULL, '2017-09-09 10:49:53'),
-(4, 189, 190, NULL, 4, '2', '3', '3', '2', 4, 2, 2, '26', 0, '', 'dsdsdf', NULL, '2017-09-15 17:49:14'),
-(5, 189, 189, NULL, 5, '2', '3', '3', '4', 3, 5, 3, '4', 0, '', 'fffff', NULL, '2017-09-15 19:18:49'),
-(6, 189, 189, NULL, 7, '1', '2', '2', '3', 7, 3, 1, '28', 1, '', 'aaa qqqqqq', NULL, '2017-09-23 15:46:44'),
-(7, 0, 0, 196, 10, '2', '3', '2', '4', 0, 0, 0, '', 0, '', '', NULL, '2017-09-28 11:41:51'),
-(8, 189, 190, 0, 12, '3', '3', '3', '0', 0, 0, 0, '', 0, '', '', NULL, '2017-10-04 18:12:46'),
-(9, 0, 0, 196, 14, '3', '3', '0', '5', 0, 0, 0, '', 0, '', '', NULL, '2017-10-06 13:23:04'),
-(10, 0, 0, 196, 15, '2', '2', '3', '3', 2, 6, 2, '3', 0, '', 'wwww', NULL, '2017-10-07 11:39:43');
+(26, 273, 0, 0, 50, '1', '3', 4, 7, 2, 6, 1, '', 0, '', '', NULL, '2017-10-25 10:10:16'),
+(27, 274, 0, 0, 51, '2', '3', 3, 7, 2, 3, 1, '', 0, '', '', NULL, '2017-10-25 10:21:57'),
+(28, 278, 0, 0, 52, '2', '3', 1, 4, 3, 3, 2, '', 0, '', '', NULL, '2017-10-25 10:43:49');
 
 -- --------------------------------------------------------
 
@@ -958,10 +867,10 @@ INSERT INTO `patienttreatment` (`idpatientTreatment`, `patientId`, `doctorId`, `
 -- Table structure for table `patient_ethnicity`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_ethnicity` (
+CREATE TABLE `patient_ethnicity` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1244 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_ethnicity`
@@ -2218,7 +2127,7 @@ INSERT INTO `patient_ethnicity` (`id`, `name`) VALUES
 -- Table structure for table `patient_history`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history` (
+CREATE TABLE `patient_history` (
   `id` int(11) NOT NULL,
   `patientid` int(11) DEFAULT NULL,
   `doctorid` int(11) DEFAULT NULL,
@@ -2242,27 +2151,16 @@ CREATE TABLE IF NOT EXISTS `patient_history` (
   `Interpreter_Required` tinyint(4) DEFAULT NULL,
   `comment` longtext,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `patient_history`
 --
 
 INSERT INTO `patient_history` (`id`, `patientid`, `doctorid`, `researcher_id`, `admission_type`, `other_admission_type`, `admission type indicator`, `qualification_status`, `criterion_for_admission`, `intended_duration_of_stay`, `admission_weight`, `FIM_Score_on_Admission`, `Admission_readmission_to_rehabilitation`, `RUG_ADL_on_admission`, `Source_of_referral_to_palliative_care`, `other_source_of_referral_to_palliative_care`, `Patient_type`, `Accommodation_type_during_admission`, `Admission_Source`, `hospital_campus_code`, `Interpreter_Required`, `comment`, `added_date`) VALUES
-(1, 189, 190, NULL, '4', '', NULL, '2', '3', '1', '4', '5', '1', '3', '3', '', '3', '4', '3', 123, 3, 'rwer', '2017-09-14 18:42:12'),
-(2, 189, 190, NULL, '3', '', NULL, '2', '2', '1', '3', '3', '2', '16', '7', '', '9', '2', '2', 0, 2, 'aaaa', '2017-09-14 19:19:31'),
-(3, 189, 190, NULL, '3', '', NULL, '1', '3', '1', '3', '3', '2', '16', '2', '', '3', '2', '3', 333, 1, '3333', '2017-09-15 17:23:45'),
-(4, 189, 190, NULL, '3', '', NULL, '1', '3', '2', '4', '4', '1', '3', '3', '', '3', '2', '3', 0, 2, 'sdfsdf', '2017-09-15 17:44:31'),
-(5, 189, 189, NULL, '3', '', NULL, '3', '2', '2', '4', '2', '2', '3', '3', '', '2', '3', '3', 3, 1, '333', '2017-09-15 19:07:06'),
-(6, 189, 190, NULL, '3', '', NULL, '2', '4', '1', '3', '3', '2', '14', '4', '', '3', '1', '3', 345, 2, 'retertert', '2017-09-20 14:40:11'),
-(7, 189, 189, NULL, '2', '', NULL, '2', '3', '2', '3', '4', '1', '15', '3', '', '3', '4', '2', 123, 1, 'aaaaaa', '2017-09-23 15:46:34'),
-(8, 0, 0, 196, '3', '', NULL, '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:21:42'),
-(9, 0, 0, 196, '2', '', NULL, '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:35:43'),
-(10, 0, 0, 196, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-09-28 11:36:07'),
-(11, 189, 190, 0, '2', '', NULL, '2', '0', '0', '0', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:11:02'),
-(12, 189, 190, 0, '6', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, 'aaa', '2017-10-04 18:12:35'),
-(13, 189, 190, 0, '2', '', NULL, '2', '3', '1', '3', '0', '0', '', '', '', '', '', '', 0, 0, '', '2017-10-04 18:17:13'),
-(16, 201, 0, 196, '1', '', NULL, '1', '1', '1', '1', '1', '1', '1', '1', '', '1', '1', '', 0, 1, 'dfsdf', '2017-10-13 16:28:29');
+(50, 273, 0, 0, '1', '', NULL, '3', '2', '1', '9', '5', '1', '7', '5', '', '1', '1', '6', 65, 1, 'He should keep away with pets.', '2017-10-25 10:09:20'),
+(51, 274, 0, 0, '6', '', NULL, '2', '1', '2', '7', '5', '2', '8', '5', '', '1', '1', '2', 99, 2, '', '2017-10-25 10:21:29'),
+(52, 278, 0, 0, '3', '', NULL, '2', '1', '1', '9', '3', '1', '6', '6', '', '1', '2', '2', 98, 1, '', '2017-10-25 10:43:20');
 
 -- --------------------------------------------------------
 
@@ -2270,10 +2168,10 @@ INSERT INTO `patient_history` (`id`, `patientid`, `doctorid`, `researcher_id`, `
 -- Table structure for table `patient_history_accommodation_type_during_admission`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_accommodation_type_during_admission` (
+CREATE TABLE `patient_history_accommodation_type_during_admission` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_accommodation_type_during_admission`
@@ -2298,10 +2196,10 @@ INSERT INTO `patient_history_accommodation_type_during_admission` (`id`, `name`)
 -- Table structure for table `patient_history_admission_read_mission_to_rehabilitation`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_admission_read_mission_to_rehabilitation` (
+CREATE TABLE `patient_history_admission_read_mission_to_rehabilitation` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_admission_read_mission_to_rehabilitation`
@@ -2317,10 +2215,10 @@ INSERT INTO `patient_history_admission_read_mission_to_rehabilitation` (`id`, `n
 -- Table structure for table `patient_history_admission_source`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_admission_source` (
+CREATE TABLE `patient_history_admission_source` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_admission_source`
@@ -2342,10 +2240,10 @@ INSERT INTO `patient_history_admission_source` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_admission_types`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_admission_types` (
+CREATE TABLE `patient_history_admission_types` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_admission_types`
@@ -2367,10 +2265,10 @@ INSERT INTO `patient_history_admission_types` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_admission_weight`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_admission_weight` (
+CREATE TABLE `patient_history_admission_weight` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_admission_weight`
@@ -2404,10 +2302,10 @@ INSERT INTO `patient_history_admission_weight` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_criterion_for_admission`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_criterion_for_admission` (
+CREATE TABLE `patient_history_criterion_for_admission` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_criterion_for_admission`
@@ -2430,10 +2328,10 @@ INSERT INTO `patient_history_criterion_for_admission` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_fim_score_on_admission`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_fim_score_on_admission` (
+CREATE TABLE `patient_history_fim_score_on_admission` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_fim_score_on_admission`
@@ -2454,10 +2352,10 @@ INSERT INTO `patient_history_fim_score_on_admission` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_intended_duration`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_intended_duration` (
+CREATE TABLE `patient_history_intended_duration` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_intended_duration`
@@ -2473,10 +2371,10 @@ INSERT INTO `patient_history_intended_duration` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_interpreter_required`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_interpreter_required` (
+CREATE TABLE `patient_history_interpreter_required` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_interpreter_required`
@@ -2493,10 +2391,10 @@ INSERT INTO `patient_history_interpreter_required` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_patient_type`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_patient_type` (
+CREATE TABLE `patient_history_patient_type` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_patient_type`
@@ -2515,10 +2413,10 @@ INSERT INTO `patient_history_patient_type` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_qualification_status`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_qualification_status` (
+CREATE TABLE `patient_history_qualification_status` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_qualification_status`
@@ -2535,10 +2433,10 @@ INSERT INTO `patient_history_qualification_status` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_rug_adl_on_admission`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_rug_adl_on_admission` (
+CREATE TABLE `patient_history_rug_adl_on_admission` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_rug_adl_on_admission`
@@ -2570,10 +2468,10 @@ INSERT INTO `patient_history_rug_adl_on_admission` (`id`, `name`) VALUES
 -- Table structure for table `patient_history_source_of_referral_to_palliative_care`
 --
 
-CREATE TABLE IF NOT EXISTS `patient_history_source_of_referral_to_palliative_care` (
+CREATE TABLE `patient_history_source_of_referral_to_palliative_care` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient_history_source_of_referral_to_palliative_care`
@@ -2596,7 +2494,7 @@ INSERT INTO `patient_history_source_of_referral_to_palliative_care` (`id`, `name
 -- Table structure for table `researcher`
 --
 
-CREATE TABLE IF NOT EXISTS `researcher` (
+CREATE TABLE `researcher` (
   `id` int(11) NOT NULL,
   `ilc_id` varchar(100) NOT NULL,
   `phone1` varchar(50) NOT NULL,
@@ -2611,23 +2509,16 @@ CREATE TABLE IF NOT EXISTS `researcher` (
   `added_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `researcher`
---
-
-INSERT INTO `researcher` (`id`, `ilc_id`, `phone1`, `phone2`, `institution_name`, `address_line_1`, `address_line_2`, `suburb`, `state`, `postcode`, `country`, `added_date`) VALUES
-(0, 'R196', '444445', '', 'eeeee', 'sd', 'sdf', 'sdf', 'sdf', '23', 'BS', '2017-09-16 19:06:05');
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `side_effect`
 --
 
-CREATE TABLE IF NOT EXISTS `side_effect` (
+CREATE TABLE `side_effect` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `side_effect`
@@ -2648,7 +2539,7 @@ INSERT INTO `side_effect` (`id`, `name`) VALUES
 (12, 'Bloated'),
 (13, 'Bloody or Cloudy urine'),
 (14, 'Blurred vision'),
-(15, 'Burning, Crawling, Itching, Numbness, Prickling, "Pins and Needles", or Tingling feelings'),
+(15, 'Burning, Crawling, Itching, Numbness, Prickling, \"Pins and Needles\", or Tingling feelings'),
 (16, 'Change in taste'),
 (17, 'Change in walking and balance'),
 (18, 'Chest discomfort'),
@@ -2703,7 +2594,6 @@ INSERT INTO `side_effect` (`id`, `name`) VALUES
 (67, 'Frequent urge to urinate'),
 (68, 'Full feeling'),
 (69, 'General feeling of discomfort'),
-(70, 'General feeling of discomfort or illness'),
 (71, 'Hair loss'),
 (72, 'Headache'),
 (73, 'Heartburn'),
@@ -2802,7 +2692,7 @@ INSERT INTO `side_effect` (`id`, `name`) VALUES
 -- Table structure for table `strain_data`
 --
 
-CREATE TABLE IF NOT EXISTS `strain_data` (
+CREATE TABLE `strain_data` (
   `id` int(11) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
   `ilc_id` varchar(250) DEFAULT NULL,
@@ -2901,20 +2791,14 @@ CREATE TABLE IF NOT EXISTS `strain_data` (
   `terpenoids_pinene` decimal(45,2) NOT NULL,
   `terpenoids_b_pinene` decimal(45,2) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `strain_data`
 --
 
 INSERT INTO `strain_data` (`id`, `status`, `ilc_id`, `doctorId`, `researcher_id`, `vivo_id`, `vitro_id`, `patient_history_id`, `common_name`, `any_other_descriptors_1`, `any_other_descriptors_2`, `any_other_descriptors_3`, `any_other_descriptors_4`, `any_other_descriptors_5`, `country_of_origin`, `pedigree`, `pedigree_enter_the_parentage`, `breeder_name_if_known`, `growers`, `manufacturer_name`, `manufacturer_address`, `available_regions`, `available_region_country`, `accession_date`, `gender`, `percent_heterozygosity`, `vcf_file_of_sequence`, `fastq_files_of_sequence`, `location`, `grow_method`, `soil_mix`, `are_you_using_living_soil`, `day_light_during_vegetative_stage`, `night_light_during_vegetative_stage`, `day_light_during_reproductive_stage`, `night_light_during_reproductive_stage`, `temperature_during_vegetative_stage`, `temperature_during_reproductive_stage`, `relative_humidity_during_vegetative_stage`, `relative_humidity_during_reproductive_stage`, `co2_supplementation`, `co2_supplementation_ppm`, `light_spectrum_during_vegetative_stage`, `light_spectrum_during_reproductive_stage`, `lamp_type_vegetative_stage`, `lamp_type_reproductive_stage`, `watering_during_vegetative_stage`, `watering_during_reproductive_stage`, `fertilisers_during_vegetative_stage`, `fertilisers_during_reproductive_stage`, `fertilisers_vegetative_stage`, `fertilisers_reproductive_stage`, `time_from_seed_cutting_to_transplantation`, `time_from_transplantation_to_flower_induction`, `time_from_flower_induction_to_harvest`, `time_of_harvest`, `trichome_maturity`, `average_yield`, `outdoor_sowing_date`, `outdoor_harvest_date`, `average_height`, `cultivation_tips`, `drying_temperature`, `drying_humidity`, `drying_time`, `type_of_packaging`, `storage_temperature`, `storage_time`, `extraction_method`, `flavour_scent`, `cannabinoid_ingredient_thc_thca`, `cannabinoid_ingredient_cbd_cbda`, `cannabinoid_ingredient_thcv_thcva`, `cannabinoid_ingredient_cbc_cbca`, `cannabinoid_ingredient_cbg_cbga`, `cannabinoid_ingredient_cbn_cbna`, `terpenoids_bisabolol`, `terpenoids_borneol`, `terpenoids_camphene`, `terpenoids_carene`, `terpenoids_caryophyllene_oxide`, `terpenoids_carophyllene`, `terpenoids_fenchol`, `terpenoids_geraniol`, `terpenoids_humulene`, `terpenoids_limonene`, `terpenoids_linalool`, `terpenoids_myrcene`, `terpenoids_phellandrene`, `terpenoids_terpinolene`, `terpenoids_terpineol`, `terpenoids_terpinene`, `terpenoids_y_terpinene`, `total_nerolidol`, `total_ocimene`, `terpenoids_pinene`, `terpenoids_b_pinene`, `added_date`) VALUES
-(3, '1', 'S3', NULL, 196, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 11:30:09'),
-(4, '1', 'S4', NULL, 196, 7, NULL, NULL, 'asdas', 'dasd', 'asd', 'aaa', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 11:31:45'),
-(5, '1', 'S5', NULL, 196, NULL, 4, NULL, 'sdas', 'asd', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:53'),
-(6, '1', 'S6', 190, 0, NULL, NULL, 12, '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-04 18:13:41'),
-(7, '0', 'S7', 0, 196, NULL, NULL, 14, 'qaaaaaaaa', 'aa', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-06 13:23:36'),
-(8, '0', 'S8', 0, 196, NULL, NULL, 15, 'conn', 'conn3', 'conn2', 'sd', 'conndf', 'df', '16', 'sativa', '34', 'ws', 'ssg', 0, 0, 'Maharashtra', '', '1987-12-12', 'male', '34.00', '', '', 'indoor', 'soil', 8, 'no', 14, 16, 14, 4, '34.0', '34.0', '34.0', '23.0', 'no', '23.00', '23.00', '2.00', 'metal_halide', 'metal_halide', '45.00', '45.00', 'organic_based', 'mineral_based', '54.00', '44.00', '45.00', '43.00', '3.00', 'afternoon', 'majority_clear', '34.00', '0000-00-00', '0000-00-00', '4.00', '34', '34.00', '34.00', '0.00', '', '34.00', '34.00', 'gfdfgh', 'fgh', '54.00', '67.00', '768.00', '678.00', '68.00', '68.00', '68.00', '0.00', '0.00', '8.00', '67.00', '678.00', '678.00', '789.00', '68.00', '446.00', '678.00', '45.00', '56.00', '56.00', '67.00', '789.00', '789.00', '789.00', '0.00', '0.00', '0.00', '2017-10-07 11:41:55'),
-(9, '0', 'S9', NULL, 196, 23, NULL, NULL, 'sd', 'df', 'df', 'ds', 'ds', 'sdf', '162', 'hybrid', '', '', '', 0, 0, '', '', '0000-00-00', '', '0.00', '', '', '', '', 0, '', 0, 0, 0, 0, '0.0', '0.0', '0.0', '0.0', '', '0.00', '0.00', '0.00', '', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '', '', '0.00', '0000-00-00', '0000-00-00', '0.00', '', '0.00', '0.00', '0.00', '', '0.00', '0.00', '', '', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-07 12:27:15');
+(28, '0', NULL, NULL, 275, 35, NULL, NULL, 'hudestruse', '', '', '', '', '', '1', 'hybrid', '34', '', '', 0, 0, '3000', '41', '0000-00-00', 'male', 67.70, '', '', 'indoor', 'coco', 7, 'yes', 8, 9, 9, 4, 35.0, 23.0, 35.0, 34.0, 'no', 0.00, 0.00, 0.00, 'metal_halide', 'ceramic_metal_halide', 0.00, 0.00, '', '', 0.00, 0.00, 0.00, 2.00, 4.00, 'afternoon', 'majority_clear', 0.00, '0000-00-00', '0000-00-00', 0.00, '', 0.00, 0.00, 0.00, '', 0.00, 0.00, '', '', 23.00, 32.00, 23.00, 23.00, 13.00, 32.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.40, 77.00, 0.00, 0.00, 25.00, 0.00, '2017-10-25 11:40:10');
 
 -- --------------------------------------------------------
 
@@ -2922,10 +2806,10 @@ INSERT INTO `strain_data` (`id`, `status`, `ilc_id`, `doctorId`, `researcher_id`
 -- Table structure for table `strain_data_soil_mix`
 --
 
-CREATE TABLE IF NOT EXISTS `strain_data_soil_mix` (
+CREATE TABLE `strain_data_soil_mix` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `strain_data_soil_mix`
@@ -2949,10 +2833,10 @@ INSERT INTO `strain_data_soil_mix` (`id`, `name`) VALUES
 -- Table structure for table `treatment_cannabinoid_ratio`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_cannabinoid_ratio` (
+CREATE TABLE `treatment_cannabinoid_ratio` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_cannabinoid_ratio`
@@ -2970,10 +2854,10 @@ INSERT INTO `treatment_cannabinoid_ratio` (`id`, `name`) VALUES
 -- Table structure for table `treatment_dosage_type`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_dosage_type` (
+CREATE TABLE `treatment_dosage_type` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_dosage_type`
@@ -2990,10 +2874,10 @@ INSERT INTO `treatment_dosage_type` (`id`, `name`) VALUES
 -- Table structure for table `treatment_dose_amount`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_dose_amount` (
+CREATE TABLE `treatment_dose_amount` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_dose_amount`
@@ -3017,10 +2901,10 @@ INSERT INTO `treatment_dose_amount` (`id`, `name`) VALUES
 -- Table structure for table `treatment_frequency`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_frequency` (
+CREATE TABLE `treatment_frequency` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_frequency`
@@ -3044,10 +2928,10 @@ INSERT INTO `treatment_frequency` (`id`, `name`) VALUES
 -- Table structure for table `treatment_method_of_administration`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_method_of_administration` (
+CREATE TABLE `treatment_method_of_administration` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_method_of_administration`
@@ -3069,10 +2953,10 @@ INSERT INTO `treatment_method_of_administration` (`id`, `name`) VALUES
 -- Table structure for table `treatment_target_dose_max`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_target_dose_max` (
+CREATE TABLE `treatment_target_dose_max` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_target_dose_max`
@@ -3099,10 +2983,10 @@ INSERT INTO `treatment_target_dose_max` (`id`, `name`) VALUES
 -- Table structure for table `treatment_target_dose_min`
 --
 
-CREATE TABLE IF NOT EXISTS `treatment_target_dose_min` (
+CREATE TABLE `treatment_target_dose_min` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `treatment_target_dose_min`
@@ -3126,7 +3010,7 @@ INSERT INTO `treatment_target_dose_min` (`id`, `name`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `ilc_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `is_reseacher` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
@@ -3151,34 +3035,30 @@ CREATE TABLE IF NOT EXISTS `users` (
   `regdate` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
   `status` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `forget_password_token` text COLLATE utf8_unicode_ci NOT NULL,
   `activate_token` text COLLATE utf8_unicode_ci NOT NULL,
   `safe_mode` enum('on','off') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'on',
   `is_block` enum('0','1') CHARACTER SET utf8 NOT NULL DEFAULT '0',
   `dob` date DEFAULT NULL,
   `added_date` datetime DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `ilc_id`, `is_reseacher`, `fname`, `lname`, `phone`, `email`, `user_type`, `doctor_id`, `username`, `password`, `pincode`, `security_question`, `security_answer`, `photo`, `certification_doc`, `q1`, `a1`, `q2`, `a2`, `ip_address`, `regdate`, `last_login`, `status`, `activate_token`, `safe_mode`, `is_block`, `dob`, `added_date`) VALUES
-(125, 'A125', 'no', 'admin', 'admin', '', 'admin@gmail.com ', '5', 0, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'Make and model of your first car', 'tata', 'microphone.jpg', 'office-863815_1280.jpg', '', '', '', '', '107.194.158.78', '1450721132', '0000-00-00 00:00:00', '1', '', 'on', '0', '1987-12-12', '0000-00-00 00:00:00'),
-(183, 'D183', 'no', 'Rajesh', 'Divekar', '9860819294', '', '3', 0, NULL, NULL, NULL, NULL, '', NULL, 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', '0000-00-00', '2016-09-12 17:33:00'),
-(185, '', 'no', 'ss', 'ss', '', 'aa@gmail.com ', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'selected', 'qqq', 'certainty-229115_640.jpg', 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', 'on', '0', '1987-12-12', '2017-08-27 15:18:02'),
-(186, '', 'no', 'kkk f', 'lll', '', 'lll@h.com ', '1', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'selected', '', NULL, 'office-863815_1280.jpg', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '1', '142941ccf61cba96fb9679e5fda6da9c', 'on', '0', '0000-00-00', '2017-08-27 17:56:41'),
-(187, '', 'no', 'hari', 'div', '', 'jj@gmail.com', '3', 0, NULL, 'c20ad4d76fe97759aa27a0c99bff6710', NULL, 'Make and model of your first car', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '8d7248decbf8a5f490d75b5172b69f60', 'on', '0', '0000-00-00', '2017-09-04 15:55:50'),
-(188, '', 'no', 'test', 'test', '', 'raj1@gmail.com', '1', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 's', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'caeec350527b82e66e365408ff5cf3a0', 'on', '0', '1987-12-12', '2017-09-07 16:47:18'),
-(189, 'P189', 'no', 'amit', 'bhat', '', 'amit@gmail.com ', '2', 190, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Your favorite sports team', 'resr', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '21d3ba531714c719f775cc5a159954db', 'on', '0', '1984-12-12', '2017-09-08 14:37:54'),
-(190, 'D190', 'yes', 'prasad222223', 'testtt', '', 'prasa@gmail.com ', '3', 0, NULL, 'bcc67d8524948bbd873e4df12c89b182', NULL, 'Your favorite singer', 'ttt', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'c1466a93170a0490b36ca6c38beee538', 'on', '0', '1999-09-02', '2017-09-08 14:48:06'),
-(197, 'P197', 'no', 'ee', 'eee', '', 'p@gmail.com', '2', 187, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'wer', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd80daddf34f19eb1a01934344a1d3163', 'on', '0', '1988-12-12', '2017-10-09 19:14:45'),
-(193, 'D193', 'no', 'prakah', 'bose', '', 'p@gmail.com', '3', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'Make and model of your first car', 'ddd', NULL, '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', '7aa875cd55d516fbaa1b9f3ebc32e81a', 'on', '0', '1987-12-12', '2017-09-16 11:08:06'),
-(196, 'R196', 'no', 'atul', 'zaa', '', 'a@gmail.com ', '4', 0, NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, 'The name of your elementary school', 'a', 'b1.jpg', '', NULL, NULL, NULL, NULL, '::1', NULL, NULL, '0', 'd12fde1a3358d8942a282aa2ffd2cd9f', 'on', '0', '1990-12-12', '2017-09-16 17:29:11'),
-(198, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(199, '', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(200, 'P200', 'no', 'john', 'demo', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(201, 'P201', 'no', 'io', 'iopip', '', '', NULL, 0, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', NULL, NULL),
-(202, '', 'no', 'rajjj', 'jadhaav', '', 'raj@gmail.com', '3', 0, NULL, 'c4ca4238a0b923820dcc509a6f75849b', NULL, 'Your first pets name', '1', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', 'on', '0', '1987-12-12', '2017-10-14 17:41:01');
+INSERT INTO `users` (`user_id`, `ilc_id`, `is_reseacher`, `fname`, `lname`, `phone`, `email`, `user_type`, `doctor_id`, `username`, `password`, `pincode`, `security_question`, `security_answer`, `photo`, `certification_doc`, `q1`, `a1`, `q2`, `a2`, `ip_address`, `regdate`, `last_login`, `status`, `forget_password_token`, `activate_token`, `safe_mode`, `is_block`, `dob`, `added_date`) VALUES
+(279, 'P279', 'no', 'Patient5', 'K', '', 'Patient5@gmail.com', '2', 275, NULL, '59d51b5cb69c829ea5bfe77e38a1522e', NULL, 'Your first pets name', 'dingding', NULL, '', NULL, NULL, NULL, NULL, '2001:8003:4529:5d00:f09a:711f:3ea9:1a21', NULL, NULL, '1', '', '0489a369ade5cc688e6f2a6f51b5c477', 'on', '0', '0000-00-00', '2017-10-25 10:41:10'),
+(278, 'P278', 'no', 'Patient4', 'K', '', 'Patient4@gmail.com', '2', 269, NULL, 'f110fc2dac5b6836af686f5c4d772aac', NULL, 'Your first pets name', 'dingding', NULL, '', NULL, NULL, NULL, NULL, '2001:8003:4529:5d00:f09a:711f:3ea9:1a21', NULL, NULL, '1', '', '93e5062e0f13c77fa43c97512babb5dc', 'on', '0', '0000-00-00', '2017-10-25 10:37:24'),
+(277, 'P277', 'no', 'PatientC', 'C', '', 'patientC@gmail.com', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your favorite actor', 'prashant', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', '', 'on', '0', '1977-04-01', '2017-10-25 10:02:28'),
+(276, 'R276', 'no', 'Researcher2', 'R', '', 'researcher2@gmail.com', '4', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your favorite sports team', 'Manchester United', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', '', 'on', '0', '1988-09-12', '2017-10-25 10:00:57'),
+(275, 'D275', 'yes', 'DoctorZ', 'Z', '', 'doctor1@gmail.com', '3', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your first pets name', 'BaoBao', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', '', 'on', '0', '1950-10-14', '2017-10-25 09:58:19'),
+(274, 'P274', 'yes', 'PatientB', 'B', '', 'patient2@gmail.com', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'The name of your elementary school', 'Catholic school', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', '', 'on', '0', '1990-10-23', '2017-10-25 09:52:58'),
+(273, 'P273', 'no', 'PatientA', 'A', '', 'patient1@gmail.com ', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your mothers maiden name', 'mary', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '', '', 'on', '0', '1980-10-10', '2017-10-25 09:51:18'),
+(272, '', 'no', 'Patientx', 'X', '', 'Patientx@gmail.com', '2', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your first pets name', 'Dog', 'patient.png', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', '', 'on', '0', '1989-11-12', '2017-10-25 05:28:33'),
+(270, 'D210', 'no', 'Admin', 'Y', '', 'admin@gmail.com', '5', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your first pets name', 'dogy', 'admin.png', '', NULL, NULL, NULL, NULL, '131.170.239.19', NULL, NULL, '1', '', '8bdb75027905755dd4af67394a22d460', 'on', '0', '0000-00-00', '2017-10-25 05:02:56'),
+(271, 'R271', 'no', 'Researcher1', 'R', '', 'researcher1@gmail.com', '4', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'The name of your elementary school', 'west', 'researcher.png', '', NULL, NULL, NULL, NULL, '131.170.239.19', NULL, NULL, '1', '', '0acc453642c5a7f93e96e3cebbf986fa', 'on', '0', '0000-00-00', '2017-10-25 05:17:21'),
+(269, 'D269', 'no', 'DoctorY', 'Y', '', 'DoctorY@gmail.com', '3', 0, NULL, '21232f297a57a5a743894a0e4a801fc3', NULL, 'Your first pets name', 'dogy', 'doctor.png', '', NULL, NULL, NULL, NULL, '131.170.239.19', NULL, NULL, '1', '', '8bdb75027905755dd4af67394a22d460', 'on', '0', '0000-00-00', '2017-10-25 05:02:56');
 
 -- --------------------------------------------------------
 
@@ -3186,10 +3066,10 @@ INSERT INTO `users` (`user_id`, `ilc_id`, `is_reseacher`, `fname`, `lname`, `pho
 -- Table structure for table `user_type`
 --
 
-CREATE TABLE IF NOT EXISTS `user_type` (
+CREATE TABLE `user_type` (
   `id` int(11) NOT NULL,
   `name` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_type`
@@ -3207,10 +3087,10 @@ INSERT INTO `user_type` (`id`, `name`) VALUES
 -- Table structure for table `vitro_cell_culture_method`
 --
 
-CREATE TABLE IF NOT EXISTS `vitro_cell_culture_method` (
+CREATE TABLE `vitro_cell_culture_method` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vitro_cell_culture_method`
@@ -3229,7 +3109,7 @@ INSERT INTO `vitro_cell_culture_method` (`id`, `name`) VALUES
 -- Table structure for table `vitro_experiment`
 --
 
-CREATE TABLE IF NOT EXISTS `vitro_experiment` (
+CREATE TABLE `vitro_experiment` (
   `id` int(11) NOT NULL,
   `researcher_id` int(11) NOT NULL,
   `condition_being_investigated` int(5) NOT NULL,
@@ -3266,17 +3146,7 @@ CREATE TABLE IF NOT EXISTS `vitro_experiment` (
   `percent_efficacy_in_negative_control` decimal(45,2) NOT NULL,
   `full_reference_of_the_study_including_doi` decimal(45,2) NOT NULL,
   `adde_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `vitro_experiment`
---
-
-INSERT INTO `vitro_experiment` (`id`, `researcher_id`, `condition_being_investigated`, `cancer_type`, `other_infections`, `cell_line`, `cell_density_per_treatment`, `cell_culture_medium`, `cell_culture_method`, `cell_culture_method_other`, `cell_culture_conditions`, `cytotoxicity_results`, `cannabis_treatment_1_name`, `cannabis_treatment_1_dose`, `cannabis_treatment_2_name`, `cannabis_treatment_2_dose`, `cannabis_treatment_3_name`, `cannabis_treatment_3_dose`, `cannabis_treatment_4_name`, `cannabis_treatment_4_dose`, `positive_control_name`, `positive_control_dose`, `vehicle_control_name`, `vehicle_control_dose`, `negative_control_name`, `neative_control_dose`, `number_of_replicates_treatment`, `percent_efficacy_in_cannabis_treatment_1`, `percent_efficacy_in_cannabis_treatment_2`, `percent_efficacy_in_cannabis_treatment_3`, `percent_efficacy_in_cannabis_treatment_4`, `percent_efficacy_in_positive_control`, `percent_efficacy_in_vehicle_control`, `percent_efficacy_in_negative_control`, `full_reference_of_the_study_including_doi`, `adde_date`) VALUES
-(1, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:00:59'),
-(2, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:14'),
-(3, 196, 3, 0, '', '', 'dfdf', '', 0, '', '', '', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:23'),
-(4, 196, 6, 0, '', 'qw', 'qwe', 'qwe', 0, '', '', '', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2017-10-01 19:01:44');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -3284,7 +3154,7 @@ INSERT INTO `vitro_experiment` (`id`, `researcher_id`, `condition_being_investig
 -- Table structure for table `vivo_experiment`
 --
 
-CREATE TABLE IF NOT EXISTS `vivo_experiment` (
+CREATE TABLE `vivo_experiment` (
   `id` int(11) NOT NULL,
   `researcher_id` int(11) NOT NULL,
   `animal_name` text NOT NULL,
@@ -3319,36 +3189,14 @@ CREATE TABLE IF NOT EXISTS `vivo_experiment` (
   `side_effects_of_cannabis_treatment` varchar(200) NOT NULL,
   `full_reference_of_the_study_including_dio` text NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vivo_experiment`
 --
 
 INSERT INTO `vivo_experiment` (`id`, `researcher_id`, `animal_name`, `animal_model_name`, `gender_of_animals`, `male_female_ratio`, `condition_being_investigated`, `cancer_type`, `other_infections`, `description_of_ailment`, `age_at_treatment`, `cannabinoid_ratio_used`, `cannabinoid_ratio_used_other`, `average_dose_amount`, `minimum_daily`, `maximum_daily`, `positive_control`, `positive_control_dose`, `vehicle_control`, `vehicle_control_dose`, `negative_control`, `negative_control_dose`, `number_of_replicates_treatment`, `method_of_administration`, `frequency`, `dosage_type`, `follow_up_frequency`, `perent_efficacy_of_cannabis_treatment`, `percent_efficacy_of_positive_control`, `percent_efficacy_of_vehicle_control`, `percent_efficacy_of_negative_control`, `side_effects_of_cannabis_treatment`, `full_reference_of_the_study_including_dio`, `added_date`) VALUES
-(1, 196, 'asd', '', 'male', '0.00', 0, 0, '', '', '0.0', 'Balanced THC & CBD', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 2, 3, 'during_meals', 7, '0.00', '0.00', '0.00', '0.00', '2', 'asasd', '2017-09-29 17:49:29'),
-(2, 196, 'ww', 'aaa', 'male', '0.00', 0, 0, '', '', '0.0', 'High THC', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 3, 3, 'during_meals', 4, '0.00', '0.00', '0.00', '0.00', '14', 'aa', '2017-09-29 17:52:37'),
-(3, 196, 'ww', 'aaa', 'male', '0.00', 0, 0, '', '', '0.0', 'High THC', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 3, 3, 'during_meals', 4, '0.00', '0.00', '0.00', '0.00', '161', 'aa', '2017-09-29 17:53:30'),
-(4, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-09-29 18:16:41'),
-(5, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-09-29 18:17:04'),
-(6, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '1,2', '', '2017-09-29 18:18:46'),
-(7, 196, 'aaa', 'aaa', 'female', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 11:26:49'),
-(8, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(9, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(10, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(11, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(12, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(13, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(14, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(15, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(16, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(17, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(18, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:15'),
-(19, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:16'),
-(20, 196, '', '', '', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 17:27:28'),
-(21, 196, 'df', 'sdf', 'male', '0.00', 0, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 19:02:34'),
-(22, 196, 'asd', 'asd', 'male', '0.00', 9, 0, '', '', '0.0', '0', '', '0.000000', '0.000000', '0.000000', '', '0.000000', '', '0.000000', '', '0.000000', 0, 0, 0, '', 0, '0.00', '0.00', '0.00', '0.00', '', '', '2017-10-01 19:04:32'),
-(23, 196, 'parot', 'parot', 'female', '0.00', 3, 0, '', '', '23.0', 'Balanced THC & CBD', '', '23.000000', '23.000000', '233.000000', 'dsss', '3.000000', 'ffffff', '34.000000', 'rrrrrrr', '4.000000', 32, 4, 3, 'during_meals', 3, '23.00', '43.00', '34.00', '34.00', '1,2', '3dfsd', '2017-10-07 12:26:32');
+(35, 275, 'pig', 'pig', 'male', 0.00, 15, 15, '', '', 14.0, 'High THC', '', 140.230000, 143.111000, 1.200000, 'control', 1.234531, 'vehicle', 7.666656, 'negative', 9.345675, 3, 4, 3, 'during_meals', 4, 2.12, 21.22, 35.43, 21.22, '10,11,15', '', '2017-10-25 11:37:10');
 
 -- --------------------------------------------------------
 
@@ -3356,10 +3204,10 @@ INSERT INTO `vivo_experiment` (`id`, `researcher_id`, `animal_name`, `animal_mod
 -- Table structure for table `vivo_follow_up_frequency`
 --
 
-CREATE TABLE IF NOT EXISTS `vivo_follow_up_frequency` (
+CREATE TABLE `vivo_follow_up_frequency` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vivo_follow_up_frequency`
@@ -3382,10 +3230,10 @@ INSERT INTO `vivo_follow_up_frequency` (`id`, `name`) VALUES
 -- Table structure for table `vivo_frequency`
 --
 
-CREATE TABLE IF NOT EXISTS `vivo_frequency` (
+CREATE TABLE `vivo_frequency` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vivo_frequency`
@@ -3409,10 +3257,10 @@ INSERT INTO `vivo_frequency` (`id`, `name`) VALUES
 -- Table structure for table `vivo_method_of_administration`
 --
 
-CREATE TABLE IF NOT EXISTS `vivo_method_of_administration` (
+CREATE TABLE `vivo_method_of_administration` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vivo_method_of_administration`
@@ -3433,12 +3281,6 @@ INSERT INTO `vivo_method_of_administration` (`id`, `name`) VALUES
 --
 
 --
--- Indexes for table `articles`
---
-ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `become_researcher`
 --
 ALTER TABLE `become_researcher`
@@ -3454,7 +3296,9 @@ ALTER TABLE `cancer_types`
 -- Indexes for table `cannabinoid strain data`
 --
 ALTER TABLE `cannabinoid strain data`
-  ADD PRIMARY KEY (`idstraindata`), ADD KEY `idCultivation_idx` (`idCultivation`), ADD KEY `idcannabinoid storage_idx` (`idStorage`);
+  ADD PRIMARY KEY (`idstraindata`),
+  ADD KEY `idCultivation_idx` (`idCultivation`),
+  ADD KEY `idcannabinoid storage_idx` (`idStorage`);
 
 --
 -- Indexes for table `certification_document`
@@ -3502,7 +3346,8 @@ ALTER TABLE `doctor_clinic`
 -- Indexes for table `followups`
 --
 ALTER TABLE `followups`
-  ADD PRIMARY KEY (`idfollowUps`), ADD KEY `treatmentNo_idx` (`treatmentNo`);
+  ADD PRIMARY KEY (`idfollowUps`),
+  ADD KEY `treatmentNo_idx` (`treatmentNo`);
 
 --
 -- Indexes for table `follow_up_comments`
@@ -3538,7 +3383,9 @@ ALTER TABLE `patient_ethnicity`
 -- Indexes for table `patient_history`
 --
 ALTER TABLE `patient_history`
-  ADD PRIMARY KEY (`id`), ADD KEY `idpatient_idx` (`patientid`), ADD KEY `iddoctor_idx` (`doctorid`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idpatient_idx` (`patientid`),
+  ADD KEY `iddoctor_idx` (`doctorid`);
 
 --
 -- Indexes for table `patient_history_accommodation_type_during_admission`
@@ -3688,7 +3535,8 @@ ALTER TABLE `treatment_target_dose_min`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`), ADD UNIQUE KEY `username` (`username`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `user_type`
@@ -3737,256 +3585,244 @@ ALTER TABLE `vivo_method_of_administration`
 --
 
 --
--- AUTO_INCREMENT for table `articles`
---
-ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
 -- AUTO_INCREMENT for table `become_researcher`
 --
 ALTER TABLE `become_researcher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `cancer_types`
 --
 ALTER TABLE `cancer_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=195;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
 --
 -- AUTO_INCREMENT for table `certification_document`
 --
 ALTER TABLE `certification_document`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `conditionsofbeingtreated`
 --
 ALTER TABLE `conditionsofbeingtreated`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=240;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 --
 -- AUTO_INCREMENT for table `diary`
 --
 ALTER TABLE `diary`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `doctor_clinic`
 --
 ALTER TABLE `doctor_clinic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `followups`
 --
 ALTER TABLE `followups`
-  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `idfollowUps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `follow_up_comments`
 --
 ALTER TABLE `follow_up_comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `follow_up_frequency`
 --
 ALTER TABLE `follow_up_frequency`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `patienttreatment`
 --
 ALTER TABLE `patienttreatment`
-  MODIFY `idpatientTreatment` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `idpatientTreatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `patient_ethnicity`
 --
 ALTER TABLE `patient_ethnicity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1244;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1244;
 --
 -- AUTO_INCREMENT for table `patient_history`
 --
 ALTER TABLE `patient_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `patient_history_accommodation_type_during_admission`
 --
 ALTER TABLE `patient_history_accommodation_type_during_admission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `patient_history_admission_read_mission_to_rehabilitation`
 --
 ALTER TABLE `patient_history_admission_read_mission_to_rehabilitation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `patient_history_admission_source`
 --
 ALTER TABLE `patient_history_admission_source`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `patient_history_admission_types`
 --
 ALTER TABLE `patient_history_admission_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `patient_history_admission_weight`
 --
 ALTER TABLE `patient_history_admission_weight`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `patient_history_criterion_for_admission`
 --
 ALTER TABLE `patient_history_criterion_for_admission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `patient_history_fim_score_on_admission`
 --
 ALTER TABLE `patient_history_fim_score_on_admission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `patient_history_intended_duration`
 --
 ALTER TABLE `patient_history_intended_duration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `patient_history_interpreter_required`
 --
 ALTER TABLE `patient_history_interpreter_required`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `patient_history_patient_type`
 --
 ALTER TABLE `patient_history_patient_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `patient_history_qualification_status`
 --
 ALTER TABLE `patient_history_qualification_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `patient_history_rug_adl_on_admission`
 --
 ALTER TABLE `patient_history_rug_adl_on_admission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `patient_history_source_of_referral_to_palliative_care`
 --
 ALTER TABLE `patient_history_source_of_referral_to_palliative_care`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `side_effect`
 --
 ALTER TABLE `side_effect`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 --
 -- AUTO_INCREMENT for table `strain_data`
 --
 ALTER TABLE `strain_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `strain_data_soil_mix`
 --
 ALTER TABLE `strain_data_soil_mix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `treatment_cannabinoid_ratio`
 --
 ALTER TABLE `treatment_cannabinoid_ratio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `treatment_dosage_type`
 --
 ALTER TABLE `treatment_dosage_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `treatment_dose_amount`
 --
 ALTER TABLE `treatment_dose_amount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `treatment_frequency`
 --
 ALTER TABLE `treatment_frequency`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `treatment_method_of_administration`
 --
 ALTER TABLE `treatment_method_of_administration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `treatment_target_dose_max`
 --
 ALTER TABLE `treatment_target_dose_max`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `treatment_target_dose_min`
 --
 ALTER TABLE `treatment_target_dose_min`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=203;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
 --
 -- AUTO_INCREMENT for table `user_type`
 --
 ALTER TABLE `user_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `vitro_cell_culture_method`
 --
 ALTER TABLE `vitro_cell_culture_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `vitro_experiment`
 --
 ALTER TABLE `vitro_experiment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `vivo_experiment`
 --
 ALTER TABLE `vivo_experiment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `vivo_follow_up_frequency`
 --
 ALTER TABLE `vivo_follow_up_frequency`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `vivo_frequency`
 --
 ALTER TABLE `vivo_frequency`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `vivo_method_of_administration`
 --
 ALTER TABLE `vivo_method_of_administration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `cannabinoid strain data`
---
-ALTER TABLE `cannabinoid strain data`
-ADD CONSTRAINT `idCultivation` FOREIGN KEY (`idCultivation`) REFERENCES `cannabinoid culltivation condition` (`idCultivation`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-ADD CONSTRAINT `idStorage` FOREIGN KEY (`idStorage`) REFERENCES `cannabinoid storage` (`idcannabinoid storage`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `followups`
 --
 ALTER TABLE `followups`
-ADD CONSTRAINT `treatmentNo` FOREIGN KEY (`treatmentNo`) REFERENCES `patienttreatment` (`idpatientTreatment`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `treatmentNo` FOREIGN KEY (`treatmentNo`) REFERENCES `patienttreatment` (`idpatientTreatment`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

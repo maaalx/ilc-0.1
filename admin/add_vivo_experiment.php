@@ -17,7 +17,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-           Step 1: Add Vivo Experiment
+           Step 1: Add In vivo Experiment
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
@@ -84,7 +84,7 @@
                       <select onchange="check_condition_investigated(this.value)" name="condition_being_investigated" id="condition_being_investigated" class="form-control">
 						<option value="0">Select</option>
                        <?php 
-						$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+						$query=mysqli_query($db,"select * from conditionsofbeingtreated order by name");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
 						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
@@ -137,7 +137,7 @@
 					<div class="form-group">
                       <label>Age at treatment (months)</label>
 					  <input type="text" name="age_at_treatment" id="age_at_treatment" class="form-control maskedExt" maskedFormat="10,1"  placeholder="Age at treatment (months)">
-					  <span style="color:red">Number with one decimal point</span>
+					  <span style="color:red">Enter number with one decimal place</span>
                      
                     </div>
             
@@ -167,8 +167,8 @@
 				<div class="form-group ">
 					<div class="form-group">
                       <label>Average Dose Amount (mg/kg body weight)</label>
-					  <input type="text" name="average_dose_amount" id="average_dose_amount" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Average Dose Amount">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <input type="text" name="average_dose_amount" id="average_dose_amount" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Average Dose Amount 0.000001">
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -177,8 +177,8 @@
 				<div class="form-group ">
 					<div class="form-group">
                       <label>Minimum daily Target Dose (mg/kg body weight)</label>
-					  <input type="text" name="minimum_daily" id="minimum_daily" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Minimum daily Target Dose">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <input type="text" name="minimum_daily" id="minimum_daily" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Minimum daily Target Dose 0.000001">
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -189,7 +189,7 @@
 					<div class="form-group">
                       <label>Maximum daily Target Dose (mg/kg body weight)</label>
 					  <input type="text" name="maximum_daily" id="maximum_daily" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Maximum daily Target Dose">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -209,7 +209,7 @@
 					<div class="form-group">
                       <label>Positive control dose (mg/kg body weight)</label>
 					  <input type="text" name="positive_control_dose" id="positive_control_dose" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Positive control dose">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -229,7 +229,7 @@
 					<div class="form-group">
                       <label>Vehicle control dose (mg/kg body weight)</label>
 					  <input type="text" name="vehicle_control_dose" id="vehicle_control_dose" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Vehicle control dose">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -249,7 +249,7 @@
 					<div class="form-group">
                       <label>Negative control dose (mg/kg body weight)</label>
 					  <input type="text" name="negative_control_dose" id="negative_control_dose" class="form-control maskedExt" maskedFormat="10,6"  placeholder="Negative control dose">
-					  <span style="color:red">Number with 6 decimal point</span>
+					  <span style="color:red">Enter number with 6 decimal places</span>
                      
                     </div>
             
@@ -338,7 +338,7 @@
 					<div class="form-group">
                       <label>% Efficacy of cannabis treatment </label>
 					  <input type="text" name="perent_efficacy_of_cannabis_treatment" id="perent_efficacy_of_cannabis_treatment" class="form-control maskedExt" maskedFormat="10,2"  placeholder="% Efficacy of cannabis treatment">
-					  <span style="color:red">Number with 2 decimal point</span>
+					  <span style="color:red">Enter number with 2 decimal places</span>
                      
                     </div>
             
@@ -349,7 +349,7 @@
 					<div class="form-group">
                       <label>% Efficacy of Positive Control </label>
 					  <input type="text" name="percent_efficacy_of_positive_control" id="percent_efficacy_of_positive_control" class="form-control maskedExt" maskedFormat="10,2"  placeholder="% Efficacy of Positive Control">
-					  <span style="color:red">Number with 2 decimal point</span>
+					  <span style="color:red">Enter number with 2 decimal places</span>
                      
                     </div>
             
@@ -359,7 +359,7 @@
 					<div class="form-group">
                       <label>% Efficacy of Vehicle Control</label>
 					  <input type="text" name="percent_efficacy_of_vehicle_control" id="percent_efficacy_of_vehicle_control" class="form-control maskedExt" maskedFormat="10,2"  placeholder="% Efficacy of Vehicle Control">
-					  <span style="color:red">Number with 2 decimal point</span>
+					  <span style="color:red">Enter number with 2 decimal places</span>
                      
                     </div>
             
@@ -369,7 +369,7 @@
 					<div class="form-group">
                       <label>% Efficacy of Negative Control</label>
 					  <input type="text" name="percent_efficacy_of_negative_control" id="percent_efficacy_of_negative_control" class="form-control maskedExt" maskedFormat="10,2"  placeholder="% Efficacy of Negative Control">
-					  <span style="color:red">Number with 2 decimal point</span>
+					  <span style="color:red">Enter number with 2 decimal places</span>
                      
                     </div>
             
@@ -391,7 +391,7 @@
 						
                         
                       </select>
-					  <span style="color:red">(Can select multiple)..Press contol key and select multiple</span>
+					  <span style="color:red">Press control key to select multiple</span>
 				</div>
 			</div>
 			

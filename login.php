@@ -1,3 +1,5 @@
+<html>
+    <head>
 <?php session_start();
 
  ?>
@@ -351,7 +353,7 @@ if(isset($_SESSION['admin_user_id'])){
 					
 					<div class="col-md-12">
 							<input type="submit" class="btn btn-info btn-send sign-in" value="Login">
-							<a href="forget_password.php" class="forgetpassword">Forget Password</a>
+							<a href="forget_password.php" class="forgetpassword">Forgot Password</a>
 					</div>
 					
 				</div>
@@ -398,24 +400,8 @@ if(isset($_SESSION['admin_user_id'])){
     }
 });
 </script>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</head>
+<body>
 <br>
 <br>
 <br>
@@ -429,4 +415,24 @@ if(isset($_SESSION['admin_user_id'])){
 <br>
 <br>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <?php include("includes/footer.php"); ?>
+</body>
+
+</html>

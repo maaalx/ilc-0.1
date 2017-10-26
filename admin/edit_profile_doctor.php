@@ -156,12 +156,12 @@
 
 						<div class="form-group has-feedback">
 						<label>Hospital Name <span style="color:red">*</span></label>
-						<input value="<?php echo $doctor['hospital_code']; ?>" type="text" name="hospital_code" id="hospital_code" class="form-control" placeholder="Hospital Name">
+						<input value="<?php echo $doctor['hospital_name']; ?>" type="text" name="hospital_name" id="hospital_name" class="form-control" placeholder="Hospital Name">
 						
 						</div>
 						<div class="form-group has-feedback">
 						<label>Hospital Code <span style="color:red">*</span></label>
-						<input value="<?php echo $doctor['hospital_name']; ?>" type="text" name="hospital_name" id="hospital_name" class="form-control" placeholder="Hospital Code">
+						<input value="<?php echo $doctor['hospital_code']; ?>" type="text" name="hospital_code" id="hospital_code" class="form-control" placeholder="Hospital Code">
 						
 						</div>
 						

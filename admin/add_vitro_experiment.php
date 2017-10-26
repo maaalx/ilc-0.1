@@ -45,7 +45,7 @@
                       <select onchange="check_condition_investigated(this.value)" name="condition_being_investigated" id="	condition_being_investigated" class="form-control">
 						<option value="0">Select</option>
                        <?php 
-						$query=mysqli_query($db,"select * from conditionsOfBeingTreated order by name");
+						$query=mysqli_query($db,"select * from conditionsofbeingtreated order by name");
 						while($row=mysqli_fetch_assoc($query)){
 						?>
 						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
@@ -376,6 +376,30 @@
                     </div>
             
 				</div>
+				
+				
+				
+								<div class="form-group ">
+					<div class="form-group">
+                      <label>Side Effects of cannabis treatment</label>
+                      <select multiple name="side_effects_of_cannabis_treatment[]" id="side_effects_of_cannabis_treatment" class="form-control">
+						<option value="0">Select</option>
+                       <?php 
+						$query=mysqli_query($db,"select * from side_effect order by name");
+						while($row=mysqli_fetch_assoc($query)){
+						?>
+						<option  value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+						<?php 	
+						}
+					   ?>
+						
+                        
+                      </select>
+					  <span style="color:red">Press control key to select multiple</span>
+				</div>
+			</div>
+				
+				
 				
 				<div class="form-group ">
 					<div class="form-group">

@@ -188,11 +188,11 @@ if($row['patient_history_id']!=NULL && $row['patient_history_id']!=''){ ?>
 <?php }  ?>
 
 <?php if($row['vivo_id']!=NULL && $row['vivo_id']!=''){ ?>
-<a href="view_vivo_experiment.php?id=<?php echo $vivo_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View Vivo Details</button></a>
+<a href="view_vivo_experiment.php?id=<?php echo $vivo_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View In vivo Experiment</button></a>
 <?php } ?>
 
 <?php if($row['vitro_id']!=NULL && $row['vitro_id']!=''){ ?>
-<a href="view_vitro_experiment.php?id=<?php echo $vitro_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View Vitro Details</button></a>
+<a href="view_vitro_experiment.php?id=<?php echo $vitro_id; ?>"><button style="width: auto;" class="btn-success disabled" name="approved">View In vitro Experiment</button></a>
 <?php } ?>
 </td>
 </tr>

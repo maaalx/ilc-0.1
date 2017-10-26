@@ -24,7 +24,7 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            
 			<?php 
 			if($user_data['photo']!=''){ ?>
 					<li><img style="width:90%" src="upload/profiles/<?php echo $user_data['photo']; ?>"></li> 
@@ -49,13 +49,13 @@
 		  
 		  <li class="treeview">
               <a href="become_reseacher_patient.php">
-				<span>Approve patient to function as researcher</span> <i class="fa fa-angle-left pull-right"></i>
+				<span>Approve patient to</br>function as researcher</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
              
             </li>
 			<li class="treeview">
               <a href="become_reseacher_doctor.php">
-				<span>Approve doctor to function as researcher</span> <i class="fa fa-angle-left pull-right"></i>
+				<span>Approve doctor to</br>function as researcher</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
              
             </li>
@@ -226,7 +226,7 @@
               </a>
               <ul class="treeview-menu">
                
-				<li><a href="doctor_add_patient_history.php"><i class="fa fa-circle-o"></i>Add Treatment</a></li>
+				<li><a href="researcher_add_patient_history.php"><i class="fa fa-circle-o"></i>Add Treatment</a></li>
 				<li><a href="researcher_treatments.php"><i class="fa fa-circle-o"></i>My Treatments List</a></li>
               </ul>
             </li>
@@ -247,6 +247,11 @@
 			<li class="treeview">
               <a href="search.php">
 					<i class="fa fa-fw fa-angle-right"></i> <span>Search</span> <i class="fa  pull-right"></i>
+              </a>
+			</li>
+		<li class="treeview">
+              <a href="search_advanced.php">
+					<i class="fa fa-fw fa-angle-right"></i> <span>Advance Search</span> <i class="fa  pull-right"></i>
               </a>
 			</li>
 		<?php } ?>

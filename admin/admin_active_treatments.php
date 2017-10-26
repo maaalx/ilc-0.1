@@ -46,7 +46,7 @@ $url = urlencode(base64_encode($adresa));
                       <tr>
                         <th>Patient Name</th>
                         
-                        <th>Conditions Of Being Treated</th>
+                        <th>Conditions Being Treated</th>
                        
                         <th>Action</th>
                         </tr>

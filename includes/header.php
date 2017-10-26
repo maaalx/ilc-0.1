@@ -32,7 +32,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ILC</title>
+	<title>International Library of Cannabinoids</title>
 	<!-- Stylesheets -->
 	<link rel="shortcut icon" type="image/png" href="../images/leave.png">
 	<link href="<?php echo SITEROOT; ?>/css/bootstrap.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 			<!--navbar top-->
 			<nav class="navbar navbar-inverse navbar-fixed-top" id="navbartop">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-leaf"></span> International Library Cannabinoid</a>
+					<a class="navbar-brand" href="<?php echo SITEROOT; ?>/index.php"><span class="glyphicon glyphicon-leaf"></span> International Library of Cannabinoids</a>
 				</div>
 				
 				<ul id="navbarrighttop" class="nav navbar-nav navbar-right">
