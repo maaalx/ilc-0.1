@@ -22,3 +22,29 @@ admin
 For more information please see the Technical report
 
 
+---------------------------------
+---------------------------------
+ADMIN
+Login: admin@gmail.com Password:admin
+
+Doctor(s)
+DoctorA@gmail.com : password : admin
+DoctorB@gmail.com : password : admin
+DoctorC@gmail.com : password : admin
+DoctorD@gmail.com: password : admin
+
+Patient(s)
+Patient1@gmail.com : password :patientILC1
+Patient2@gmail.com : password :patientILC1
+Patient3@gmail.com : password :patientILC1
+Patient4@gmail.com : password :patientILC1
+Patient5@gmail.com : password :patientILC1
+Patient6@gmail.com : password :patientILC1
+Patient7@gmail.com : password :patientILC1
+Patient8@gmail.com : password :patientILC1
+
+researcher(s)
+ResearcherA@gmail.com : password: admin
+ResearcherB@gmail.com : password: admin
+ResearcherC@gmail.com : password: admin
+ResearcherD@gmail.com : password: admin
